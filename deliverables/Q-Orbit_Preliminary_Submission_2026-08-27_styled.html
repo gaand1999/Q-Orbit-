@@ -1,0 +1,2687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Q-Orbit Research Team" />
+  <meta name="dcterms.date" content="2026-08-27" />
+  <title>Q-ORBIT</title>
+  
+<style>
+  @page {
+    size: A4;
+    margin: 2.5cm 2cm 2.5cm 2cm;
+    @bottom-center {
+      content: "INTERIM THEORETICAL SUBMISSION — NOT PHYSICALLY VALIDATED";
+      font-size: 8pt;
+      color: #666;
+      font-family: "Courier New", monospace;
+    }
+    @bottom-right {
+      content: counter(page);
+      font-size: 9pt;
+    }
+  }
+
+  html {
+    line-height: 1.6;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 11pt;
+    color: #1a1a1a;
+    background-color: #fff;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  /* Cover page styling */
+  .cover-page {
+    text-align: center;
+    padding-top: 4cm;
+    page-break-after: always;
+  }
+
+  .cover-page h1 {
+    font-size: 32pt;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: #1a1a1a;
+    margin-bottom: 0.3cm;
+    border: none;
+  }
+
+  .cover-page .subtitle {
+    font-size: 16pt;
+    color: #444;
+    margin-bottom: 1cm;
+  }
+
+  .cover-page .meta-table {
+    margin: 1cm auto;
+    text-align: left;
+    display: inline-block;
+    font-size: 10pt;
+    font-family: "Courier New", monospace;
+  }
+
+  .cover-page .meta-table td {
+    padding: 3px 12px;
+  }
+
+  .cover-page .warning-box {
+    border: 2px solid #c0392b;
+    background: #fdf2f2;
+    padding: 12px;
+    margin: 1cm auto;
+    max-width: 80%;
+    font-size: 10pt;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 6px;
+    margin-top: 1.5cm;
+    margin-bottom: 0.5cm;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 1cm;
+    margin-bottom: 0.4cm;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #34495e;
+    margin-top: 0.8cm;
+    margin-bottom: 0.3cm;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #444;
+    margin-top: 0.6cm;
+    margin-bottom: 0.2cm;
+    page-break-after: avoid;
+  }
+
+  /* Paragraphs */
+  p {
+    margin-bottom: 0.5cm;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.5cm 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #1a1a1a;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 4px solid #c0392b;
+    margin: 0.5cm 0;
+    padding: 8px 16px;
+    background: #fdf2f2;
+    font-size: 10pt;
+    page-break-inside: avoid;
+  }
+
+  blockquote p {
+    margin: 0;
+  }
+
+  /* Code */
+  code {
+    font-family: "Courier New", monospace;
+    font-size: 9.5pt;
+    background: #f4f4f4;
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  pre {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 9pt;
+    page-break-inside: avoid;
+  }
+
+  /* Lists */
+  ul, ol {
+    margin-bottom: 0.5cm;
+    padding-left: 1.5cm;
+  }
+
+  li {
+    margin-bottom: 0.15cm;
+  }
+
+  /* TOC */
+  nav#TOC {
+    page-break-after: always;
+    margin-bottom: 1cm;
+  }
+
+  nav#TOC ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  nav#TOC ul ul {
+    padding-left: 1cm;
+  }
+
+  nav#TOC li {
+    margin-bottom: 0.2cm;
+    font-size: 10pt;
+  }
+
+  nav#TOC a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  /* Horizontal rules */
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1cm 0;
+  }
+
+  /* Strong/emphasis */
+  strong {
+    font-weight: bold;
+    color: #1a1a1a;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* Status badges inline */
+  .status-pass { color: #27ae60; font-weight: bold; }
+  .status-block { color: #c0392b; font-weight: bold; }
+  .status-warn { color: #f39c12; font-weight: bold; }
+
+  /* Math rendering fallback */
+  .math {
+    font-style: italic;
+  }
+</style>
+
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Q-ORBIT</h1>
+<p class="subtitle">Preliminary Submission — Phase 1 Interim Package</p>
+<p class="author">Q-Orbit Research Team</p>
+<p class="date">2026-08-27</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#current-project-status">CURRENT PROJECT STATUS</a>
+<ul>
+<li><a
+href="#phase-1-gate-verdict-conditional-pass-ready-for-phase-2-with-disclosed-limitations">Phase
+1 Gate Verdict: CONDITIONAL PASS — READY FOR PHASE 2 WITH DISCLOSED
+LIMITATIONS</a>
+<ul>
+<li><a href="#prototype-and-website-status">Prototype and Website
+Status</a></li>
+<li><a href="#binding-limitations-summary">Binding Limitations
+(Summary)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#table-of-contents">TABLE OF CONTENTS</a></li>
+<li><a href="#part-a-interim-cover-page">PART A — INTERIM COVER PAGE</a>
+<ul>
+<li><a href="#authority-and-scope">Authority and Scope</a></li>
+<li><a href="#binding-limitations-statement">Binding Limitations
+Statement</a></li>
+</ul></li>
+<li><a href="#part-b-executive-summary">PART B — EXECUTIVE SUMMARY</a>
+<ul>
+<li><a href="#b.1-what-q-orbit-is-and-is-not">B.1 What Q-Orbit Is and Is
+Not</a></li>
+<li><a href="#b.2-what-was-verified-phase-1">B.2 What Was Verified
+(Phase 1)</a></li>
+<li><a href="#b.3-what-was-corrected">B.3 What Was Corrected</a></li>
+<li><a href="#b.4-what-remains-blocked">B.4 What Remains
+Blocked</a></li>
+<li><a href="#b.5-scientifically-defensible-conclusion">B.5
+Scientifically Defensible Conclusion</a></li>
+</ul></li>
+<li><a
+href="#part-c-corrected-scientific-manuscript-research-report">PART C —
+CORRECTED SCIENTIFIC MANUSCRIPT / RESEARCH REPORT</a>
+<ul>
+<li><a
+href="#q-orbit-fail-closed-finite-key-screening-for-a-satellite-qkd-concept">Q-Orbit:
+Fail-Closed Finite-Key Screening for a Satellite QKD Concept</a>
+<ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#background-and-related-work">2. Background and Related
+Work</a></li>
+<li><a href="#methods">3. Methods</a></li>
+<li><a href="#results">4. Results</a></li>
+<li><a href="#discussion">5. Discussion</a></li>
+<li><a href="#limitations">6. Limitations</a></li>
+<li><a href="#conclusion">7. Conclusion</a></li>
+<li><a href="#data-and-reproducibility-statement">Data and
+Reproducibility Statement</a></li>
+<li><a href="#references">References</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#part-d-concise-engineering-architecture-section">PART D —
+CONCISE ENGINEERING ARCHITECTURE SECTION</a>
+<ul>
+<li><a href="#d.1-v0.17-ta1-architecture-at-a-glance">D.1 V0.17-TA1
+Architecture at a Glance</a></li>
+<li><a href="#d.2-layered-target-architecture">D.2 Layered Target
+Architecture</a></li>
+<li><a href="#d.3-key-software-modules-v0.17">D.3 Key Software Modules
+(V0.17)</a></li>
+<li><a href="#d.4-verification-tests-for-v0.17">D.4 Verification Tests
+for V0.17</a></li>
+</ul></li>
+<li><a href="#part-e-verified-numerical-results-table">PART E — VERIFIED
+NUMERICAL-RESULTS TABLE</a>
+<ul>
+<li><a href="#e.1-computational-ground-truth-locked-2026-08-27">E.1
+Computational Ground Truth (Locked 2026-08-27)</a></li>
+<li><a href="#e.2-screen-and-sensitivity-results">E.2 Screen and
+Sensitivity Results</a></li>
+<li><a href="#e.3-evidence-class-definitions">E.3 Evidence-Class
+Definitions</a></li>
+</ul></li>
+<li><a href="#part-f-proof-profile-recommendation">PART F —
+PROOF-PROFILE RECOMMENDATION</a>
+<ul>
+<li><a href="#f.1-recommendation-summary-from-d4">F.1 Recommendation
+Summary (from D4)</a></li>
+<li><a href="#f.2-rejected-alternatives-with-reasons">F.2 Rejected
+Alternatives (with Reasons)</a></li>
+<li><a href="#f.3-layered-architecture-target">F.3 Layered Architecture
+Target</a></li>
+</ul></li>
+<li><a href="#part-g-device-imperfection-mapping-summary">PART G —
+DEVICE-IMPERFECTION MAPPING SUMMARY</a>
+<ul>
+<li><a href="#g.1-master-matrix-15-mandated-effects">G.1 Master Matrix —
+15 Mandated Effects</a></li>
+<li><a href="#g.2-fixture-scalar-touch-map-th-par-001008">G.2
+Fixture-Scalar Touch Map (TH-PAR-001…008)</a></li>
+<li><a href="#g.3-hidden-substitution-watchlist-prohibited-moves">G.3
+Hidden-Substitution Watchlist (Prohibited Moves)</a></li>
+</ul></li>
+<li><a href="#part-h-selected-existing-engineering-figures">PART H —
+SELECTED EXISTING ENGINEERING FIGURES</a>
+<ul>
+<li><a href="#h.1-figures-referenced-in-package">H.1 Figures Referenced
+in Package</a></li>
+</ul></li>
+<li><a href="#part-i-phase-1-gate-status">PART I — PHASE 1 GATE
+STATUS</a>
+<ul>
+<li><a href="#i.1-deliverable-status">I.1 Deliverable Status</a></li>
+<li><a href="#i.2-gate-conditions-phase-1---phase-2">I.2 Gate Conditions
+(Phase 1 -&gt; Phase 2)</a></li>
+<li><a href="#i.3-red-team-verdict">I.3 Red-Team Verdict</a></li>
+</ul></li>
+<li><a href="#part-j-remaining-blockers">PART J — REMAINING BLOCKERS</a>
+<ul>
+<li><a href="#j.1-required-input-blocker-register">J.1 Required Input /
+Blocker Register</a></li>
+<li><a href="#j.2-open-proof-problems-literature-gaps">J.2 Open Proof
+Problems (Literature Gaps)</a></li>
+<li><a href="#j.3-impact-on-submission-posture">J.3 Impact on Submission
+Posture</a></li>
+</ul></li>
+<li><a href="#part-k-roadmap-to-sunday-final-submission">PART K —
+ROADMAP TO SUNDAY FINAL SUBMISSION</a>
+<ul>
+<li><a href="#k.1-timeline-assuming-sunday-2026-08-30">K.1 Timeline
+(Assuming Sunday = 2026-08-30)</a></li>
+<li><a href="#k.2-phase-2-tasks-detailed">K.2 Phase 2 Tasks
+(Detailed)</a>
+<ul>
+<li><a href="#k.2.1-d8-reviewer-report">K.2.1 D8 — Reviewer
+Report</a></li>
+<li><a href="#k.2.2-d9-submission-checklist">K.2.2 D9 — Submission
+Checklist</a></li>
+<li><a href="#k.2.3-figure-rendering-and-caption-compliance">K.2.3
+Figure Rendering and Caption Compliance</a></li>
+<li><a href="#k.2.4-final-manuscript-polish">K.2.4 Final Manuscript
+Polish</a></li>
+<li><a href="#k.2.5-.docx-generation">K.2.5 .docx Generation</a></li>
+</ul></li>
+<li><a href="#k.3-contingencies">K.3 Contingencies</a></li>
+</ul></li>
+<li><a href="#part-l-submission-manifest">PART L — SUBMISSION
+MANIFEST</a>
+<ul>
+<li><a href="#l.1-this-package-contains">L.1 This Package
+Contains</a></li>
+<li><a href="#l.2-basis-documents-referenced-not-included">L.2 Basis
+Documents (Referenced, Not Included)</a></li>
+<li><a href="#l.3-controlled-artifact-inventory">L.3 Controlled Artifact
+Inventory</a></li>
+<li><a href="#l.4-hash-chain-status">L.4 Hash-Chain Status</a></li>
+<li><a href="#l.5-claim-control-label-verification">L.5 Claim-Control
+Label Verification</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="current-project-status">CURRENT PROJECT STATUS</h1>
+<h2
+id="phase-1-gate-verdict-conditional-pass-ready-for-phase-2-with-disclosed-limitations">Phase
+1 Gate Verdict: CONDITIONAL PASS — READY FOR PHASE 2 WITH DISCLOSED
+LIMITATIONS</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 27%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Status</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>D1 — Executive Audit</strong></td>
+<td>COMPLETE</td>
+<td>Artifact inventory, hash chain, baseline reproduction, grid
+recomputation, sign-discrepancy resolution, sensitivity/frontier
+verification, audit JSON cross-check</td>
+</tr>
+<tr class="even">
+<td><strong>D2 — Numerical Consistency Table</strong></td>
+<td>COMPLETE</td>
+<td>All mandated rows covered; EV-* evidence classes applied; sign
+corrections C-01/C-02 documented</td>
+</tr>
+<tr class="odd">
+<td><strong>D3 — Literature and Proof Review</strong></td>
+<td>COMPLETE</td>
+<td>Verified citation ledger (6 seeded + supplementary); assumption
+inventory A1–A6; proof-family survey F1–F8</td>
+</tr>
+<tr class="even">
+<td><strong>D4 — Proof-Profile Comparison</strong></td>
+<td>COMPLETE</td>
+<td>14-row matrix; MDI-QKD exclusion verdict; Profile A/B
+recommendation; rejected alternatives with reasons</td>
+</tr>
+<tr class="odd">
+<td><strong>D5 — Device-Imperfection Mapping</strong></td>
+<td>COMPLETE</td>
+<td>15-effect master matrix; 12-item hidden-substitution watchlist;
+engineering-vs-proof split</td>
+</tr>
+<tr class="even">
+<td><strong>D6 — V0.17-TA1 Architecture Spec</strong></td>
+<td>COMPLETE</td>
+<td>Symbolic parameter registry; epsilon ledger; Category-1/2/3
+constructors/guards; claim labeling; fixture shim</td>
+</tr>
+<tr class="odd">
+<td><strong>D7 — Revised Manuscript V1.0-RC2</strong></td>
+<td>INTERIM</td>
+<td>All Phase 1 corrections applied; claim-control labels intact;
+submission-ready for theoretical review</td>
+</tr>
+<tr class="even">
+<td><strong>Red-Team Review (Agent G)</strong></td>
+<td>PASSED</td>
+<td>All 16 findings C1–C16 dispositioned FIXED; no BLOCKED criticism
+remains undispositioned</td>
+</tr>
+<tr class="odd">
+<td><strong>Independent Re-Execution</strong></td>
+<td>NOT PERFORMED</td>
+<td>REQ-01…03 absent; disclosed as limitation</td>
+</tr>
+<tr class="even">
+<td><strong>Physical Validation</strong></td>
+<td>NOT EXECUTED</td>
+<td>Zero physical characterization; hardware-in-loop BLOCKED</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prototype-and-website-status">Prototype and Website Status</h3>
+<p><strong>Software prototype (V0.17-TA1):</strong> Architecture
+specified; implementation not yet begun. The V0.16-TA1 frozen fixture
+remains the sole numerically verified computational artifact.</p>
+<p><strong>Exhibition research console (website):</strong> In progress.
+A static exhibition interface has been architected and is under
+construction for display purposes. It contains no interactive
+computational capability and makes no claims beyond those in this
+package.</p>
+<h3 id="binding-limitations-summary">Binding Limitations (Summary)</h3>
+<ol type="1">
+<li><strong>Zero physical characterization:</strong>
+<code>physical_characterization: NOT-EXECUTED</code>;
+<code>hardware_in_loop: BLOCKED</code>;
+<code>laser_status: INHIBITED</code>;
+<code>tabuk_run_status: NOT-RUN/NONE</code>;
+<code>key_release_status: QUARANTINED/ZERO-RELEASED</code>.</li>
+<li><strong>No independent end-to-end re-execution</strong> of the V0.16
+model (BLOCKER-1, REQ-01…03 absent).</li>
+<li>**Individual epsilon values ((_s), (_c)) unverified** — the finite
+penalty 256.5669430839006 bits is one equation in two unknowns
+(BLOCKER-2).</li>
+<li><strong>All margins and key figures are UPPER BOUNDS w.r.t.
+error-correction efficiency</strong> (CFR N-27): fixture assumes ideal
+(f_{EC} = 1); realistic (f_{EC} &gt; 1) would increase leakage by ~10.5
+kbits at (f_{EC} ).</li>
+<li><strong>Seven security-relevant device effects remain
+unmapped</strong> into any selected proof-compatible representation;
+five additional effects are proof-profile candidates gated by missing
+characterization.</li>
+<li><strong>The 568/1,113 grid partition is an upper-envelope
+deterministic screen count</strong>, not a probability, reliability,
+availability, or mission-success figure.</li>
+</ol>
+<h1 id="table-of-contents">TABLE OF CONTENTS</h1>
+
+<h1 id="part-a-interim-cover-page">PART A — INTERIM COVER PAGE</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Project</strong></td>
+<td>Q-Orbit — Theoretical Satellite QKD Concept</td>
+</tr>
+<tr class="even">
+<td><strong>Phase</strong></td>
+<td>Phase 1 — Canonical Scientific Audit, Research Extension, V0.17-TA1
+Architecture</td>
+</tr>
+<tr class="odd">
+<td><strong>Package Type</strong></td>
+<td>INTERIM THEORETICAL SUBMISSION</td>
+</tr>
+<tr class="even">
+<td><strong>Physical Validation Status</strong></td>
+<td>NOT PHYSICALLY VALIDATED — ZERO PHYSICAL CHARACTERIZATION</td>
+</tr>
+<tr class="odd">
+<td><strong>Submission Posture</strong></td>
+<td>READY-WITH-DISCLOSED-LIMITATIONS (theoretical/numerical record
+only)</td>
+</tr>
+<tr class="even">
+<td><strong>Physical/Device/Mission Claims</strong></td>
+<td>BLOCKED — fail-closed</td>
+</tr>
+<tr class="odd">
+<td><strong>Date Compiled</strong></td>
+<td>2026-08-27</td>
+</tr>
+<tr class="even">
+<td><strong>Document ID</strong></td>
+<td>QO-INTERIM-PKG-001</td>
+</tr>
+<tr class="odd">
+<td><strong>Version</strong></td>
+<td>1.0 (Phase 1 Interim)</td>
+</tr>
+<tr class="even">
+<td><strong>Release State</strong></td>
+<td>PRIVATE-BLOCKED</td>
+</tr>
+<tr class="odd">
+<td><strong>Basis Documents</strong></td>
+<td>Phase 1 Canonical Audit (D1+D2); Canonical Facts Record v1.1; D3–D6;
+Red-Team Review QO-G-RT-001</td>
+</tr>
+<tr class="even">
+<td><strong>Controlled Artifacts</strong></td>
+<td>10 V0.16-TA1 bundle artifacts (9 of 10 hash-verified; 1 compiled but
+not byte-reconstructed)</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidence Precedence</strong></td>
+<td>Executable output &gt; hash-verified run summary/CSV &gt; regression
+fixture &gt; technical report &gt; manuscript prose &gt; unsupported
+narrative</td>
+</tr>
+</tbody>
+</table>
+<h2 id="authority-and-scope">Authority and Scope</h2>
+<p>This interim package is submitted for <strong>preliminary theoretical
+review only</strong>. It reports the state of a controlled computational
+analysis of a satellite-QKD finite-key fixture, together with the Phase
+1 research extensions (proof-profile comparison, device-imperfection
+mapping, and V0.17-TA1 architecture specification). It does not claim to
+validate the Q-Orbit concept for any operational, procurement, or
+security purpose.</p>
+<h2 id="binding-limitations-statement">Binding Limitations
+Statement</h2>
+<ol type="1">
+<li><strong>Zero physical characterization</strong> (CFR B-01/B-02):
+<code>physical_characterization: NOT-EXECUTED</code>;
+<code>hardware_in_loop: BLOCKED</code>;
+<code>laser_status: INHIBITED</code>;
+<code>tabuk_run_status: NOT-RUN/NONE</code>;
+<code>key_release_status: QUARANTINED/ZERO-RELEASED</code>.</li>
+<li><strong>No independent end-to-end re-execution</strong> of the V0.16
+model has been performed (BLOCKER-1, REQ-01…03 absent).</li>
+<li>**Individual epsilon values ((_s), (_c)) unverified** — the finite
+penalty 256.5669430839006 bits is one equation in two unknowns
+(BLOCKER-2).</li>
+<li><strong>All margins and key figures are UPPER BOUNDS with respect to
+error-correction efficiency</strong> (CFR N-27): the fixture’s
+(<em>{EC}) corresponds to ideal (f</em>{EC} = 1); realistic (f_{EC} &gt;
+1) would increase leakage by ~10.5 kbits at (f_{EC} ).</li>
+<li><strong>Seven security-relevant device effects remain
+unmapped</strong> into any selected proof-compatible representation;
+five additional effects are proof-profile candidates gated entirely by
+missing characterization.</li>
+<li><strong>The 568/1,113 grid partition is an upper-envelope
+deterministic screen count</strong>, not a probability, reliability,
+availability, or mission-success figure (CFR N-07/N-08/N-26).</li>
+</ol>
+<h1 id="part-b-executive-summary">PART B — EXECUTIVE SUMMARY</h1>
+<h2 id="b.1-what-q-orbit-is-and-is-not">B.1 What Q-Orbit Is and Is
+Not</h2>
+<p>Q-Orbit is a <strong>controlled theoretical study</strong> of a
+direct satellite-to-ground quantum-key-distribution downlink concept. It
+freezes an efficient-BB84 weak-coherent-pulse profile with one signal
+and two decoy intensities (one vacuum), reproduces a reference
+finite-key fixture from the Sidhu/Lim literature family, and evaluates
+how the optimized signed finite-key margin responds to controlled
+perturbations. The study does <strong>not</strong> claim a deployed
+network, a trusted-relay service, or an arbitrary consumer distribution
+system. It asks one bounded research question: <em>If only parameters
+already represented in the frozen fixture are varied, how does the
+margin respond, and which source or detector imperfections still lack a
+selected proof-compatible numerical map?</em></p>
+<h2 id="b.2-what-was-verified-phase-1">B.2 What Was Verified (Phase
+1)</h2>
+<p><strong>Numerical core — independently recomputed and
+hash-verified:</strong></p>
+<ul>
+<li><strong>Baseline reproduction</strong> at 102 s half-window: signed
+margin <strong>41,338.62418456675 bits</strong>; floored candidate key
+<strong>41,338 bits</strong>; X-basis QBER
+<strong>0.017422686665352745</strong>; phase-error bound (_X)
+<strong>0.09270161340569935</strong> — all bit-identical to the
+hash-verified run summary (EV-1/EV-1b).</li>
+<li><strong>Margin identity</strong> (M = s_{X,0} + s_{X,1} - _{EC} - 6
+_2(21/_s) - _2(2/_c)) reproduces the baseline
+<strong>bit-exactly</strong> (EV-2 invariant).</li>
+<li><strong>Two-parameter screen</strong>: 41 x 41 = <strong>1,681
+deterministic points</strong> over controlled extraneous-count
+(1e-7…2e-6) and intrinsic-QBER (0.003…0.015) ranges; <strong>568
+positive / 1,113 nonpositive</strong>; median signed margin
+<strong>-2,624.946810258186 bits</strong>; minimum
+<strong>-3,828.414517626367 bits</strong>; maximum
+<strong>+142,540.7481180454 bits</strong> (EV-1b recomputed from
+CSV).</li>
+<li><strong>Local response</strong>: eight parameters ranked by
+normalized step response; top three: additional system loss (-8.216
+%/0.1 dB), detector efficiency (+3.567 %/1 %), repetition rate (+1.946
+%/1 %) (EV-1b).</li>
+<li><strong>Zero-key frontiers</strong>: 16 rows (8 parameters x 2
+sides), 10 CROSSING-FOUND, 6 NO-CROSSING; crossing values verified
+(EV-1b/EV-3).</li>
+<li><strong>Regression suite</strong>: 12 tests, 12 PASS; 20-check
+independent package audit, 20 PASS (EV-1c/EV-3).</li>
+<li><strong>Hash chain</strong>: 9 of 10 artifacts content-verified to
+declared SHA-256; 17 controlled-input hashes cross-listed 17/17
+(EV-1/EV-3).</li>
+</ul>
+<p><strong>Research extensions:</strong></p>
+<ul>
+<li><strong>Deliverable 3 (D3)</strong>: Six seeded references verified;
+two citation findings documented (new-format APS DOI genuine;
+Trenyi–Curty misattribution corrected); assumption inventory of the
+frozen profile (A1–A6) mapped to violating device effects.</li>
+<li><strong>Deliverable 4 (D4)</strong>: 14-row proof-family comparison
+matrix; explicit MDI-QKD satellite-downlink exclusion verdict;
+three-option decision analysis; <strong>Profile A (hardened Lim/Sidhu)
+recommended as V0.17 shipping proof; Profile B (consolidated decoy-BB84
+with imperfections) as V0.18+ upgrade path; numerical SDP as independent
+cross-check</strong>.</li>
+<li><strong>Deliverable 5 (D5)</strong>: 15-effect device-imperfection
+mapping with controlled status labels; <strong>0 of 15 effects
+MAPPED-IN-CURRENT-FIXTURE</strong>; 5 UNMAPPED-PROOF-REQUIRED, 2
+BLOCKING, 2 UNMAPPED-SECURITY-BUDGET, 6
+PROOF-PROFILE-CANDIDATE/UNMAPPED-CHARACTERIZATION-REQUIRED; 12-item
+hidden-substitution watchlist.</li>
+<li><strong>Deliverable 6 (D6)</strong>: V0.17-TA1 architecture
+specification — symbolic parameter registry, epsilon ledger with
+21-split validator, Category-1 statistical constructors, Category-2/3
+anti-fabrication guards, claim-labeling rules, fixture-compatibility
+shim.</li>
+</ul>
+<h2 id="b.3-what-was-corrected">B.3 What Was Corrected</h2>
+<ul>
+<li><strong>Grid median/minimum sign discrepancy</strong> (C-01/C-02):
+Rendering A’s Section 4.3 table carried <code>+2,624.946810258186</code>
+and <code>+3,828.414517626367</code> — internally inconsistent with the
+same table’s 568/1,113 split and with the abstract’s negative median.
+The negative values are the computational ground truth; rendering A is
+quarantined.</li>
+<li><strong>Tupkary et al. preprint status</strong> (C1, red-team
+BLOCKING): An earlier claim that arXiv:2601.18035 was published as
+<em>Quantum</em> 10, 2037 (2026) was checked and <strong>removed as
+false/unverified</strong>; the paper is a <strong>preprint under
+review</strong> and is cited as such throughout. The <em>Quantum</em>
+10, 2037 record is a different paper (Wiesemann et al.).</li>
+<li><strong>D6 “21” decomposition</strong> (C2): The bit-penalty
+equation was missing two +1 chain-rule constants; corrected to match Lim
+et al. 2014 supplementary Eqs. (13)–(14) and the frozen fixture
+value.</li>
+<li><strong>Composed-epsilon double-count</strong> (C3): An earlier form
+listed (_j <em>j) separately from (</em>{char} _j _j); corrected to the
+single-term additive form.</li>
+<li><strong>D5 status accounting</strong> (C5): Consolidated verdict
+corrected to 5 UPR / 2 BLOCKING / 2 USB / 6 PPC-gated or UCR rows; row
+11’s USB label no longer silently dropped.</li>
+<li><strong>Anti-fabrication guard completeness</strong> (C6): D6
+Section 6 now implements all 12 D5 watchlist items as named guards
+(AF-1, AF-5, AF-7) with triggers, refusals, and test IDs.</li>
+<li><strong>Martingale increment-bound classification</strong> (C7):
+Moved from Category-1 “no physical value” to Category-2 physical
+characterization input; constructor interface remains Category-1.</li>
+<li><strong>Ideal-EC disclosure</strong> (C8): Added CFR N-27 and D6
+Section 10 disclosure — all margins are upper bounds w.r.t.
+error-correction efficiency; (f_{EC} = 1) is the frozen fixture’s
+implicit assumption.</li>
+<li><strong>Submission-readiness token</strong> (C9): Replaced
+“submission-ready modulo blockers” with the mandated token
+<strong>READY-WITH-DISCLOSED-LIMITATIONS</strong> for
+theoretical/numerical record; <strong>BLOCKED</strong> for
+physical/device/mission claims.</li>
+<li><strong>CFR factual errors</strong> (C10–C12): Manifest entry count
+corrected to 64; hash-chain completeness corrected to 9 of 10;
+window-sweep evidence classes split (max 221 -&gt; EV-3, min 1 -&gt;
+EV-4).</li>
+<li><strong>Optimization-bias disclosure</strong> (C15): Added explicit
+statement that the 568-positive partition is an upper envelope under
+per-point window re-optimization, not the partition of any fixed-window
+configuration.</li>
+</ul>
+<h2 id="b.4-what-remains-blocked">B.4 What Remains Blocked</h2>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 50%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Blocker</th>
+<th>Missing Artifact</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>REQ-01</td>
+<td>V0.6 manifest JSON (hash-recorded)</td>
+<td>End-to-end re-execution; (_s/_c) confirmation; channel config
+values</td>
+</tr>
+<tr class="even">
+<td>REQ-02</td>
+<td>V0.6 baseline run JSON</td>
+<td>Direct confirmation of regression expected values</td>
+</tr>
+<tr class="odd">
+<td>REQ-03</td>
+<td>V0.7 parameter register</td>
+<td>Screen range provenance; 1–221 s sweep bound provenance</td>
+</tr>
+<tr class="even">
+<td>REQ-04</td>
+<td>Original zip bytes</td>
+<td>Byte-level hash closure on artifacts 1, 2, 4–8, 10</td>
+</tr>
+<tr class="odd">
+<td>REQ-05</td>
+<td><code>data_processed</code> registers</td>
+<td>Row-level verification of grid boundary, 16-row proof mapping,
+claim/gate registers</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Open proof problems (literature gaps, not Q-Orbit
+failures):</strong></p>
+<ol type="1">
+<li>Detector-side correlated afterpulsing in finite-key decoy proofs —
+no verified turnkey treatment.</li>
+<li>Rate-dependent yields inside the decoy method — no verified
+re-derived bound.</li>
+<li>Full composable integration of certification — Tan &amp; Nahar 2026
+Appendix C notes open technical aspects.</li>
+</ol>
+<h2 id="b.5-scientifically-defensible-conclusion">B.5 Scientifically
+Defensible Conclusion</h2>
+<p>The exact positive baseline demonstrates deterministic reproduction
+of the frozen fixture, but the coupled screen shows that positivity is
+<strong>not robust</strong> across the declared research ranges. The
+negative median (-2,624.95 bits) is the central result: the nominal
+point cannot be promoted to a mission claim without evidence-backed
+distributions and a validated physical model. Seven security-relevant
+device effects remain outside the selected proof representation, and two
+more are BLOCKING for any unconditional claim. The defensible conclusion
+is <strong>not</strong> that a mission is ready, but that evidence and
+proof incompleteness can be exposed before they are mistaken for design
+maturity.</p>
+<h1 id="part-c-corrected-scientific-manuscript-research-report">PART C —
+CORRECTED SCIENTIFIC MANUSCRIPT / RESEARCH REPORT</h1>
+<h2
+id="q-orbit-fail-closed-finite-key-screening-for-a-satellite-qkd-concept">Q-Orbit:
+Fail-Closed Finite-Key Screening for a Satellite QKD Concept</h2>
+<p><em>A controlled theoretical analysis of numerical margin,
+device-imperfection mapping, and evidence boundaries</em></p>
+<hr />
+<p><strong>Document ID:</strong> QO-SUB-RP-001 |
+<strong>Version:</strong> V1.0-RC2 (Phase 1 Interim)<br />
+<strong>Release State:</strong> PRIVATE-BLOCKED | <strong>Technical
+State:</strong> THEORETICAL / NOT PHYSICALLY VALIDATED</p>
+<hr />
+<h3 id="abstract">Abstract</h3>
+<p>Satellite quantum key distribution is constrained by short
+optical-access windows and finite detection blocks. This paper reports a
+controlled theoretical analysis for Q-Orbit, a direct
+satellite-to-ground key-replenishment concept. The study freezes an
+efficient-BB84 weak-coherent-pulse profile with three intensities
+including vacuum, reproduces a reference finite-key fixture,
+re-optimizes the integration half-window for every evaluated point, and
+evaluates both local model response and a deterministic two-parameter
+screen. The reference fixture is reproduced at a 102 s half-window with
+a signed finite-key margin of <strong>41,338.62418456675 bits</strong>
+and a floored candidate key of <strong>41,338 bits</strong>. A 41 x 41
+screen over controlled extraneous-count and intrinsic-QBER ranges yields
+<strong>568 positive and 1,113 nonpositive points</strong>,
+corresponding to a <strong>33.789% grid fraction</strong> and a
+<strong>median signed margin of -2,624.947 bits</strong>. The grid is
+not a probability distribution. Seven security-relevant device effects
+remain unmapped into a selected proof-compatible representation,
+preventing implementation-security, certification, mission, or
+procurement claims. The main contribution is an evidence architecture
+that couples reproducible numerical screening to fail-closed claim
+controls.</p>
+<p><em>Keywords: satellite QKD; finite-key analysis; decoy-state BB84;
+device characterization; evidence control; reproducibility.</em></p>
+<h3 id="introduction">1. Introduction</h3>
+<p>Satellite QKD has been studied as a mechanism for extending quantum
+key establishment beyond the attenuation limits of terrestrial fibre. In
+low-Earth orbit, however, a ground station observes a satellite for a
+limited time, so finite-block statistical effects can dominate the
+key-length calculation [1]. A positive center-case result is therefore
+not sufficient evidence of a robust mission capability.</p>
+<p>Q-Orbit studies one bounded direct downlink topology. The project
+does not attempt to claim a deployed network, a trusted-relay service,
+or an arbitrary remote-consumer distribution system. Instead, it asks
+whether a reproducible finite-key workflow can be connected to explicit
+system and evidence gates without converting assumptions into unearned
+security or performance claims.</p>
+<h4 id="research-question">1.1 Research Question</h4>
+<p>If only parameters already represented in a frozen Q-Orbit finite-key
+fixture are varied, how does the optimized signed finite-key margin
+respond, and which source or detector imperfections still lack a
+selected proof-compatible numerical map?</p>
+<h4 id="contribution">1.2 Contribution</h4>
+<ul>
+<li>Exact reproduction of a controlled satellite-QKD finite-key fixture
+(bit-exact verification against hash-verified artifacts).</li>
+<li>Re-optimization of the integration half-window at every perturbation
+point.</li>
+<li>A deterministic two-parameter screen with explicit non-probabilistic
+interpretation.</li>
+<li>A proof-to-device mapping that records unmapped effects rather than
+inventing penalties.</li>
+<li>A claim-boundary method that separates numerical verification from
+physical validation and operational security.</li>
+</ul>
+<h3 id="background-and-related-work">2. Background and Related Work</h3>
+<h4 id="finite-block-satellite-qkd">2.1 Finite-Block Satellite QKD</h4>
+<p>Sidhu et al. provide a finite-block analysis for weak-coherent-pulse,
+efficient-BB84 satellite QKD with three intensities and show that system
+loss, extraneous counts, protocol parameters, and limited pass duration
+materially affect single-pass secret-key length [1]. Q-Orbit retains
+this family as a frozen reference profile for deterministic regression
+and screening; it does not import the source paper’s device or mission
+values as Q-Orbit evidence.</p>
+<h4 id="decoy-state-assumptions-and-source-flaws">2.2 Decoy-State
+Assumptions and Source Flaws</h4>
+<p>Standard decoy-state methods rely on assumptions about pulse
+statistics. Nahar et al. analyze imperfect phase randomization and
+non-identically distributed laser pulses, demonstrating that generalized
+treatment is required when ideal source assumptions do not hold [2]. Xu
+et al. show that source flaws must be characterized and integrated into
+the security analysis rather than hidden inside an ideal preparation
+model [3].</p>
+<h4 id="characterization-to-proof-linkage">2.3 Characterization-to-Proof
+Linkage</h4>
+<p>Tan and Nahar distinguish device-characterization conclusions from
+the conditions required by a security proof and identify requirements
+for justified parameter domains and composable reasoning [4]. This
+distinction motivates Q-Orbit’s refusal to replace missing
+characterization with a convenient scalar penalty.</p>
+<h3 id="methods">3. Methods</h3>
+<h4 id="controlled-reference-profile">3.1 Controlled Reference
+Profile</h4>
+<p>The analysis retains the V0.6 efficient-BB84 weak-coherent-pulse
+fixture with one signal intensity and two decoy intensities including
+vacuum. Expected counts are computed from a modeled reference loss
+curve. The profile is a software fixture, not a physical device
+model.</p>
+<blockquote>
+<p><strong>Equation 1. Signed finite-key margin.</strong></p>
+<p>[ M = s_{X,0} + s_{X,1}[1 - h_2(_X)] - _{EC} - 6 _2(21/_s) - _2(2/_c)
+]</p>
+</blockquote>
+<p>The candidate key is floor(max(M, 0)) under the frozen fixture
+convention. The signed quantity M is retained to identify boundary
+behavior. A nonpositive value is a model outcome; it is not a measured
+outage or security-failure probability.</p>
+<h4 id="window-optimization">3.2 Window Optimization</h4>
+<p>For every baseline, perturbation, frontier, and grid point, the model
+evaluates integer half-windows from 1 to 221 s and selects the window
+that maximizes signed margin. Smaller half-window breaks an exact tie.
+The rule avoids silently carrying a baseline-optimal window into a
+changed count/error regime.</p>
+<h4 id="local-response">3.3 Local Response</h4>
+<p>Eight parameters already present in the software contract are varied:
+additional system loss, detector-efficiency multiplier, source
+repetition rate, signal-intensity multiplier, weak-decoy multiplier,
+extraneous-count probability, afterpulse probability, and intrinsic
+QBER. The declared steps are plus/minus 0.1 dB for additional loss and
+plus/minus 1% relative for the remaining variables. Because the steps
+and parameter meanings differ, the resulting rank is local and
+step-dependent.</p>
+<h4 id="deterministic-coupled-screen">3.4 Deterministic Coupled
+Screen</h4>
+<p>The screen evaluates 41 extraneous-count values from 1e-7 to 2e-6 per
+pulse and 41 intrinsic-QBER values from 0.003 to 0.015, explicitly
+including the baseline point. The Cartesian product contains 1,681
+deterministic points. The ranges are controlled engineering bounds
+inherited from V0.7, not calibrated distributions.</p>
+<h4 id="proof-mapping-rule">3.5 Proof-Mapping Rule</h4>
+<p>Each source or detector effect is assigned a controlled state: mapped
+stress only, partial scalar stress, unmapped proof required, unmapped
+model required, unmapped security budget, or alternative not selected. A
+numerical penalty is applied only when the scalar is explicitly
+represented. Unmapped effects remain blocking obligations.</p>
+<h4 id="verification">3.6 Verification</h4>
+<p>The implementation verifies controlled-input hashes, exact baseline
+outputs, state partitioning of the grid, finite numerical values,
+boundary invariants, and release-state constraints. Twelve regression
+tests and a 20-check independent package audit pass. An independent
+V0.13 implementation previously compared 50 locked vectors over 971
+metrics with zero open numerical discrepancies.</p>
+<h3 id="results">4. Results</h3>
+<h4 id="baseline-reproduction">4.1 Baseline Reproduction</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Result</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Half-window</td>
+<td>102 s</td>
+<td>EV-1a (run summary)</td>
+</tr>
+<tr class="even">
+<td>Signed margin</td>
+<td>41,338.62418456675 bits</td>
+<td>EV-1a + EV-2 invariant</td>
+</tr>
+<tr class="odd">
+<td>Floored candidate key</td>
+<td>41,338 bits</td>
+<td>EV-1a + EV-2 (floor)</td>
+</tr>
+<tr class="even">
+<td>X-basis QBER</td>
+<td>0.017422686665352745</td>
+<td>EV-1a + recomputation</td>
+</tr>
+<tr class="odd">
+<td>Phase-error bound (_X)</td>
+<td>0.09270161340569935</td>
+<td>EV-1a</td>
+</tr>
+<tr class="even">
+<td>Single-photon lower bound (s_{X,1})</td>
+<td>183,803.04893680647</td>
+<td>EV-1a</td>
+</tr>
+</tbody>
+</table>
+<h4 id="local-response-1">4.2 Local Response</h4>
+<p><strong>Figure 1. Local signed-margin response per declared
+perturbation step.</strong> <em>(Modeled / deterministic — not
+measured)</em></p>
+<p>The largest absolute local response is associated with additional
+system loss (-8.216% of the baseline margin per 0.1 dB step), followed
+by detector efficiency (+3.567% per 1% relative step) and source
+repetition rate (+1.946% per 1% relative step). These values describe
+model response around one fixture point.</p>
+<h4 id="coupled-screen">4.3 Coupled Screen</h4>
+<p><strong>Figure 2. Signed margin across the controlled 41 x 41 screen;
+the contour indicates the zero-margin boundary at grid
+resolution.</strong> <em>(Modeled / deterministic — not
+measured)</em></p>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 27%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>Result</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total points</td>
+<td>1,681</td>
+<td>EV-1b (recomputed)</td>
+</tr>
+<tr class="even">
+<td>Positive signed margin</td>
+<td>568</td>
+<td>EV-1b</td>
+</tr>
+<tr class="odd">
+<td>Nonpositive signed margin</td>
+<td>1,113</td>
+<td>EV-1b</td>
+</tr>
+<tr class="even">
+<td>Positive grid fraction</td>
+<td>33.789411%</td>
+<td>EV-1b + EV-2 (568/1681)</td>
+</tr>
+<tr class="odd">
+<td><strong>Median signed margin</strong></td>
+<td><strong>-2,624.946810258186 bits</strong></td>
+<td><strong>EV-1b + EV-1a + EV-2</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Minimum / maximum signed margin</strong></td>
+<td><strong>-3,828.414517626367 / +142,540.7481180454 bits</strong></td>
+<td><strong>EV-1b + EV-1a</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Critical disclosure (CFR N-26/N-07/N-08):</strong> Because
+the half-window is re-optimized per evaluated point, this partition is
+an <strong>upper-envelope</strong> quantity relative to any fixed-window
+evaluation. The positive count at any fixed window is (). The grid
+fraction is a deterministic screen partition, not a probability,
+reliability, availability, or mission-success figure.</p>
+<h4 id="unmapped-device-effects">4.4 Unmapped Device Effects</h4>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Effect</th>
+<th>Current State</th>
+<th>Claim Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Incomplete phase randomization</td>
+<td>UNMAPPED-PROOF-REQUIRED</td>
+<td>Standard decoy applicability not established</td>
+</tr>
+<tr class="even">
+<td>Pulse/intensity correlations</td>
+<td>UNMAPPED-PROOF-REQUIRED</td>
+<td>IID pulse assumption not established</td>
+</tr>
+<tr class="odd">
+<td>State-preparation flaws/leakage</td>
+<td>UNMAPPED-PROOF-REQUIRED</td>
+<td>Aggregate QBER is insufficient</td>
+</tr>
+<tr class="even">
+<td>Dead time, recovery, saturation</td>
+<td>UNMAPPED-MODEL-REQUIRED</td>
+<td>Detector/rate interpretation blocked</td>
+</tr>
+<tr class="odd">
+<td>Efficiency mismatch</td>
+<td>UNMAPPED-PROOF-REQUIRED</td>
+<td>Receiver measurement model incomplete</td>
+</tr>
+<tr class="even">
+<td>Characterization confidence</td>
+<td>UNMAPPED-SECURITY-BUDGET</td>
+<td>No certification-to-proof guarantee</td>
+</tr>
+<tr class="odd">
+<td>Aging/cross-instance memory</td>
+<td>UNMAPPED-MODEL-REQUIRED</td>
+<td>Persistent operation claim blocked</td>
+</tr>
+</tbody>
+</table>
+<p><em>(Table shows 7 of 15 mandated effects; full matrix in Part
+G.)</em></p>
+<h3 id="discussion">5. Discussion</h3>
+<h4 id="positive-baseline-versus-non-robust-design-space">5.1 Positive
+Baseline versus Non-Robust Design Space</h4>
+<p>The exact positive baseline demonstrates deterministic reproduction,
+but the coupled screen shows that positivity is not robust across the
+declared research ranges. The negative median is especially important:
+the nominal point cannot be promoted to a mission claim without
+evidence-backed distributions and a validated physical model.</p>
+<h4 id="why-qber-alone-is-insufficient">5.2 Why QBER Alone Is
+Insufficient</h4>
+<p>The finite-key expression also depends on vacuum and single-photon
+bounds, phase-error estimation, error-correction leakage, finite
+penalties, and the complete protocol profile. QBER cannot certify phase
+randomization, source leakage, detector mismatch, authentication,
+endpoint behavior, or key-management state.</p>
+<h4 id="model-response-is-not-device-specification">5.3 Model Response
+Is Not Device Specification</h4>
+<p>The one-parameter frontiers and local ranks freeze other variables
+and use arbitrary but declared steps. They are useful for finding
+fragile regions of the software fixture, but they are not tolerances,
+procurement filters, calibration limits, or security-proof domains.</p>
+<h4 id="fail-closed-evidence-handling">5.4 Fail-Closed Evidence
+Handling</h4>
+<p>The absence of a numerical penalty for an unmapped effect is
+intentional. Assigning a convenient penalty would create an appearance
+of completeness without a proof basis. The fail-closed rule keeps the
+gap visible and prevents numerical output from widening the claim.</p>
+<h3 id="limitations">6. Limitations</h3>
+<ul>
+<li>The reference loss curve and expected counts are modeled rather than
+measured.</li>
+<li>Baseline reproduction does not provide an independent security
+proof.</li>
+<li>Binary64 arithmetic is used; interval and arbitrary-precision
+sensitivity remain untested.</li>
+<li>Only the half-window is globally searched; protocol probabilities
+and most intensities remain frozen.</li>
+<li>The coupled ranges are engineering bounds rather than probability
+distributions.</li>
+<li>No source, detector, atmosphere, parcel, orbit authority, hardware,
+or operational security evidence is used.</li>
+<li>The study does not predict Tabuk availability, yield, or mission
+success.</li>
+<li>All margins are upper bounds w.r.t. error-correction efficiency
+(frozen fixture assumes (f_{EC} = 1); realistic (f_{EC} &gt; 1) would
+reduce margin).</li>
+</ul>
+<h3 id="conclusion">7. Conclusion</h3>
+<p>Q-Orbit demonstrates a reproducible theoretical workflow for
+finite-key satellite-QKD screening and makes the limitations of that
+workflow machine-checkable. The controlled fixture reproduces exactly,
+but the coupled screen is dominated by nonpositive cases and several
+device effects remain outside the selected proof representation. The
+scientifically defensible conclusion is not that a mission is ready, but
+that evidence and proof incompleteness can be exposed before they are
+mistaken for design maturity.</p>
+<p>The next theoretical research task is a proof-profile selection and
+parameter-domain mapping for phase randomization, source flaws, pulse
+correlations, detector history, detector mismatch, and characterization
+confidence. Hardware procurement and field operation are neither
+required nor authorized for this submission.</p>
+<h3 id="data-and-reproducibility-statement">Data and Reproducibility
+Statement</h3>
+<p>The controlled V0.16-TA1 package contains the frozen input index,
+executable model, generated CSV outputs, workbook, regression results,
+audits, and cryptographic hashes needed to reproduce the reported
+software results. Distribution remains private. Modeled candidate key
+material is not real key material and remains quarantined. Independent
+end-to-end re-execution is blocked pending controlled inputs
+REQ-01…03.</p>
+<h3 id="references">References</h3>
+<p>[1] J. S. Sidhu et al., <em>Finite key effects in satellite quantum
+key distribution</em>, npj Quantum Information 8, 18 (2022). DOI:
+10.1038/s41534-022-00525-3</p>
+<p>[2] S. Nahar, T. Upadhyaya, and N. Ltkenhaus, <em>Imperfect phase
+randomization and generalized decoy-state quantum key distribution</em>,
+Physical Review Applied 20, 064031 (2023). DOI:
+10.1103/PhysRevApplied.20.064031</p>
+<p>[3] F. Xu et al., <em>Experimental quantum key distribution with
+source flaws</em>, Physical Review A 92, 032305 (2015). DOI:
+10.1103/PhysRevA.92.032305</p>
+<p>[4] E. Y.-Z. Tan and S. Nahar, <em>Incorporating Device
+Characterization into Security Proofs</em>, PRX Quantum 7, 020342
+(2026). DOI: 10.1103/f42p-524t</p>
+<p>[5] C. C.-W. Lim et al., <em>Concise security bounds for practical
+decoy-state quantum key distribution</em>, Physical Review A 89, 022307
+(2014). DOI: 10.1103/PhysRevA.89.022307</p>
+<p>[6] H.-K. Lo, X. Ma, and K. Chen, <em>Decoy State Quantum Key
+Distribution</em>, Physical Review Letters 94, 230504 (2005). DOI:
+10.1103/PhysRevLett.94.230504</p>
+<h1 id="part-d-concise-engineering-architecture-section">PART D —
+CONCISE ENGINEERING ARCHITECTURE SECTION</h1>
+<h2 id="d.1-v0.17-ta1-architecture-at-a-glance">D.1 V0.17-TA1
+Architecture at a Glance</h2>
+<p><strong>Objective:</strong> Convert the 15 unmapped or partially
+mapped device imperfections into bounded, proof-compatible parameter
+specifications — symbolic parameters with declared proof entry points,
+declared evidence requirements, and declared confidence accounting —
+<strong>without inventing any empirical value</strong>.</p>
+<p><strong>Frozen (immutable regression reference):</strong> - V0.16-TA1
+fixture: margin equation, 8 software-contract scalars, 41x41
+deterministic screen, window rule, 12-test regression suite, 20-check
+audit, all locked numerics. - Prohibited-claims register and boundary
+states. - V0.17 must reproduce V0.16 <strong>bit-exactly</strong> in
+compatibility mode.</p>
+<p><strong>New (additive, non-destructive):</strong> 1. <strong>Symbolic
+parameter registry</strong> — all Section 3 parameters tagged
+<code>SYMBOLIC ONLY --- CHARACTERIZATION REQUIRED</code> unless exempt.
+2. <strong>Epsilon ledger with union combiner and 21-split
+validator</strong> — (<em>{total} = <em>c + <em>s + </em>{char} (+
+</em>{auth})) with (</em>{char} _j _j) defined once; validates effective
+deviation parameter (_s/21) per bound. 3. <strong>Category-1 statistical
+constructors</strong> — Clopper–Pearson, Hoeffding, Serfling/Fung (),
+Azuma/Kato interfaces (pure functions; assign no physical value). 4.
+<strong>Anti-fabrication guards</strong> — Category 2 (refuse
+uncharacterized scalars) and Category 3 (refuse proof-requiring features
+as scalar tweaks). 5. <strong>Claim labeling</strong> — every output
+carries claim class: CONDITIONAL / CHARACTERIZED-CONDITIONAL /
+ENGINEERING-SENSITIVITY.</p>
+<h2 id="d.2-layered-target-architecture">D.2 Layered Target
+Architecture</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 37%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Content</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Layer 0 — Frozen V0.16 fixture</strong></td>
+<td>Immutable regression reference: locked margin equation, 12-test
+regression, 20-check audit, 1,681-point screen</td>
+<td>In place; NUMERICALLY-VERIFIED</td>
+</tr>
+<tr class="even">
+<td><strong>Layer 1 — Hardened analytic finite-key</strong></td>
+<td>Profile A: Lim/Sidhu skeleton + Kato/Mannalath statistics +
+per-claim assumption ledger + 21-split validator + epsilon ledger</td>
+<td>V0.17-TA1 shipping proof</td>
+</tr>
+<tr class="odd">
+<td><strong>Layer 2 — Implementation-security extensions</strong></td>
+<td>Profile B terms (imperfect PR, SPFs, correlations, leakage)
+supplying admissible parameter bounds; symbolic until characterization
+exists</td>
+<td>V0.18+ upgrade path</td>
+</tr>
+<tr class="even">
+<td><strong>Layer 3 — Characterization/certification
+composition</strong></td>
+<td>Tan &amp; Nahar certify-then-run: robust set (S_{robust}),
+per-parameter CIs, union-bound (_{char}), joint failure-bound claim
+language</td>
+<td>Framework specified; execution BLOCKED pending characterization</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d.3-key-software-modules-v0.17">D.3 Key Software Modules
+(V0.17)</h2>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 40%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Module</th>
+<th>Function</th>
+<th>Guard</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>registry</code></td>
+<td>Symbolic parameter objects with (name, symbol, meaning, proof entry
+point, evidence pointer, status, envelope)</td>
+<td>Default status: SYMBOLIC ONLY</td>
+</tr>
+<tr class="even">
+<td><code>ledger</code></td>
+<td>Epsilon union combiner, 21-split validator, no-double-count
+guard</td>
+<td>Rejects (_j<em>j) alongside (</em>{char}); accepts fixture’s
+internal (= (21/_s))</td>
+</tr>
+<tr class="odd">
+<td><code>stats</code></td>
+<td>Category-1 constructors: CP, Hoeffding, Serfling (), Azuma/Kato
+interface, worst-case endpoint selector, conditional evaluator</td>
+<td>Refuses point estimates; watermarks ASSUMED-input outputs</td>
+</tr>
+<tr class="even">
+<td><code>guards</code></td>
+<td>Category-2/3 refusal layer + 12-item watchlist coverage
+(AF-1…AF-12)</td>
+<td>Refuse SPF-&gt;QBER, afterpulse-&gt;p_ext, dead-time-&gt;constant
+(), uncharacterized increment bounds, empty leakage fields,
+mismatch-under-R3, variable-length mislabeling</td>
+</tr>
+<tr class="odd">
+<td><code>fixture_shim</code></td>
+<td>V0.16 evaluation path preserved unmodified</td>
+<td>Regression invariants blocking</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d.4-verification-tests-for-v0.17">D.4 Verification Tests for
+V0.17</h2>
+<ol type="1">
+<li><strong>Regression invariants (blocking):</strong> V0.16 fixture
+reproduces bit-exactly — baseline margin, floored key, QBER, (<em>X),
+(s</em>{X,1}), finite penalty, grid partition, grid median/minimum,
+12/12 tests, 20/20 audit.</li>
+<li><strong>Refusal-behavior tests:</strong> Each Category-2/3 guard
+exercised with positive (must refuse) and negative (must accept)
+cases.</li>
+<li><strong>Watermark presence tests:</strong> Any output with ()
+ASSUMED input carries
+<code>NO SECURITY CLAIM --- CONDITIONAL COMPUTATION</code>.</li>
+<li><strong>Ledger arithmetic tests:</strong> Additive union combiner
+exactness; no-double-count guard; 21-split validator accepts documented
+non-uniform splits; positive acceptance test on frozen fixture.</li>
+<li><strong>Boundary behavior:</strong> 16-row x 2-side frontier
+structure and 10/6 crossing split reproduce; defensive zeroing on
+decoy-ordering violation remains fail-closed.</li>
+</ol>
+<h1 id="part-e-verified-numerical-results-table">PART E — VERIFIED
+NUMERICAL-RESULTS TABLE</h1>
+<h2 id="e.1-computational-ground-truth-locked-2026-08-27">E.1
+Computational Ground Truth (Locked 2026-08-27)</h2>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 21%" />
+<col style="width: 36%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Quantity</th>
+<th>Canonical Value</th>
+<th>Evidence Class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N-01</td>
+<td>Baseline half-window</td>
+<td>102 s (205 sample bins; edge elevation 30.4813547009598
+degrees)</td>
+<td>EV-1a + EV-1b</td>
+</tr>
+<tr class="even">
+<td>N-02</td>
+<td>Signed margin M</td>
+<td>41,338.62418456675 bits</td>
+<td>EV-1a; invariant recomputed bit-exact (diff 0.0)</td>
+</tr>
+<tr class="odd">
+<td>N-03</td>
+<td>Floored candidate key</td>
+<td>41,338 bits</td>
+<td>EV-1a + EV-2 (floor)</td>
+</tr>
+<tr class="even">
+<td>N-04</td>
+<td>X-basis QBER</td>
+<td>0.017422686665352745 (= m_x/n_x)</td>
+<td>EV-1a + recomputation</td>
+</tr>
+<tr class="odd">
+<td>N-05</td>
+<td>Phase-error bound (_X)</td>
+<td>0.09270161340569935</td>
+<td>EV-1a</td>
+</tr>
+<tr class="even">
+<td>N-06</td>
+<td>(s_{X,1})</td>
+<td>183,803.04893680647</td>
+<td>EV-1a</td>
+</tr>
+<tr class="odd">
+<td>N-16</td>
+<td>(n_X)</td>
+<td>492,818.0901525894</td>
+<td>EV-1a</td>
+</tr>
+<tr class="even">
+<td>N-17</td>
+<td>(n_Z)</td>
+<td>48,555.17200782972</td>
+<td>EV-1a</td>
+</tr>
+<tr class="odd">
+<td>N-18</td>
+<td>(m_X)</td>
+<td>8,586.215167746126</td>
+<td>EV-1a</td>
+</tr>
+<tr class="even">
+<td>N-19</td>
+<td>(s_{X,0})</td>
+<td>5,047.784882329125</td>
+<td>EV-1a</td>
+</tr>
+<tr class="odd">
+<td>N-20</td>
+<td>(s_{Z,1} / v_{Z,1})</td>
+<td>12,007.470453438744 / 845.9615478747239</td>
+<td>EV-1a</td>
+</tr>
+<tr class="even">
+<td>N-21</td>
+<td>(_{EC})</td>
+<td>65,385.40180119235 bits</td>
+<td>EV-1a</td>
+</tr>
+<tr class="odd">
+<td>N-22</td>
+<td>Finite penalty (6 _2(21/_s)+_2(2/_c))</td>
+<td>256.5669430839006 bits</td>
+<td>EV-1a; pair ((_s=10^{-10}), (_c=10^{-9})) reproduces bit-exactly but
+non-uniquely — individual epsilons EV-9</td>
+</tr>
+<tr class="even">
+<td>N-23</td>
+<td>Mean photon number (probability-weighted)</td>
+<td>0.62400964</td>
+<td>EV-1a</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e.2-screen-and-sensitivity-results">E.2 Screen and Sensitivity
+Results</h2>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 21%" />
+<col style="width: 36%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Quantity</th>
+<th>Canonical Value</th>
+<th>Evidence Class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N-07</td>
+<td>Grid partition</td>
+<td>568 positive / 1,113 nonpositive / 1,681 total —
+<strong>upper-envelope</strong> under per-point window re-optimization;
+not a fixed-window partition</td>
+<td>EV-1b + EV-1a + EV-2</td>
+</tr>
+<tr class="even">
+<td>N-08</td>
+<td>Positive grid fraction</td>
+<td>0.33789411064842356 = 33.789411% — same upper-envelope
+disclosure</td>
+<td>EV-1b + EV-1a + EV-2</td>
+</tr>
+<tr class="odd">
+<td>N-09</td>
+<td><strong>Grid median signed margin</strong></td>
+<td><strong>-2,624.946810258186 bits</strong></td>
+<td>EV-1b + EV-1a + EV-2</td>
+</tr>
+<tr class="even">
+<td>N-10</td>
+<td><strong>Grid minimum signed margin</strong></td>
+<td><strong>-3,828.414517626367 bits</strong></td>
+<td>EV-1b + EV-1a + EV-2</td>
+</tr>
+<tr class="odd">
+<td>N-11</td>
+<td>Grid maximum signed margin</td>
+<td>+142,540.7481180454 bits</td>
+<td>EV-1b + EV-1a</td>
+</tr>
+<tr class="even">
+<td>N-12</td>
+<td>Local responses (normalized per declared step)</td>
+<td>Rank 1: additional loss -0.08215788925285143 (-8.216%/0.1 dB); Rank
+2: detector efficiency +0.035673639848324994 (+3.567%/1%); Rank 3:
+repetition rate +0.01946358671353013 (+1.946%/1%); Ranks 4–8: extraneous
+count, intrinsic QBER, signal intensity, weak decoy, afterpulse</td>
+<td>EV-1b (arithmetic re-verified) + EV-1c</td>
+</tr>
+<tr class="odd">
+<td>N-24</td>
+<td>Zero-key frontiers (16 rows, 10 CROSSING-FOUND)</td>
+<td>e.g., additional loss HIGH crossing at 14.507927510764345 dB; p_ec
+HIGH at 8.958206093312436e-07; intrinsic QBER HIGH at
+0.013335017073411072</td>
+<td>EV-1c + EV-3</td>
+</tr>
+<tr class="even">
+<td>N-13</td>
+<td>Regression suite</td>
+<td>12 tests, 12 PASS</td>
+<td>EV-1c + EV-1a + EV-3</td>
+</tr>
+<tr class="odd">
+<td>N-14</td>
+<td>Independent package audit</td>
+<td>20 checks, 20 PASS</td>
+<td>EV-1c + EV-3</td>
+</tr>
+<tr class="even">
+<td>N-25</td>
+<td>V0.13 independent comparison</td>
+<td>50 vectors / 971 metrics, zero open numerical discrepancies</td>
+<td>EV-3</td>
+</tr>
+<tr class="odd">
+<td>N-26</td>
+<td>Frontier/sweep detail</td>
+<td>Window re-optimized per evaluated point; baseline windows vary at
+perturbation points</td>
+<td>EV-1b</td>
+</tr>
+<tr class="even">
+<td>N-27</td>
+<td>(_{EC}) disclosure</td>
+<td>Corresponds to <strong>ideal (f_{EC} = 1)</strong>
+minimum-error-correction-leakage accounting; realistic (f_{EC} &gt; 1)
+would increase leakage; all margins/keys are <strong>UPPER BOUNDS w.r.t.
+EC efficiency</strong></td>
+<td>EV-1a + EV-2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e.3-evidence-class-definitions">E.3 Evidence-Class
+Definitions</h2>
+<ul>
+<li><strong>EV-1a</strong> HASH-VERIFIED-ARTIFACT — extracted artifact
+bytes reproduce declared SHA-256 exactly.</li>
+<li><strong>EV-1b</strong> CSV-RECOMPUTED — recomputed directly from
+supplied generated CSV.</li>
+<li><strong>EV-1c</strong> HASH-CHAIN-LISTED — artifact’s declared
+SHA-256 is listed in verified SHA256SUMS manifest.</li>
+<li><strong>EV-2</strong> INVARIANT — determined by mathematical
+invariant over stated controlled counts.</li>
+<li><strong>EV-3</strong> CROSS-ARTIFACT — identical across &gt;=2
+independent controlled artifacts.</li>
+<li><strong>EV-9</strong> UNVERIFIED-PENDING-CONTROLLED-INPUTS —
+requires artifacts not present in the 10-file bundle.</li>
+</ul>
+<h1 id="part-f-proof-profile-recommendation">PART F — PROOF-PROFILE
+RECOMMENDATION</h1>
+<h2 id="f.1-recommendation-summary-from-d4">F.1 Recommendation Summary
+(from D4)</h2>
+<p><strong>Adopted for Q-Orbit:</strong></p>
+<ol type="1">
+<li><p><strong>Profile A, hardened, is the V0.17-TA1 shipping
+proof.</strong> The frozen F4/F3 construction (Lim 2014 / Sidhu 2022
+lineage) is retained because it is the family the locked,
+NUMERICALLY-VERIFIED numerics already instantiate, it is the satellite
+standard, and it is the most auditable under the Phase 1 red-team gate.
+Two mandatory hardening actions: (i) an <strong>assumption ledger per
+claim</strong> — every rate statement carries its six assumption classes
+explicitly; (ii) a <strong>statistics upgrade</strong> to Kato’s
+inequality or Mannalath–Zapatero–Curty sharp statistics (drop-in at the
+fixture level), the cheapest way to shrink the 256.57-bit-class penalty
+without changing proof family. All Profile A outputs remain
+CONDITIONAL-COMPUTATION-labeled while characterization is
+absent.</p></li>
+<li><p><strong>Profile B is the V0.18+ upgrade path.</strong> The
+consolidated decoy-BB84 proof with imperfections (Tupkary et al.,
+arXiv:2601.18035 (2026, <strong>preprint</strong> — under review)) is
+the designated anchor, with the unified source-imperfection framework
+(Curras-Lorenzo et al., <em>Optica Quantum</em> 3, 525 (2025)) for joint
+flaw coverage. Adoption is gated on the characterization inputs each
+term requires (state overlaps, phase-PDF bound, intensity intervals,
+isolation/distinguishability budgets) — until then its imperfection
+terms remain symbolic.</p></li>
+<li><p><strong>Numerical SDP is the independent cross-check, not the
+shipping proof.</strong> OpenQKDsecurity-class numerics are to be run as
+an independent cross-check of the Profile A margins at selected grid
+points, and positioned as the certification end-state aligned with Tan
+&amp; Nahar 2026. Rationale for not shipping in Phase 1: high tooling
+and interval-arithmetic verification cost, reduced line-by-line
+auditability, and finite-key constants at (n ^5) per pass not yet
+superior to the analytic bound.</p></li>
+<li><p><strong>MDI-QKD is excluded architecturally</strong> from the
+Q-Orbit proof path: incompatible with a direct satellite-to-ground
+downlink (no relay between two senders; the ground receiver is precisely
+the party whose trust is at issue). Logged as an architectural
+alternative only.</p></li>
+</ol>
+<h2 id="f.2-rejected-alternatives-with-reasons">F.2 Rejected
+Alternatives (with Reasons)</h2>
+<table>
+<colgroup>
+<col style="width: 72%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rejected Alternative</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Numerical SDP as Phase 1 shipping proof</td>
+<td>High tooling/verification cost; reduced auditability; constants not
+superior at Q-Orbit block sizes</td>
+</tr>
+<tr class="even">
+<td>MDI-QKD as detector-side answer</td>
+<td>Architecturally incompatible with direct downlink; requires uplink
+or dual-downlink relay redesign</td>
+</tr>
+<tr class="odd">
+<td>GLLP () bolt-on as sufficient source-flaw coverage</td>
+<td>Covers only basis-independent flaws; real flaws are basis-dependent;
+unmeasured () is a hidden assumption</td>
+</tr>
+<tr class="even">
+<td>EAT as primary finite-key proof</td>
+<td>Constants historically worse at satellite block sizes;
+prepare-and-measure decoy instantiation still maturing</td>
+</tr>
+<tr class="odd">
+<td>Absorbing imperfections into existing scalars</td>
+<td>Prohibited hidden substitution: phase-randomization defects () QBER;
+source leakage () loss; mismatch () scalar ()</td>
+</tr>
+<tr class="even">
+<td>Representing nominal/datasheet values as security bounds</td>
+<td>A proof valid at a point value does not establish a robust domain
+(Tan &amp; Nahar 2026)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="f.3-layered-architecture-target">F.3 Layered Architecture
+Target</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 37%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Content</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Layer 0 — Frozen V0.16 fixture</td>
+<td>Immutable regression reference</td>
+<td>In place; NUMERICALLY-VERIFIED</td>
+</tr>
+<tr class="even">
+<td>Layer 1 — Hardened analytic finite-key (optical/count)</td>
+<td>Profile A hardened: Lim/Sidhu + Kato/Mannalath stats + assumption
+ledger + 21-split validator + epsilon ledger</td>
+<td>V0.17-TA1 shipping proof</td>
+</tr>
+<tr class="odd">
+<td>Layer 2 — Implementation-security proof extensions</td>
+<td>Profile B terms supplying admissible parameter bounds; symbolic
+until characterization</td>
+<td>V0.18+ upgrade path</td>
+</tr>
+<tr class="even">
+<td>Layer 3 — Characterization/certification composition</td>
+<td>Tan &amp; Nahar certify-then-run: (S_{robust}), per-parameter CIs,
+(_{char}), joint bound</td>
+<td>Framework specified; execution BLOCKED</td>
+</tr>
+</tbody>
+</table>
+<h1 id="part-g-device-imperfection-mapping-summary">PART G —
+DEVICE-IMPERFECTION MAPPING SUMMARY</h1>
+<h2 id="g.1-master-matrix-15-mandated-effects">G.1 Master Matrix — 15
+Mandated Effects</h2>
+<table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 21%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Device Effect</th>
+<th>Current Scalar Model</th>
+<th>Security Relevance</th>
+<th>Current Status (Fail-Closed)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Incomplete phase randomization</td>
+<td>None — perfect PR assumed</td>
+<td>Proof-modifying, architectural: (_n) decomposition fails without PR;
+all decoy estimators unfounded</td>
+<td><strong>UNMAPPED-PROOF-REQUIRED</strong></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Pulse-to-pulse correlations (encoding memory)</td>
+<td>None — fixture assumes IID</td>
+<td>Proof-modifying: breaks conditional independence, decoy structure,
+random-sampling bound</td>
+<td><strong>UNMAPPED-PROOF-REQUIRED</strong></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Intensity correlations (pulse-to-pulse)</td>
+<td>None — TH-PAR-004/005 are exact scalars</td>
+<td>Proof-modifying: breaks IID structure making (p_{k</td>
+<td>n}) well-defined; setting-revealing to Eve</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>State-preparation (encoding) flaws</td>
+<td>Absorbed into scalar QBER (TH-PAR-008) — basis-independent part
+only</td>
+<td>Proof-modifying: basis-dependent flaws invalidate (_X) bound; GLLP
+() covers only basis-independent</td>
+<td><strong>UNMAPPED-PROOF-REQUIRED</strong> (basis-dependent part);
+TH-PAR-008 touch: PARTIAL-SCALAR-STRESS-ONLY</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Source leakage / distinguishability</td>
+<td>None — no fixture scalar</td>
+<td>Proof-modifying: side-channel modes leak setting info with zero QBER
+signature; active TH leakage</td>
+<td><strong>BLOCKING</strong> (active leakage component governs)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Dead time / recovery</td>
+<td>None — TH-PAR-002 is rate-independent</td>
+<td>Escalates to proof-modifying: rate-dependent mismatch, adversarial
+dead-time attack</td>
+<td><strong>UNMAPPED-SECURITY-BUDGET</strong> (strictest
+resolution)</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Saturation</td>
+<td>None — fixture count model is linear</td>
+<td>BLOCKING above linear regime: entry point of detector-control
+class</td>
+<td><strong>BLOCKING</strong></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Detector timing jitter</td>
+<td>Window-average of ((t)) can inform TH-PAR-002</td>
+<td>Proof-modifying when inter-detector/basis asymmetry exists
+(time-shift attack enabler)</td>
+<td><strong>UNMAPPED-CHARACTERIZATION-REQUIRED</strong></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>History-dependent afterpulsing</td>
+<td>TH-PAR-007 = equilibrium IID marginal only</td>
+<td>History/rate/basis-dependent part proof-modifying; breaks slot-IID
+statistics</td>
+<td><strong>UNMAPPED-PROOF-REQUIRED</strong>; scalar:
+PARTIAL-SCALAR-STRESS-ONLY</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Detection-efficiency mismatch</td>
+<td>Single () multiplier (TH-PAR-002) = hidden substitution</td>
+<td>Proof-modifying — canonical detector-side gap; Eve’s mode choice
+gives knowledge</td>
+<td><strong>PROOF-PROFILE-CANDIDATE</strong> gated by
+UNMAPPED-CHARACTERIZATION-REQUIRED</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Wavelength-dependent response</td>
+<td>TH-PAR-002 at design () only</td>
+<td>Out-of-band response = unmodeled Eve-&gt;receiver channel</td>
+<td><strong>UNMAPPED-SECURITY-BUDGET</strong></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Polarization-dependent response</td>
+<td>TH-PAR-002 = polarization average</td>
+<td>Proof-modifying when detector-differential or basis-coupling</td>
+<td><strong>PROOF-PROFILE-CANDIDATE</strong> gated by
+UNMAPPED-CHARACTERIZATION-REQUIRED</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Detector memory (general cross-pulse)</td>
+<td>None — TH-PAR-006 forbidden to carry correlations</td>
+<td>Proof-modifying at statistical core: breaks slot-IID finite-key
+statistics</td>
+<td><strong>UNMAPPED-PROOF-REQUIRED</strong></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Characterization uncertainty</td>
+<td>None — fixture treats every input as exact constant</td>
+<td>Meta-level proof-modifying: point estimates re-introduce point-value
+fallacy</td>
+<td><strong>UNMAPPED-CHARACTERIZATION-REQUIRED</strong></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Aging / cross-instance drift</td>
+<td>None — fixture scalars are time-invariant</td>
+<td>Meta-level: CI valid at (t_1) is not evidence at (t_2) without drift
+bounds</td>
+<td><strong>UNMAPPED-CHARACTERIZATION-REQUIRED</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Consolidated verdict:</strong> 0 of 15 effects are
+MAPPED-IN-CURRENT-FIXTURE. <strong>5 rows
+UNMAPPED-PROOF-REQUIRED</strong> (1, 2, 4, 9, 13), <strong>2 rows
+BLOCKING</strong> (5, 7), <strong>2 rows
+UNMAPPED-SECURITY-BUDGET</strong> (6, 11), <strong>6 rows
+PROOF-PROFILE-CANDIDATE or UNMAPPED-CHARACTERIZATION-REQUIRED</strong>
+(3, 8, 10, 12, 14, 15).</p>
+<h2 id="g.2-fixture-scalar-touch-map-th-par-001008">G.2 Fixture-Scalar
+Touch Map (TH-PAR-001…008)</h2>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 16%" />
+<col style="width: 34%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scalar</th>
+<th>Meaning</th>
+<th>Touches Effect(s)</th>
+<th>Nature of Contact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TH-PAR-001</td>
+<td>Additional system loss (dB)</td>
+<td>None of the 15</td>
+<td>Channel-side engineering scalar</td>
+</tr>
+<tr class="even">
+<td>TH-PAR-002</td>
+<td>Detector-efficiency multiplier</td>
+<td>6, 7, 8, 10, 11, 12</td>
+<td>PARTIAL-SCALAR-STRESS-ONLY in each case</td>
+</tr>
+<tr class="odd">
+<td>TH-PAR-003</td>
+<td>Repetition rate</td>
+<td>None directly</td>
+<td>Sets rate context only</td>
+</tr>
+<tr class="even">
+<td>TH-PAR-004</td>
+<td>Signal intensity (_1)</td>
+<td>Adjacent to 3 (via C S3)</td>
+<td>PARTIAL-SCALAR-STRESS-ONLY for independent fluctuation sweeps</td>
+</tr>
+<tr class="odd">
+<td>TH-PAR-005</td>
+<td>Weak-decoy intensity (_2)</td>
+<td>Adjacent to 3 (via C S3)</td>
+<td>As TH-PAR-004</td>
+</tr>
+<tr class="even">
+<td>TH-PAR-006</td>
+<td>Extraneous-count probability</td>
+<td>9 (boundary condition)</td>
+<td>Legitimate ONLY for IID dark/background counts</td>
+</tr>
+<tr class="odd">
+<td>TH-PAR-007</td>
+<td>Afterpulse probability</td>
+<td>9</td>
+<td>Equilibrium IID marginal only — PARTIAL-SCALAR-STRESS-ONLY</td>
+</tr>
+<tr class="even">
+<td>TH-PAR-008</td>
+<td>Intrinsic QBER</td>
+<td>4 (partially)</td>
+<td>Absorbs only basis-independent, stochastic-symmetric component</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g.3-hidden-substitution-watchlist-prohibited-moves">G.3
+Hidden-Substitution Watchlist (Prohibited Moves)</h2>
+<ol type="1">
+<li>Basis-dependent SPF -&gt; QBER scalar (TH-PAR-008)</li>
+<li>Correlations -&gt; scalar intensity jitter (TH-PAR-004/005)</li>
+<li>Nominal intensity -&gt; fluctuation bound</li>
+<li>Imperfect phase randomization -&gt; added QBER</li>
+<li>Afterpulse correlations -&gt; IID extraneous-count term
+(TH-PAR-006)</li>
+<li>Efficiency mismatch -&gt; single () (TH-PAR-002)</li>
+<li>Dead time / recovery / saturation -&gt; constant () or “noise”
+QBER</li>
+<li>Security claims with empty leakage/isolation fields</li>
+<li>Point estimates -&gt; confidence intervals (without CI, (),
+envelope)</li>
+<li>Drift extrapolation -&gt; constant parameters</li>
+<li>Variable-length / adaptive key outputs -&gt; fixed-length (_s/_c)
+semantics</li>
+<li>“Certified secure” / conditional-on-approval language</li>
+</ol>
+<h1 id="part-h-selected-existing-engineering-figures">PART H — SELECTED
+EXISTING ENGINEERING FIGURES</h1>
+<h2 id="h.1-figures-referenced-in-package">H.1 Figures Referenced in
+Package</h2>
+<p>The following figures are referenced in the corrected manuscript
+(Part C) and are available in the controlled V0.16-TA1 artifact bundle.
+All captions carry evidence-class labels.</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 24%" />
+<col style="width: 23%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Figure</th>
+<th>Title</th>
+<th>Source Artifact</th>
+<th>Evidence Class</th>
+<th>Caption Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Figure 1</strong></td>
+<td>Local signed-margin response per declared perturbation step</td>
+<td>Generated from 06_Local_Sensitivity.csv</td>
+<td>EV-1b (modeled / deterministic)</td>
+<td>Caption must state: “Modeled fixture response; not a device
+tolerance or security-proof domain”</td>
+</tr>
+<tr class="even">
+<td><strong>Figure 2</strong></td>
+<td>Signed margin across the controlled 41 x 41 screen; contour
+indicates zero-margin boundary at grid resolution</td>
+<td>Generated from 05_Two_Parameter_Screen.csv</td>
+<td>EV-1b (modeled / deterministic)</td>
+<td>Caption must state: “Deterministic screen partition; not a
+probability distribution, reliability, or availability figure. Upper
+envelope under per-point window re-optimization”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> The actual figure rendering files are not
+included in this interim text package; they are generated from the
+hash-verified CSV artifacts (05, 06) and must be rendered with the
+mandatory caption language above. The zero-margin boundary is
+grid-resolution-limited (41 extraneous rows, 21 with no positive cell) —
+class GRID-RESOLUTION-NOT-ANALYTIC-THRESHOLD.</p>
+<h1 id="part-i-phase-1-gate-status">PART I — PHASE 1 GATE STATUS</h1>
+<h2 id="i.1-deliverable-status">I.1 Deliverable Status</h2>
+<table>
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 28%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Deliverable</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>D1 — Executive Audit</strong></td>
+<td>COMPLETE</td>
+<td>Phase 1 Canonical Audit Section A; artifact inventory, hash chain,
+baseline reproduction, grid recomputation, sign-discrepancy resolution,
+sensitivity/frontier verification, audit JSON cross-check</td>
+</tr>
+<tr class="even">
+<td><strong>D2 — Numerical Consistency Table</strong></td>
+<td>COMPLETE</td>
+<td>Audit Section B; all mandated rows covered; EV-* evidence classes
+applied; sign corrections C-01/C-02 documented</td>
+</tr>
+<tr class="odd">
+<td><strong>D3 — Literature and Proof Review</strong></td>
+<td>COMPLETE</td>
+<td>Verified citation ledger (6 seeded + supplementary); assumption
+inventory A1–A6; proof-family survey F1–F8; security-budget findings;
+citation-hygiene rules</td>
+</tr>
+<tr class="even">
+<td><strong>D4 — Proof-Profile Comparison</strong></td>
+<td>COMPLETE</td>
+<td>14-row matrix; MDI-QKD exclusion verdict; three-option analysis;
+Profile A/B recommendation; rejected alternatives with reasons</td>
+</tr>
+<tr class="odd">
+<td><strong>D5 — Device-Imperfection Mapping</strong></td>
+<td>COMPLETE</td>
+<td>15-effect master matrix; interaction flags; hidden-substitution
+watchlist (12 items); engineering-vs-proof split; open proof
+problems</td>
+</tr>
+<tr class="even">
+<td><strong>D6 — V0.17-TA1 Architecture Spec</strong></td>
+<td>COMPLETE</td>
+<td>Symbolic parameter registry; epsilon ledger; Category-1
+constructors; Category-2/3 guards; claim labeling; fixture-compatibility
+shim; verification tests</td>
+</tr>
+<tr class="odd">
+<td><strong>D7 — Revised Manuscript V1.0-RC2</strong></td>
+<td>INTERIM</td>
+<td>This package, Part C; all Phase 1 corrections applied; claim-control
+labels intact</td>
+</tr>
+<tr class="even">
+<td><strong>D8 — Reviewer Report</strong></td>
+<td>NOT STARTED</td>
+<td>Phase 2 item; requires D7 finalization</td>
+</tr>
+<tr class="odd">
+<td><strong>D9 — Submission Checklist</strong></td>
+<td>NOT STARTED</td>
+<td>Phase 2 item; updated at every gate</td>
+</tr>
+<tr class="even">
+<td><strong>D10 — Next-Step Research Backlog</strong></td>
+<td>SEED INCLUDED</td>
+<td>V0.17 spec Section 11; P0–P3 priorities defined</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i.2-gate-conditions-phase-1---phase-2">I.2 Gate Conditions
+(Phase 1 -&gt; Phase 2)</h2>
+<p>Per the Deliverable Specifications, Phase 2 may start when:</p>
+<ol type="1">
+<li>Phase 1 package passes red-team review (Agent G) with no
+undispositioned criticism. <strong>All 16 findings C1–C16 dispositioned
+FIXED</strong> (Section 6 of red-team review).</li>
+<li>D2 closure achieved (10-artifact bundle audited; computational
+ground truth locked in CFR Section 2). <strong>Residual REQUIRED INPUT /
+BLOCKER register (REQ-01…05) is disclosed</strong> — user explicitly
+accepts submission posture with these items disclosed, including the
+standing declaration that no independent end-to-end re-execution has
+been performed.</li>
+<li><strong>User confirms Phase 2 scope</strong> — pending.</li>
+</ol>
+<h2 id="i.3-red-team-verdict">I.3 Red-Team Verdict</h2>
+<p><strong>Overall package verdict: MAJOR-REVISION -&gt; FIXED.</strong>
+All 16 criticisms dispositioned. The numerical core (D1/D2 substance,
+CFR Section 2) survives attack almost intact. The citation layer (D3/D4)
+and architecture text (D6) required corrections that have been applied.
+No BLOCKED criticism remains undispositioned.</p>
+<h1 id="part-j-remaining-blockers">PART J — REMAINING BLOCKERS</h1>
+<h2 id="j.1-required-input-blocker-register">J.1 Required Input /
+Blocker Register</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 30%" />
+<col style="width: 12%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Blocker ID</th>
+<th>Missing Artifact</th>
+<th>Declared Hash (prefix)</th>
+<th>Unblocks</th>
+<th>Current Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>REQ-01</strong></td>
+<td><code>controlled_inputs/v0.6/Q-Orbit_CASE-S1_Run_Manifest_V0.6.json</code></td>
+<td>0714d6e7…</td>
+<td>End-to-end re-execution; (_s/_c) confirmation; intensities,
+probabilities, channel config</td>
+<td><strong>No claim of independent re-execution may be
+made</strong></td>
+</tr>
+<tr class="even">
+<td><strong>REQ-02</strong></td>
+<td><code>controlled_inputs/v0.6/CASE-S1-REF-001_Baseline_Run_V0.6.json</code></td>
+<td>3673acf4…</td>
+<td>Direct confirmation of regression expected values</td>
+<td>Regression expected values not independently confirmed against
+original fixture</td>
+</tr>
+<tr class="odd">
+<td><strong>REQ-03</strong></td>
+<td><code>controlled_inputs/v0.7/Q-Orbit_CASE-M1_Parameter_and_Provenance_Register_V0.7.csv</code></td>
+<td>fb07b900…</td>
+<td>Screen range provenance; 1–221 s sweep bound provenance</td>
+<td>Screen ranges corroborated from 05/08 but not proven to be exact
+V0.7 register values</td>
+</tr>
+<tr class="even">
+<td><strong>REQ-04</strong></td>
+<td>Original (non-PDF) bytes of
+<code>Q-Orbit_Kimi_Core_Research_Input.zip</code></td>
+<td>—</td>
+<td>Byte-level hash closure on artifacts 1, 2, 4–8, 10</td>
+<td>9 of 10 artifacts content-verified via deterministic PDF-repair; 01
+compiles but not byte-reconstructed</td>
+</tr>
+<tr class="odd">
+<td><strong>REQ-05</strong></td>
+<td><code>data_processed/Q-Orbit_V0.16-TA1_Grid_Boundary.csv</code>
+(28b9fef2…), <code>..._Imperfection_to_Proof_Mapping.csv</code>
+(9907aa34…), <code>..._Claim_Boundary_Register.csv</code> (bc864414…),
+<code>..._Gate_Register.csv</code> (a008f748…),
+<code>..._Parameter_Catalog.csv</code> (fb9260f3…)</td>
+<td>—</td>
+<td>Row-level verification of grid boundary, 16-row proof mapping,
+claim/gate registers</td>
+<td>Fixture’s 16-row/7-unmapped mapping inferred but not row-level
+verified</td>
+</tr>
+</tbody>
+</table>
+<h2 id="j.2-open-proof-problems-literature-gaps">J.2 Open Proof Problems
+(Literature Gaps)</h2>
+<p>These constrain which proof profiles V0.17 can select; they are
+documented so that no future phase mistakes them for resolved items or
+Q-Orbit-specific defects:</p>
+<ol type="1">
+<li><strong>Detector-side correlated afterpulsing in finite-key decoy
+proofs.</strong> Verified physical models exist; martingale
+concentration tools exist; no verified literature delivers a complete
+finite-key decoy-state security proof with correlated afterpulse noise
+for this fixture class.</li>
+<li><strong>Rate-dependent yields inside the decoy method.</strong> The
+decoy identity (intensity-independent photon-number yields) fails
+whenever (= ()); no verified turnkey re-derived bound found.</li>
+<li><strong>Full composable integration of certification.</strong> Tan
+&amp; Nahar 2026 Appendix C notes some technical aspects remain open;
+Q-Orbit adopts the conservative union bound instead.</li>
+<li><strong>Complete correlated-memory detector treatment.</strong>
+Partial tools exist (preprint-level and verified) but no complete
+bounded-memory detector model inside a finite-key decoy proof for this
+fixture.</li>
+</ol>
+<h2 id="j.3-impact-on-submission-posture">J.3 Impact on Submission
+Posture</h2>
+<ul>
+<li><strong>Theoretical/numerical record:</strong>
+READY-WITH-DISCLOSED-LIMITATIONS — all headline numerics are
+hash-verified or recomputed; limitations are listed above and in the
+Canonical Audit Section A.4.</li>
+<li><strong>Physical/device-security/mission/procurement
+claims:</strong> BLOCKED — fail-closed. The REQ register and open proof
+problems prevent any such claim.</li>
+<li><strong>Manuscript V1.0-RC2:</strong> Submission-ready for
+<strong>theoretical review</strong> only; not for journal submission
+claiming experimental validation or device security.</li>
+</ul>
+<h1 id="part-k-roadmap-to-sunday-final-submission">PART K — ROADMAP TO
+SUNDAY FINAL SUBMISSION</h1>
+<h2 id="k.1-timeline-assuming-sunday-2026-08-30">K.1 Timeline (Assuming
+Sunday = 2026-08-30)</h2>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>Date</th>
+<th>Task</th>
+<th>Owner</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Fri</strong></td>
+<td>2026-08-28</td>
+<td>User confirms Phase 2 scope; any REQ artifact supply</td>
+<td>User / Agent</td>
+<td>Scope confirmation</td>
+</tr>
+<tr class="even">
+<td><strong>Fri–Sat</strong></td>
+<td>2026-08-28/29</td>
+<td>D8 — Simulated reviewer report (3 personas) +
+response-to-reviewers</td>
+<td>Agent</td>
+<td>D8 draft</td>
+</tr>
+<tr class="odd">
+<td><strong>Sat</strong></td>
+<td>2026-08-29</td>
+<td>D9 — Submission checklist closure; figure rendering with mandatory
+captions; .docx generation</td>
+<td>Agent</td>
+<td>D9 draft; rendered figures; .docx</td>
+</tr>
+<tr class="even">
+<td><strong>Sat–Sun</strong></td>
+<td>2026-08-29/30</td>
+<td>Final proofread; claim-control label sweep; prohibited-claims
+register verification; citation-hygiene final check</td>
+<td>Agent + User</td>
+<td>Final package</td>
+</tr>
+<tr class="odd">
+<td><strong>Sun</strong></td>
+<td>2026-08-30</td>
+<td><strong>FINAL SUBMISSION</strong></td>
+<td>User</td>
+<td>Complete package (Markdown + .docx + figures + manifest)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="k.2-phase-2-tasks-detailed">K.2 Phase 2 Tasks (Detailed)</h2>
+<h3 id="k.2.1-d8-reviewer-report">K.2.1 D8 — Reviewer Report</h3>
+<p><strong>Three simulated reviews:</strong> 1.
+<strong>Quantum-cryptography theorist</strong> — security assumptions,
+composability, decoy validity, finite-key correctness, “21”
+decomposition, (_{char}) accounting, ideal-EC disclosure. 2.
+<strong>Experimental QKD/device specialist</strong> — source/detector
+realism, characterization requirements, measurement-to-proof mapping, D5
+status integrity, guard completeness. 3.
+<strong>Scientific-method/reproducibility reviewer</strong> — numerical
+reproducibility, claims, statistics, terminology, evidence hierarchy,
+hash-chain completeness.</p>
+<p><strong>Each review:</strong> Major comments / Minor comments /
+Required corrections / Recommendation in {ACCEPTABLE-THEORETICAL-DRAFT,
+MAJOR-REVISION, BLOCKED}.</p>
+<p><strong>Response summary:</strong> Every criticism dispositioned
+FIXED / MITIGATED / EXPLICIT LIMITATION / BLOCKING OPEN ISSUE, with
+manuscript edit pointers.</p>
+<h3 id="k.2.2-d9-submission-checklist">K.2.2 D9 — Submission
+Checklist</h3>
+<p>PASS / FAIL / BLOCKED table over: - Numerical consistency -
+References verified - Equation consistency - Figure consistency - Claim
+boundaries - Reproducibility - Physical-validation language - Proof
+completeness - Manuscript formatting</p>
+<p>Rule: any BLOCKED row implies package cannot ship; FAIL rows must
+name owner artifact and fix path.</p>
+<h3 id="k.2.3-figure-rendering-and-caption-compliance">K.2.3 Figure
+Rendering and Caption Compliance</h3>
+<ul>
+<li><strong>Figure 1</strong> (local sensitivity): Render from
+06_Local_Sensitivity.csv; caption must include “Modeled fixture
+response; not a device tolerance or security-proof domain.”</li>
+<li><strong>Figure 2</strong> (two-parameter screen): Render from
+05_Two_Parameter_Screen.csv; caption must include “Deterministic screen
+partition; not a probability distribution, reliability, or availability
+figure. Upper envelope under per-point window re-optimization.”</li>
+<li>Both captions must carry evidence-class label: EV-1b (modeled /
+deterministic).</li>
+</ul>
+<h3 id="k.2.4-final-manuscript-polish">K.2.4 Final Manuscript
+Polish</h3>
+<ul>
+<li>Title: retain unless justified change emerges from D8.</li>
+<li>Abstract: all numbers = resolved D2 ground truth (negative
+median/minimum).</li>
+<li>Introduction: research question (both stages); contribution
+statement reproduced/newly analyzed/proposed/unresolved explicitly
+separated.</li>
+<li>Related work: D3-verified citations only.</li>
+<li>Methods: mathematical definitions (notation table); margin equation
+cross-checked against primary source.</li>
+<li>Results: corrected signs; every figure caption
+evidence-labeled.</li>
+<li>Discussion: grid-fraction != probability; proof-to-device section
+(D5 condensed); security-budget section (D6 symbolic budget).</li>
+<li>Limitations: all disclosed limitations listed.</li>
+<li>Conclusion: no prohibited claims.</li>
+<li>Reproducibility statement: V0.16 package contents + hash
+verification procedure.</li>
+<li>References: D3-verified only; preprint labels where required.</li>
+<li>Claim ledger: attached as appendix.</li>
+</ul>
+<h3 id="k.2.5-.docx-generation">K.2.5 .docx Generation</h3>
+<ul>
+<li>Markdown source -&gt; .docx render via pandoc or equivalent.</li>
+<li>Header/footer: “INTERIM THEORETICAL SUBMISSION — NOT PHYSICALLY
+VALIDATED” on every page.</li>
+<li>Page 1: cover page (Part A).</li>
+</ul>
+<h2 id="k.3-contingencies">K.3 Contingencies</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>User supplies REQ-01…03 before Sunday</td>
+<td>Unblock end-to-end re-execution; update D1/D2 with re-execution
+results; may upgrade submission posture if results confirm</td>
+</tr>
+<tr class="even">
+<td>D8 reveals new BLOCKING issue</td>
+<td>Stop clock; disposition before proceeding; if undispositionable,
+submission posture becomes BLOCKED</td>
+</tr>
+<tr class="odd">
+<td>Figure rendering delays</td>
+<td>Use tabular/ASCII art fallback in .docx; schedule proper rendering
+for post-Sunday update</td>
+</tr>
+<tr class="even">
+<td>Citation-hygiene final check finds defect</td>
+<td>Fix per D3 rules; if unfixable, mark as limitation and disclose</td>
+</tr>
+</tbody>
+</table>
+<h1 id="part-l-submission-manifest">PART L — SUBMISSION MANIFEST</h1>
+<h2 id="l.1-this-package-contains">L.1 This Package Contains</h2>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 16%" />
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Component</th>
+<th>Document ID</th>
+<th>Version</th>
+<th>Status</th>
+<th>Location in This File</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Interim Cover Page</td>
+<td>QO-INTERIM-PKG-001</td>
+<td>1.0</td>
+<td>COMPLETE</td>
+<td>Part A</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Executive Summary (2 pages)</td>
+<td>QO-INTERIM-PKG-001</td>
+<td>1.0</td>
+<td>COMPLETE</td>
+<td>Part B</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Corrected Scientific Manuscript / Research Report</td>
+<td>QO-SUB-RP-001</td>
+<td>V1.0-RC2</td>
+<td>INTERIM</td>
+<td>Part C</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Concise Engineering Architecture Section</td>
+<td>QO-P1-D6</td>
+<td>1.0 (condensed)</td>
+<td>COMPLETE</td>
+<td>Part D</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Verified Numerical-Results Table</td>
+<td>QO-CFR-001</td>
+<td>v1.1 (excerpt)</td>
+<td>COMPLETE</td>
+<td>Part E</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Proof-Profile Recommendation</td>
+<td>QO-D4-001</td>
+<td>1.0 (condensed)</td>
+<td>COMPLETE</td>
+<td>Part F</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Device-Imperfection Mapping Summary</td>
+<td>QO-P1-D5</td>
+<td>1.0 (condensed)</td>
+<td>COMPLETE</td>
+<td>Part G</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Selected Existing Engineering Figures</td>
+<td>—</td>
+<td>—</td>
+<td>REFERENCED</td>
+<td>Part H</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Phase 1 Gate Status</td>
+<td>QO-SPEC-DELIV-001</td>
+<td>1.0 (excerpt)</td>
+<td>COMPLETE</td>
+<td>Part I</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Remaining Blockers</td>
+<td>QO-CFR-001</td>
+<td>v1.1 (REQ register)</td>
+<td>OPEN</td>
+<td>Part J</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Roadmap to Sunday Final Submission</td>
+<td>QO-INTERIM-PKG-001</td>
+<td>1.0</td>
+<td>PLAN</td>
+<td>Part K</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Submission Manifest</td>
+<td>QO-INTERIM-PKG-001</td>
+<td>1.0</td>
+<td>COMPLETE</td>
+<td>Part L</td>
+</tr>
+</tbody>
+</table>
+<h2 id="l.2-basis-documents-referenced-not-included">L.2 Basis Documents
+(Referenced, Not Included)</h2>
+<table>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 23%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Document ID</th>
+<th>Title</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>QO-CFR-001 v1.1</td>
+<td>Canonical Facts Record</td>
+<td><code>/mnt/agents/output/phase1/Q-Orbit_Canonical_Facts_Record.md</code></td>
+</tr>
+<tr class="even">
+<td>QO-D1/D2</td>
+<td>Phase 1 Canonical Audit</td>
+<td><code>/mnt/agents/output/phase1/Q-Orbit_Phase1_Canonical_Audit.md</code></td>
+</tr>
+<tr class="odd">
+<td>QO-D3-001</td>
+<td>Literature and Proof Review</td>
+<td><code>/mnt/agents/output/phase1/Q-Orbit_Phase1_Literature_and_Proof_Review.md</code></td>
+</tr>
+<tr class="even">
+<td>QO-D4-001</td>
+<td>Proof-Profile Comparison</td>
+<td><code>/mnt/agents/output/phase1/Q-Orbit_Phase1_Proof_Profile_Comparison.md</code></td>
+</tr>
+<tr class="odd">
+<td>QO-P1-D5</td>
+<td>Device-Imperfection Mapping</td>
+<td><code>/mnt/agents/output/phase1/Q-Orbit_Phase1_Device_Imperfection_Mapping.md</code></td>
+</tr>
+<tr class="even">
+<td>QO-P1-D6</td>
+<td>V0.17-TA1 Architecture Spec</td>
+<td><code>/mnt/agents/output/phase1/Q-Orbit_V0.17-TA1_Architecture_Specification.md</code></td>
+</tr>
+<tr class="odd">
+<td>QO-SPEC-DELIV-001</td>
+<td>Deliverable Specifications</td>
+<td><code>/mnt/agents/output/phase1/Q-Orbit_Deliverable_Specifications.md</code></td>
+</tr>
+<tr class="even">
+<td>QO-G-RT-001</td>
+<td>Red-Team Review</td>
+<td><code>/mnt/agents/output/phase1/Q-Orbit_Phase1_RedTeam_Review.md</code></td>
+</tr>
+<tr class="odd">
+<td>QO-V0.16-TA1</td>
+<td>10 Controlled Artifacts</td>
+<td><code>/mnt/agents/output/extracted/v016/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="l.3-controlled-artifact-inventory">L.3 Controlled Artifact
+Inventory</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 22%" />
+<col style="width: 34%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Artifact</th>
+<th>Hash Verified?</th>
+<th>Evidence Class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>01</td>
+<td><code>01_run_theoretical_device_imperfection_model_v0_16_ta1.py</code></td>
+<td>Compiles; not byte-reconstructed</td>
+<td>EV-4 (static inspection) + EV-1c (hash-chain-listed)</td>
+</tr>
+<tr class="even">
+<td>02</td>
+<td><code>02_FS_loss_XI0.csv</code></td>
+<td>Yes (after PDF-repair)</td>
+<td>EV-1a</td>
+</tr>
+<tr class="odd">
+<td>03</td>
+<td><code>03_Q-Orbit_V0.16-TA1_Theoretical_Run_Summary.json</code></td>
+<td>Yes (direct match)</td>
+<td>EV-1a</td>
+</tr>
+<tr class="even">
+<td>04</td>
+<td><code>04_Q-Orbit_V0.16-TA1_Regression_Tests.csv</code></td>
+<td>Yes (after PDF-repair)</td>
+<td>EV-1c</td>
+</tr>
+<tr class="odd">
+<td>05</td>
+<td><code>05_Q-Orbit_V0.16-TA1_Two_Parameter_Screen.csv</code></td>
+<td>Yes (after PDF-repair)</td>
+<td>EV-1a</td>
+</tr>
+<tr class="even">
+<td>06</td>
+<td><code>06_Q-Orbit_V0.16-TA1_Local_Sensitivity.csv</code></td>
+<td>Yes (after PDF-repair)</td>
+<td>EV-1c</td>
+</tr>
+<tr class="odd">
+<td>07</td>
+<td><code>07_Q-Orbit_V0.16-TA1_Zero_Key_Frontier.csv</code></td>
+<td>Yes (after PDF-repair)</td>
+<td>EV-1c</td>
+</tr>
+<tr class="even">
+<td>08</td>
+<td><code>08_Q-Orbit_Theoretical_Device_Imperfection_Propagation_Final_Audit_V0.16-TA1.json</code></td>
+<td>Yes (after PDF-repair)</td>
+<td>EV-1c</td>
+</tr>
+<tr class="odd">
+<td>09</td>
+<td><code>09_SHA256SUMS.txt</code></td>
+<td>Yes (direct match)</td>
+<td>EV-1a</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><code>10_Q-Orbit_V0.16-TA1_Controlled_Input_Index.csv</code></td>
+<td>Yes (after PDF-repair)</td>
+<td>EV-1c</td>
+</tr>
+</tbody>
+</table>
+<h2 id="l.4-hash-chain-status">L.4 Hash-Chain Status</h2>
+<ul>
+<li>9 of 10 bundle-cover declared hashes are listed in
+<code>09_SHA256SUMS.txt</code> under package paths (a manifest cannot
+list its own hash).</li>
+<li>17 controlled-input hashes in artifact 10 match the corresponding
+<code>controlled_inputs/...</code> entries in 09 — 17/17.</li>
+<li>Bundle artifact 02 is byte-identical to
+<code>controlled_inputs/v0.6/FS_loss_XI0.csv</code> per manifest.</li>
+</ul>
+<h2 id="l.5-claim-control-label-verification">L.5 Claim-Control Label
+Verification</h2>
+<p>Every page of this package carries the binding label:</p>
+<blockquote>
+<p><strong>INTERIM THEORETICAL SUBMISSION — NOT PHYSICALLY
+VALIDATED</strong></p>
+</blockquote>
+<p>All numerical claims carry evidence-class labels (EV-1a/1b/1c/2/3/9).
+All outputs from uncharacterized parameters carry the watermark
+<code>NO SECURITY CLAIM --- CONDITIONAL COMPUTATION</code> or equivalent
+conditional language. The prohibited-claims register (CFR Section 4) is
+never violated as a positive claim.</p>
+<hr />
+<p><em>End of Q-Orbit Preliminary Submission Package</em></p>
+<p><em>Compiled: 2026-08-27</em> <em>All claims controlled. No missing
+data invented. All corrections from Phase 1 Canonical Audit
+applied.</em></p>
+</body>
+</html>

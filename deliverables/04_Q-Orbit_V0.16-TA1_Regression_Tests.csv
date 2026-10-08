@@ -1,0 +1,13 @@
+test_id,test,observed,expected,absolute_tolerance,result,claim_limit
+REG-001,V0.6 fixture reproduction: half_window_s,102,102,0.0,PASS,Software regression only
+REG-002,V0.6 fixture reproduction: secret_key_bits,41338,41338,0.0,PASS,Software regression only
+REG-003,V0.6 fixture reproduction: raw_secret_key_bits,41338.62418456675,41338.62418456675,1e-08,PASS,Software regression only
+REG-004,V0.6 fixture reproduction: qber_x,0.017422686665352745,0.017422686665352745,1e-12,PASS,Software regression only
+REG-005,V0.6 fixture reproduction: phase_error_x,0.09270161340569935,0.09270161340569935,1e-12,PASS,Software regression only
+REG-006,V0.6 fixture reproduction: n_x,492818.0901525894,492818.0901525894,1e-07,PASS,Software regression only
+REG-007,V0.6 fixture reproduction: s_x1,183803.04893680647,183803.04893680647,1e-07,PASS,Software regression only
+REG-008,+20 dB injected loss gives no positive key,0,0,0,PASS,Software negative test
+REG-009,Grid row identity,1681,1681,0,PASS,Deterministic grid integrity
+REG-010,Grid states partition exactly,1681,1681,0,PASS,Deterministic grid integrity
+REG-011,Physical characterization remains absent,NOT-EXECUTED,NOT-EXECUTED,0,PASS,Boundary invariant
+REG-012,Unmapped imperfections receive no numeric penalty,NO-SUBSTITUTION,NO-SUBSTITUTION,0,PASS,Boundary invariant
