@@ -1,0 +1,483 @@
+{
+  "audit_id": "QO-V0.16-TA1-INDEPENDENT-AUDIT",
+  "package_id": "QO-THEORETICAL-DEVICE-IMPERFECTION-PROPAGATION-V0.16-TA1",
+  "version": "V0.16-TA1",
+  "audit_date": "2026-08-25",
+  "result": "PASS-THEORETICAL-ANALYSIS-PACKAGE",
+  "scope": "Independent serialization, numerical-summary, formula, provenance and claim-boundary audit only.",
+  "explicit_nonclaims": [
+    "No source or detector was selected, purchased, characterized, calibrated or tested.",
+    "No hardware, optical emission, laser, Tabuk or hardware-in-loop run occurred.",
+    "No implementation-security, certification, mission-performance, procurement or key-release claim is established.",
+    "The positive grid fraction is not probability, reliability, availability or mission success."
+  ],
+  "check_count": 20,
+  "pass_count": 20,
+  "failure_count": 0,
+  "checks": [
+    {
+      "check_id": "AUD-016-001",
+      "description": "Manifest controlling values",
+      "result": "PASS",
+      "observed": {
+        "package_id": "QO-THEORETICAL-DEVICE-IMPERFECTION-PROPAGATION-V0.16-TA1",
+        "version": "V0.16-TA1",
+        "result": "PASS-THEORETICAL-ANALYSIS",
+        "controlled_input_count": 17,
+        "mapped_scalar_parameter_count": 8,
+        "proof_mapping_row_count": 16,
+        "unmapped_mapping_row_count": 7,
+        "frontier_row_count": 16,
+        "frontier_crossing_count": 10,
+        "grid_row_count": 1681,
+        "grid_positive_count": 568,
+        "grid_nonpositive_count": 1113,
+        "regression_test_count": 12,
+        "regression_pass_count": 12,
+        "workbook_sheet_count": 17,
+        "workbook_formula_count": 79,
+        "physical_characterization": "NOT-EXECUTED",
+        "hardware_in_loop": "BLOCKED",
+        "laser_status": "INHIBITED",
+        "tabuk_run_status": "NOT-RUN/NONE",
+        "key_release_status": "QUARANTINED/ZERO-RELEASED",
+        "release_status": "PRIVATE-BLOCKED"
+      },
+      "expected": {
+        "package_id": "QO-THEORETICAL-DEVICE-IMPERFECTION-PROPAGATION-V0.16-TA1",
+        "version": "V0.16-TA1",
+        "result": "PASS-THEORETICAL-ANALYSIS",
+        "controlled_input_count": 17,
+        "mapped_scalar_parameter_count": 8,
+        "proof_mapping_row_count": 16,
+        "unmapped_mapping_row_count": 7,
+        "frontier_row_count": 16,
+        "frontier_crossing_count": 10,
+        "grid_row_count": 1681,
+        "grid_positive_count": 568,
+        "grid_nonpositive_count": 1113,
+        "regression_test_count": 12,
+        "regression_pass_count": 12,
+        "workbook_sheet_count": 17,
+        "workbook_formula_count": 79,
+        "physical_characterization": "NOT-EXECUTED",
+        "hardware_in_loop": "BLOCKED",
+        "laser_status": "INHIBITED",
+        "tabuk_run_status": "NOT-RUN/NONE",
+        "key_release_status": "QUARANTINED/ZERO-RELEASED",
+        "release_status": "PRIVATE-BLOCKED"
+      }
+    },
+    {
+      "check_id": "AUD-016-002",
+      "description": "Exact frozen-fixture reproduction",
+      "result": "PASS",
+      "observed": {
+        "half_window_s": 102,
+        "secret_key_bits": 41338,
+        "signed_key_margin_bits": 41338.62418456675,
+        "qber_x": 0.017422686665352745,
+        "phase_error_x": 0.09270161340569935,
+        "n_x": 492818.0901525894,
+        "s_x1": 183803.04893680647
+      },
+      "expected": {
+        "half_window_s": 102,
+        "secret_key_bits": 41338,
+        "signed_key_margin_bits": 41338.62418456675,
+        "qber_x": 0.017422686665352745,
+        "phase_error_x": 0.09270161340569935,
+        "n_x": 492818.0901525894,
+        "s_x1": 183803.04893680647
+      }
+    },
+    {
+      "check_id": "AUD-016-003",
+      "description": "Regression and boundary-invariant suite",
+
+      "result": "PASS",
+      "observed": {
+        "rows": 12,
+        "pass": 12
+      },
+      "expected": {
+        "rows": 12,
+        "pass": 12
+      }
+    },
+    {
+      "check_id": "AUD-016-004",
+      "description": "Eight local responses with contiguous ranks and expected leader",
+      "result": "PASS",
+      "observed": {
+        "rows": 8,
+        "ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "rank_1": "additional_system_loss_db"
+      },
+      "expected": {
+        "rows": 8,
+        "ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "rank_1": "additional_system_loss_db"
+      }
+    },
+    {
+      "check_id": "AUD-016-005",
+      "description": "Complete two-sided one-parameter frontier set",
+      "result": "PASS",
+      "observed": {
+        "rows": 16,
+        "crossings": 10,
+        "unique_parameter_side": 16
+      },
+      "expected": {
+        "rows": 16,
+        "crossings": 10,
+        "unique_parameter_side": 16
+      }
+    },
+    {
+      "check_id": "AUD-016-006",
+      "description": "Selected frontier values reproduce exactly within numerical tolerance",
+      "result": "PASS",
+      "observed": {
+        "additional_loss_high": 14.507927510764345,
+        "extraneous_counts_high": 8.958206093312436e-07,
+        "intrinsic_qber_high": 0.013335017073411072
+      },
+      "expected": {
+        "additional_loss_high": 14.507927510764345,
+        "extraneous_counts_high": 8.958206093312436e-07,
+        "intrinsic_qber_high": 0.013335017073411072
+      }
+    },
+    {
+      "check_id": "AUD-016-007",
+      "description": "Coupled grid identity, partition, median and finiteness",
+      "result": "PASS",
+      "observed": {
+        "rows": 1681,
+        "unique_pairs": 1681,
+        "positive": 568,
+        "nonpositive": 1113,
+        "positive_fraction": 0.33789411064842356,
+        "median": -2624.946810258186,
+        "finite": true
+      },
+      "expected": {
+        "rows": 1681,
+        "unique_pairs": 1681,
+        "positive": 568,
+        "nonpositive": 1113,
+        "positive_fraction": 0.33789411064842356,
+        "median": -2624.946810258186,
+        "finite": true
+      }
+    },
+
+    {
+      "check_id": "AUD-016-008",
+      "description": "Grid uses exact controlled V0.7 screening ranges",
+      "result": "PASS",
+      "observed": {
+        "p_ec_min": 1e-07,
+        "p_ec_max": 2e-06,
+        "qber_min": 0.003,
+        "qber_max": 0.015
+      },
+      "expected": {
+        "p_ec_min": 1e-07,
+        "p_ec_max": 2e-06,
+        "qber_min": 0.003,
+        "qber_max": 0.015
+      }
+    },
+    {
+      "check_id": "AUD-016-009",
+      "description": "Boundary is complete and explicitly resolution-limited",
+      "result": "PASS",
+      "observed": {
+        "rows": 41,
+        "blank_boundaries": 21,
+        "all_classified": true
+      },
+      "expected": {
+        "rows": 41,
+        "blank_boundaries": 21,
+        "all_classified": true
+      }
+    },
+    {
+      "check_id": "AUD-016-010",
+      "description": "All unmapped imperfections receive no invented penalty",
+      "result": "PASS",
+      "observed": {
+        "rows": 16,
+        "unmapped": 7,
+        "unmapped_without_substitution": 7
+      },
+      "expected": {
+        "rows": 16,
+        "unmapped": 7,
+        "unmapped_without_substitution": 7
+      }
+    },
+    {
+      "check_id": "AUD-016-011",
+      "description": "Limitations retain blocking proof and release states",
+      "result": "PASS",
+      "observed": {
+        "rows": 15,
+        "unmapped_blocking": 5,
+        "private_blocked": 1
+      },
+      "expected": {
+        "rows": 15,
+        "unmapped_blocking": 5,
+        "private_blocked": 1
+      }
+    },
+    {
+      "check_id": "AUD-016-012",
+      "description": "Fail-closed theoretical gate lattice",
+      "result": "PASS",
+      "observed": {
+        "TA-G01": "PASS-CONTROLLED",
+        "TA-G02": "PASS-THEORETICAL",
+        "TA-G03": "PASS-THEORETICAL",
+        "TA-G04": "PASS-THEORETICAL",
+        "TA-G05": "BLOCKED",
+        "TA-G06": "BLOCKED",
+        "TA-G07": "NOT-EXECUTED",
+        "TA-G08": "BLOCKED",
+        "TA-G09": "NOT-RUN/NONE",
+        "TA-G10": "QUARANTINED/ZERO-RELEASED",
+        "TA-G11": "PRIVATE-BLOCKED"
+      },
+      "expected": {
+        "TA-G01": "PASS-CONTROLLED",
+        "TA-G02": "PASS-THEORETICAL",
+        "TA-G03": "PASS-THEORETICAL",
+        "TA-G04": "PASS-THEORETICAL",
+        "TA-G05": "BLOCKED",
+        "TA-G06": "BLOCKED",
+        "TA-G07": "NOT-EXECUTED",
+        "TA-G08": "BLOCKED",
+        "TA-G09": "NOT-RUN/NONE",
+        "TA-G10": "QUARANTINED/ZERO-RELEASED",
+        "TA-G11": "PRIVATE-BLOCKED"
+      }
+    },
+    {
+      "check_id": "AUD-016-013",
+      "description": "Claim boundary preserves permitted and prohibited classes",
+
+      "result": "PASS",
+      "observed": {
+        "rows": 14,
+        "prohibited": 9,
+        "permitted_or_qualified": 5
+      },
+      "expected": {
+        "rows": 14,
+        "prohibited": 9,
+        "permitted_or_qualified": 5
+      }
+    },
+    {
+      "check_id": "AUD-016-014",
+      "description": "Source register has distinct primary and controlled sources",
+      "result": "PASS",
+      "observed": {
+        "rows": 10,
+        "primary": 4,
+        "controlled": 6
+      },
+      "expected": {
+        "rows": 10,
+        "primary": 4,
+        "controlled": 6
+      }
+    },
+    {
+      "check_id": "AUD-016-015",
+      "description": "Seventeen controlled predecessor copies match index and originals",
+      "result": "PASS",
+      "observed": {
+        "rows": 17,
+        "failures": []
+      },
+      "expected": {
+        "rows": 17,
+        "failures": []
+      }
+    },
+    {
+      "check_id": "AUD-016-016",
+      "description": "Workbook sheet, formula, error-token and calculation controls",
+      "result": "PASS",
+      "observed": {
+        "sheet_names": [
+          "Read Me",
+          "Summary",
+          "Baseline",
+          "Parameters",
+          "Local Response",
+          "Frontiers",
+          "Grid Summary",
+          "Grid Boundary",
+          "Grid Screen",
+          "Regression",
+          "Proof Mapping",
+          "Limitations",
+          "Gates",
+          "Claims",
+          "Sources",
+          "Controlled Inputs",
+          "Audit"
+        ],
+        "formula_count": 79,
+        "formula_error_tokens": [],
+        "calc_state": {
+          "calcId": "191029",
+          "calcMode": "auto",
+          "fullCalcOnLoad": "1",
+          "forceFullCalc": "1"
+        }
+      },
+      "expected": {
+        "sheet_names": [
+          "Read Me",
+          "Summary",
+          "Baseline",
+          "Parameters",
+          "Local Response",
+          "Frontiers",
+          "Grid Summary",
+          "Grid Boundary",
+          "Grid Screen",
+          "Regression",
+          "Proof Mapping",
+          "Limitations",
+          "Gates",
+          "Claims",
+          "Sources",
+          "Controlled Inputs",
+          "Audit"
+        ],
+        "formula_count": 79,
+        "formula_error_tokens": [],
+        "calcMode": "auto",
+
+        "fullCalcOnLoad": "1",
+        "forceFullCalc": "1"
+      }
+    },
+    {
+      "check_id": "AUD-016-017",
+      "description": "Output and packaged workbook are identical",
+      "result": "PASS",
+      "observed": {
+        "package_sha256": "462cfdaa4f71bca718818fa5aefac651f38ec15e11f56d5d9c2a567c7d04e02d",
+        "output_sha256": "462cfdaa4f71bca718818fa5aefac651f38ec15e11f56d5d9c2a567c7d04e02d",
+        "same": true
+      },
+      "expected": {
+        "same": true
+      }
+    },
+    {
+      "check_id": "AUD-016-018",
+      "description": "All workbook sheets have nonempty visual-QA renders",
+      "result": "PASS",
+      "observed": {
+        "count": 17,
+        "nonempty": 17,
+        "names": [
+          "Audit.png",
+          "Baseline.png",
+          "Claims.png",
+          "Controlled_Inputs.png",
+          "Frontiers.png",
+          "Gates.png",
+          "Grid_Boundary.png",
+          "Grid_Screen.png",
+          "Grid_Summary.png",
+          "Limitations.png",
+          "Local_Response.png",
+          "Parameters.png",
+          "Proof_Mapping.png",
+          "Read_Me.png",
+          "Regression.png",
+          "Sources.png",
+          "Summary.png"
+        ]
+      },
+      "expected": {
+        "count": 17,
+        "nonempty": 17
+      }
+    },
+    {
+      "check_id": "AUD-016-019",
+      "description": "Required human- and machine-readable deliverables exist",
+      "result": "PASS",
+      "observed": {
+        "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Report_V0.16-TA1.md": true,
+        "Q-Orbit_Engineering_Design_Handbook_V0.16-TA1_Chapter_6_7_Theoretical_Insert.md": true,
+        "README.md": true,
+        "requirements-lock.txt": true,
+        "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Workbook_V0.16-TA1.xlsx": true,
+        "run_theoretical_device_imperfection_model_v0_16_ta1.py": true
+      },
+      "expected": {
+        "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Report_V0.16-TA1.md": true,
+        "Q-Orbit_Engineering_Design_Handbook_V0.16-TA1_Chapter_6_7_Theoretical_Insert.md": true,
+        "README.md": true,
+        "requirements-lock.txt": true,
+        "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Workbook_V0.16-TA1.xlsx": true,
+        "run_theoretical_device_imperfection_model_v0_16_ta1.py": true
+      }
+    },
+    {
+      "check_id": "AUD-016-020",
+      "description": "Physical, Tabuk, laser, key and publication invariants remain blocked",
+      "result": "PASS",
+      "observed": {
+        "physical_characterization": "NOT-EXECUTED",
+        "physical_validation": "NOT-EXECUTED",
+        "hardware_in_loop": "BLOCKED",
+        "laser_status": "INHIBITED",
+        "tabuk_run_status": "NOT-RUN/NONE",
+        "key_release_status": "QUARANTINED/ZERO-RELEASED",
+        "release_status": "PRIVATE-BLOCKED"
+      },
+      "expected": {
+        "physical_characterization": "NOT-EXECUTED",
+        "physical_validation": "NOT-EXECUTED",
+        "hardware_in_loop": "BLOCKED",
+        "laser_status": "INHIBITED",
+        "tabuk_run_status": "NOT-RUN/NONE",
+        "key_release_status": "QUARANTINED/ZERO-RELEASED",
+        "release_status": "PRIVATE-BLOCKED"
+      }
+    }
+  ]
+}
