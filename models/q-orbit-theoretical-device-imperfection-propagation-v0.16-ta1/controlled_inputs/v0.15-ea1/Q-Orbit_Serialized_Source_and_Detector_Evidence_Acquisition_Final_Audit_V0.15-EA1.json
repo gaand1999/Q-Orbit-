@@ -1,0 +1,376 @@
+{
+  "audit_id": "QO-V0.15-EA1-INDEPENDENT-AUDIT",
+  "package_id": "QO-SERIALIZED-SOURCE-DETECTOR-EVIDENCE-ACQUISITION-V0.15-EA1",
+  "version": "V0.15-EA1",
+  "audit_date": "2026-08-24",
+  "result": "PASS-EVIDENCE-ACQUISITION-PACKAGE",
+  "scope": "Desk acquisition-contract integrity, provenance, workbook structure and honest residual states only.",
+  "explicit_nonclaims": [
+    "No source or detector was characterized or calibrated.",
+    "No hardware, optical emission, laser, Tabuk or hardware-in-loop run occurred.",
+    "No security proof, certification, mission performance or key-release claim is established."
+  ],
+  "check_count": 18,
+  "pass_count": 18,
+  "failure_count": 0,
+  "checks": [
+    {
+      "check_id": "AUD-001",
+      "description": "Manifest controlling values",
+      "result": "PASS",
+      "observed": "exact match",
+      "expected": {
+        "package_id": "QO-SERIALIZED-SOURCE-DETECTOR-EVIDENCE-ACQUISITION-V0.15-EA1",
+        "version": "V0.15-EA1",
+        "result": "PASS-EVIDENCE-ACQUISITION-PACKAGE",
+        "readiness": "NOT-READY-FOR-HARDWARE-IN-LOOP",
+        "controlled_input_count": 13,
+        "source_count": 13,
+        "device_count": 2,
+        "equipment_function_count": 13,
+        "test_count": 26,
+        "source_test_count": 12,
+        "detector_test_count": 14,
+        "evidence_item_count": 33,
+        "evidence_acquired_count": 0,
+        "measurement_record_count": 0,
+        "executed_test_count": 0,
+        "gate_count": 12,
+        "desk_pass_gate_count": 3,
+        "blocking_gate_count": 9,
+        "risk_count": 14,
+        "claim_count": 10,
+        "source_gate": "BLOCKED-NO-SERIALIZED-EVIDENCE",
+        "detector_gate": "BLOCKED-NO-SERIALIZED-EVIDENCE",
+        "hardware_in_loop": "BLOCKED",
+        "physical_characterization": "NOT-EXECUTED",
+        "physical_validation": "NOT-EXECUTED",
+        "tabuk_run_status": "NOT-RUN/NONE",
+        "laser_status": "INHIBITED",
+        "key_release_status": "QUARANTINED/ZERO-RELEASED",
+        "release_status": "PRIVATE-BLOCKED"
+      }
+    },
+    {
+      "check_id": "AUD-002",
+      "description": "Thirteen unique controlled predecessor files match SHA-256 and size",
+      "result": "PASS",
+      "observed": {
+        "rows": 13,
+        "failures": []
+      },
+      "expected": {
+        "rows": 13,
+        "failures": []
+      }
+    },
+    {
+      "check_id": "AUD-003",
+      "description": "Exact characterization test identity and domain split",
+      "result": "PASS",
+      "observed": {
+        "count": 26,
+        "missing": [],
+        "unexpected": [],
+        "domains": {
+          "SOURCE": 12,
+          "DETECTOR_OR_INTEGRATED": 14
+        }
+      },
+      "expected": {
+        "count": 26,
+        "domains": {
+          "SOURCE": 12,
+          "DETECTOR_OR_INTEGRATED": 14
+        }
+      }
+    },
+    {
+      "check_id": "AUD-004",
+      "description": "All physical test states remain fail-closed and no limit is approved",
+      "result": "PASS",
+      "observed": {
+        "bad_statuses": [],
+        "approved_limits": []
+      },
+      "expected": {
+        "bad_statuses": [],
+        "approved_limits": []
+      }
+    },
+    {
+      "check_id": "AUD-005",
+      "description": "Two serialized-device placeholders contain no invented identity",
+      "result": "PASS",
+      "observed": {
+        "rows": 2,
+        "bad_devices": []
+      },
+      "expected": {
+        "rows": 2,
+        "bad_devices": []
+      }
+    },
+    {
+      "check_id": "AUD-006",
+      "description": "Thirteen equipment functions contain no invented instrument or calibration",
+      "result": "PASS",
+      "observed": {
+        "rows": 13,
+        "bad_equipment": []
+      },
+      "expected": {
+        "rows": 13,
+        "bad_equipment": []
+      }
+    },
+    {
+      "check_id": "AUD-007",
+      "description": "Thirty-three evidence items are explicitly unacquired and unreviewed",
+      "result": "PASS",
+      "observed": {
+        "rows": 33,
+        "bad_evidence": []
+      },
+      "expected": {
+        "rows": 33,
+        "bad_evidence": []
+      }
+    },
+    {
+      "check_id": "AUD-008",
+      "description": "Uncertainty components are templates, not zero-valued evidence",
+      "result": "PASS",
+      "observed": {
+        "rows": 16,
+        "bad_components": []
+      },
+      "expected": {
+        "rows": 16,
+        "bad_components": []
+      }
+    },
+    {
+      "check_id": "AUD-009",
+      "description": "Raw-data and uncertainty templates contain headers only",
+      "result": "PASS",
+      "observed": {
+        "Q-Orbit_Source_Raw_Data_Template_V0.15-EA1.csv": {
+          "rows_after_header": 0,
+          "fields": 33
+        },
+        "Q-Orbit_Detector_Raw_Data_Template_V0.15-EA1.csv": {
+          "rows_after_header": 0,
+          "fields": 35
+        },
+        "Q-Orbit_Uncertainty_Budget_Template_V0.15-EA1.csv": {
+          "rows_after_header": 0,
+          "fields": 17
+        }
+      },
+      "expected": {
+        "Q-Orbit_Source_Raw_Data_Template_V0.15-EA1.csv": {
+          "rows_after_header": 0,
+          "fields": 33
+        },
+        "Q-Orbit_Detector_Raw_Data_Template_V0.15-EA1.csv": {
+          "rows_after_header": 0,
+          "fields": 35
+        },
+        "Q-Orbit_Uncertainty_Budget_Template_V0.15-EA1.csv": {
+          "rows_after_header": 0,
+          "fields": 17
+        }
+      }
+    },
+    {
+      "check_id": "AUD-010",
+      "description": "Only three desk gates pass; nine progression/release gates block",
+      "result": "PASS",
+      "observed": {
+        "EA-G01": "PASS-DESK",
+        "EA-G02": "PASS-DESK",
+        "EA-G03": "PASS-DESK",
+        "EA-G04": "BLOCKED",
+        "EA-G05": "BLOCKED",
+        "EA-G06": "BLOCKED",
+        "EA-G07": "BLOCKED",
+        "EA-G08": "BLOCKED",
+        "EA-G09": "BLOCKED",
+        "EA-G10": "BLOCKED",
+        "EA-G11": "BLOCKED",
+        "EA-G12": "PRIVATE-BLOCKED"
+      },
+      "expected": {
+        "EA-G01": "PASS-DESK",
+        "EA-G02": "PASS-DESK",
+        "EA-G03": "PASS-DESK",
+        "EA-G04": "BLOCKED",
+        "EA-G05": "BLOCKED",
+        "EA-G06": "BLOCKED",
+        "EA-G07": "BLOCKED",
+        "EA-G08": "BLOCKED",
+        "EA-G09": "BLOCKED",
+        "EA-G10": "BLOCKED",
+        "EA-G11": "BLOCKED",
+        "EA-G12": "PRIVATE-BLOCKED"
+      }
+    },
+    {
+      "check_id": "AUD-011",
+      "description": "Claim boundary permits only acquisition-contract facts",
+      "result": "PASS",
+      "observed": {
+        "rows": 10,
+        "PERMITTED": 2,
+        "PROHIBITED": 8
+      },
+      "expected": {
+        "rows": 10,
+        "PERMITTED": 2,
+        "PROHIBITED": 8
+      }
+    },
+    {
+      "check_id": "AUD-012",
+      "description": "No physical risk is marked closed",
+      "result": "PASS",
+      "observed": {
+        "rows": 14,
+        "closed": []
+      },
+      "expected": {
+        "rows": 14,
+        "closed": []
+      }
+    },
+    {
+      "check_id": "AUD-013",
+      "description": "Twenty P0 acquisition actions remain openly unacquired",
+      "result": "PASS",
+      "observed": {
+        "rows": 20,
+        "bad_actions": []
+      },
+      "expected": {
+        "rows": 20,
+        "bad_actions": []
+      }
+    },
+    {
+      "check_id": "AUD-014",
+      "description": "Procedure, metrology and phase-proof sources retain distinct applicability",
+      "result": "PASS",
+      "observed": "distinct and bounded",
+      "expected": "distinct and bounded"
+    },
+    {
+      "check_id": "AUD-015",
+      "description": "Workbook preserves 16-sheet structure and 188 auditable formulas",
+      "result": "PASS",
+      "observed": {
+        "exists": true,
+        "sheets": [
+          "Read Me",
+          "Summary",
+          "Devices",
+          "Equipment",
+          "Tests",
+          "Evidence",
+          "Acquisition",
+          "Uncertainty",
+          "Source Schema",
+          "Detector Schema",
+          "Gates",
+          "Risks",
+          "Claims",
+          "Sources",
+          "Controlled Inputs",
+          "Audit"
+        ],
+        "formula_count": 188,
+        "calc_mode": {
+          "calcId": "191029",
+          "calcMode": "auto",
+          "fullCalcOnLoad": "1",
+          "forceFullCalc": "1"
+        },
+        "formula_error_tokens": []
+      },
+      "expected": {
+        "sheets": [
+          "Read Me",
+          "Summary",
+          "Devices",
+          "Equipment",
+          "Tests",
+          "Evidence",
+          "Acquisition",
+          "Uncertainty",
+          "Source Schema",
+          "Detector Schema",
+          "Gates",
+          "Risks",
+          "Claims",
+          "Sources",
+          "Controlled Inputs",
+          "Audit"
+        ],
+        "formula_count": 188,
+        "calcMode": "auto",
+        "formula_error_tokens": []
+      }
+    },
+    {
+      "check_id": "AUD-016",
+      "description": "Independent capture of workbook calculation scan has no errors and 28/28 PASS rows",
+      "result": "PASS",
+      "observed": {
+        "formula_scan": "Cell search matched 0 entries.",
+        "audit_rows": 28,
+        "passes": 28
+      },
+      "expected": {
+        "formula_scan": "Cell search matched 0 entries.",
+        "audit_rows": 28,
+        "passes": 28
+      }
+    },
+    {
+      "check_id": "AUD-017",
+      "description": "All sixteen workbook sheets have nonempty visual-QA renders",
+      "result": "PASS",
+      "observed": {
+        "count": 16,
+        "files": [
+          "Acquisition.png",
+          "Audit.png",
+          "Claims.png",
+          "Controlled_Inputs.png",
+          "Detector_Schema.png",
+          "Devices.png",
+          "Equipment.png",
+          "Evidence.png",
+          "Gates.png",
+          "Read_Me.png",
+          "Risks.png",
+          "Source_Schema.png",
+          "Sources.png",
+          "Summary.png",
+          "Tests.png",
+          "Uncertainty.png"
+        ]
+      },
+      "expected": {
+        "count": 16
+      }
+    },
+    {
+      "check_id": "AUD-018",
+      "description": "Required human- and machine-readable deliverables exist",
+      "result": "PASS",
+      "observed": "all present",
+      "expected": "all present"
+    }
+  ]
+}
