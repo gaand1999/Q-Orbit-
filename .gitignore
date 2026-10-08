@@ -1,0 +1,14 @@
+# Local environments and operating-system files
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json

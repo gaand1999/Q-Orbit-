@@ -1,0 +1,2 @@
+# Preserve imported artifact bytes, including the original checksum fixtures.
+* -text
