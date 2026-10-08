@@ -1,0 +1,340 @@
+{
+  "audit_id": "QO-V013-FINAL-AUDIT-001",
+  "version": "V0.13",
+  "result": "PASS-INDEPENDENT-NUMERICAL-COMPARISON",
+  "check_count": 65,
+  "pass_count": 65,
+  "fail_count": 0,
+  "scope": "scientific traceability, independent numerical comparison, artifact integrity and claim boundaries",
+  "physical_validation": "NOT-EXECUTED",
+  "tabuk_run_status": "NOT-RUN/NONE",
+  "laser_status": "INHIBITED",
+  "release_status": "PRIVATE-BLOCKED",
+  "checks": [
+    {
+      "check_id": "MAN-001",
+      "result": "PASS",
+      "evidence": "PASS-INDEPENDENT-NUMERICAL-COMPARISON"
+    },
+    {
+      "check_id": "MAN-002",
+      "result": "PASS",
+      "evidence": "V0.12"
+    },
+    {
+      "check_id": "MAN-003",
+      "result": "PASS",
+      "evidence": "NOT-EXECUTED"
+    },
+    {
+      "check_id": "MAN-004",
+      "result": "PASS",
+      "evidence": "NOT-RUN/NONE"
+    },
+    {
+      "check_id": "MAN-005",
+      "result": "PASS",
+      "evidence": "INHIBITED"
+    },
+    {
+      "check_id": "MAN-006",
+      "result": "PASS",
+      "evidence": "PRIVATE-BLOCKED"
+    },
+    {
+      "check_id": "MAN-007",
+      "result": "PASS",
+      "evidence": "Software verification and numerical reproducibility only; not SCI-G1, SIM-G1, hardware qualification, security certification or mission readiness."
+    },
+    {
+      "check_id": "CAT-001",
+      "result": "PASS",
+      "evidence": "True"
+    },
+    {
+      "check_id": "CAT-002",
+      "result": "PASS",
+      "evidence": "50"
+    },
+    {
+      "check_id": "CAT-003",
+      "result": "PASS",
+      "evidence": "unique vector IDs"
+    },
+    {
+      "check_id": "CAT-004",
+      "result": "PASS",
+      "evidence": "six negative vectors"
+    },
+    {
+      "check_id": "CAT-005",
+      "result": "PASS",
+      "evidence": "35 finite-key vectors"
+    },
+    {
+      "check_id": "CAT-006",
+      "result": "PASS",
+      "evidence": "no physical evidence vectors"
+    },
+    {
+      "check_id": "LOCK-001",
+      "result": "PASS",
+      "evidence": "acceptance locked"
+    },
+    {
+      "check_id": "LOCK-002",
+      "result": "PASS",
+      "evidence": "no tolerance relaxation"
+    },
+    {
+      "check_id": "LOCK-003",
+      "result": "PASS",
+      "evidence": "e796b6e783620eeb2f4eb616dec2333cf99a3ffe4541d569b5a6738873f05d5f"
+    },
+    {
+      "check_id": "LOCK-004",
+      "result": "PASS",
+      "evidence": "e0a8bffac9599ec7c501f3116bc533c6bae9597cefd48673205488c50ccee257"
+    },
+    {
+      "check_id": "LOCK-005",
+      "result": "PASS",
+      "evidence": "catalog hash unchanged across runs"
+    },
+    {
+      "check_id": "LOCK-006",
+      "result": "PASS",
+      "evidence": "policy hash unchanged across runs"
+    },
+    {
+      "check_id": "LOCK-007",
+      "result": "PASS",
+      "evidence": "all current locked source hashes match"
+    },
+    {
+      "check_id": "RUN-001",
+      "result": "PASS",
+      "evidence": "QO-V013-INDEPENDENT-MODEL-COMPARISON-RUN-002"
+    },
+    {
+      "check_id": "RUN-002",
+      "result": "PASS",
+      "evidence": "50/50 vector PASS"
+    },
+    {
+      "check_id": "RUN-003",
+      "result": "PASS",
+      "evidence": "971/971 metric PASS"
+    },
+    {
+      "check_id": "RUN-004",
+      "result": "PASS",
+      "evidence": "zero final discrepancies"
+    },
+    {
+      "check_id": "RUN-005",
+      "result": "PASS",
+      "evidence": "all vector rows PASS"
+    },
+    {
+      "check_id": "RUN-006",
+      "result": "PASS",
+      "evidence": "all metric rows PASS"
+    },
+    {
+      "check_id": "RUN-007",
+      "result": "PASS",
+      "evidence": "240 exact integer metrics"
+    },
+    {
+      "check_id": "RUN-008",
+      "result": "PASS",
+      "evidence": "37 independent binomial quantiles exact"
+    },
+    {
+      "check_id": "RUN-009",
+      "result": "PASS",
+      "evidence": "both models reject all six invalid domains"
+    },
+    {
+      "check_id": "COR-001",
+      "result": "PASS",
+      "evidence": "initial run retained as FAIL"
+    },
+    {
+      "check_id": "COR-002",
+      "result": "PASS",
+      "evidence": "one retained discrepancy"
+    },
+    {
+      "check_id": "COR-003",
+      "result": "PASS",
+      "evidence": "TV-043 points[3].azimuth_rad"
+    },
+    {
+      "check_id": "COR-004",
+      "result": "PASS",
+      "evidence": "no equation change"
+    },
+    {
+      "check_id": "COR-005",
+      "result": "PASS",
+      "evidence": "no vector change"
+    },
+    {
+      "check_id": "COR-006",
+      "result": "PASS",
+      "evidence": "no tolerance change"
+    },
+    {
+      "check_id": "COR-007",
+      "result": "PASS",
+      "evidence": "policy hashes exact"
+    },
+    {
+      "check_id": "COR-008",
+      "result": "PASS",
+      "evidence": "RESOLVED-BY-DOMAIN-CONTRACT; INITIAL-FAIL-RETAINED"
+    },
+    {
+      "check_id": "IND-001",
+      "result": "PASS",
+      "evidence": "Model B does not execute/import Model A"
+    },
+    {
+      "check_id": "IND-002",
+      "result": "PASS",
+      "evidence": "different language/runtime identities"
+    },
+    {
+      "check_id": "IND-003",
+      "result": "PASS",
+      "evidence": "eight independence dimensions"
+    },
+    {
+      "check_id": "IND-004",
+      "result": "PASS",
+      "evidence": "four diverse dimensions"
+    },
+    {
+      "check_id": "IND-005",
+      "result": "PASS",
+      "evidence": "two common-cause dimensions"
+    },
+    {
+      "check_id": "REG-001",
+      "result": "PASS",
+      "evidence": "V0.6 optimum 102 s"
+    },
+    {
+      "check_id": "REG-002",
+      "result": "PASS",
+      "evidence": "V0.6 secret-key fixture 41,338 bits"
+    },
+    {
+      "check_id": "REG-003",
+      "result": "PASS",
+      "evidence": "pass identity exact; peak difference 1.421e-14 deg"
+    },
+    {
+      "check_id": "REG-004",
+      "result": "PASS",
+      "evidence": "zenith azimuth null in both models"
+    },
+    {
+      "check_id": "REG-005",
+      "result": "PASS",
+      "evidence": "zenith definition flag false"
+    },
+    {
+      "check_id": "REG-006",
+      "result": "PASS",
+      "evidence": "V0.7 optimum 190 s"
+    },
+    {
+      "check_id": "REG-007",
+      "result": "PASS",
+      "evidence": "V0.7 synthetic fixture 540,673 bits"
+    },
+    {
+      "check_id": "REGS-001",
+      "result": "PASS",
+      "evidence": "19 rules including azimuth singularity"
+    },
+    {
+      "check_id": "REGS-002",
+      "result": "PASS",
+      "evidence": "12 open controlled limitations"
+    },
+    {
+      "check_id": "REGS-003",
+      "result": "PASS",
+      "evidence": "10 claims; 8 prohibited"
+    },
+    {
+      "check_id": "REGS-004",
+      "result": "PASS",
+      "evidence": "six controlled sources"
+    },
+    {
+      "check_id": "REGS-005",
+      "result": "PASS",
+      "evidence": "11 controlled input artifacts"
+    },
+    {
+      "check_id": "REGS-006",
+      "result": "PASS",
+      "evidence": "all controlled input hashes and sizes match"
+    },
+    {
+      "check_id": "REGS-007",
+      "result": "PASS",
+      "evidence": "V0.12 predecessor audit PASS"
+    },
+    {
+      "check_id": "WB-001",
+      "result": "PASS",
+      "evidence": "workbook present"
+    },
+    {
+      "check_id": "WB-002",
+      "result": "PASS",
+      "evidence": "14 worksheets"
+    },
+    {
+      "check_id": "WB-003",
+      "result": "PASS",
+      "evidence": "1204 formulas"
+    },
+    {
+      "check_id": "WB-004",
+      "result": "PASS",
+      "evidence": "zero error-typed cells"
+    },
+    {
+      "check_id": "WB-005",
+      "result": "PASS",
+      "evidence": "zero external workbook links"
+    },
+    {
+      "check_id": "WB-006",
+      "result": "PASS",
+      "evidence": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    },
+    {
+      "check_id": "WB-007",
+      "result": "PASS",
+      "evidence": "exported Audit sheet final-failure checks PASS"
+    },
+    {
+      "check_id": "WB-008",
+      "result": "PASS",
+      "evidence": "14 nonempty rendered previews"
+    },
+    {
+      "check_id": "ART-001",
+      "result": "PASS",
+      "evidence": "all required reports/records present"
+    }
+  ]
+}

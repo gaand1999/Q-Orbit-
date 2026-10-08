@@ -1,0 +1,13 @@
+limitation_id,limitation,required_interpretation,status
+LIM-013-001,"Numerical agreement is verification, not empirical validation.",Do not close physical or operational gates.,OPEN-CONTROLLED
+LIM-013-002,Both models use the same frozen inputs and mathematical contract.,Agreement cannot detect a shared equation or assumption error.,OPEN-CONTROLLED
+LIM-013-003,Both models use IEEE-754 binary64 arithmetic.,Alternate-precision sensitivity remains untested.,OPEN-CONTROLLED
+LIM-013-004,Model A and Model B run on the same host.,External independent reproduction remains open.,OPEN-CONTROLLED
+LIM-013-005,"V0.6 loss curve is a modeled reference curve, not Q-Orbit mission data.",No mission-performance claim.,OPEN-CONTROLLED
+LIM-013-006,V0.7 orbit and site are synthetic and low fidelity.,"No access, pointing or scheduling claim.",OPEN-CONTROLLED
+LIM-013-007,V0.7 wavelength metadata is inert in the reduced link equation.,No wavelength trade or approval.,OPEN-CONTROLLED
+LIM-013-008,"Mean-loss link excludes turbulence time series, cloud outages, background and PAT loss states.",No availability or reliability claim.,OPEN-CONTROLLED
+LIM-013-009,Finite-key profile values are literature/regression fixtures.,No optimized or device-backed protocol configuration.,OPEN-CONTROLLED
+LIM-013-010,"No source, detector, timing or polarization measurements are supplied.",No terminal qualification.,OPEN-CONTROLLED
+LIM-013-011,"No authentication, privacy-amplification code, KMS or endpoint integration is exercised.",No security or key-release claim.,OPEN-CONTROLLED
+LIM-013-012,"Tabuk, laser emission and external publication remain blocked.","Statuses stay NOT-RUN/NONE, INHIBITED and PRIVATE-BLOCKED.",OPEN-CONTROLLED

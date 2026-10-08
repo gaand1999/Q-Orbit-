@@ -1,0 +1,20 @@
+contract_id,domain,controlled_rule,output_unit,covered_vector_kinds,claim_class
+MC-001,Input domain,"mu1 > mu2 > mu3 = 0; probabilities sum to one; selection probabilities in (0,1)",exact predicate,finite_key; negative,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-002,Poisson weight,tau_n = sum_k p_k exp(-mu_k) mu_k^n / n!,dimensionless,finite_key,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-003,Detection,"D_k,t = (1+p_ap)[1-(1-2p_ec)exp(-mu_k eta_t eta_sys)]",probability/pulse,finite_key,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-004,Errors,"E_k,t = p_ec + 0.5 p_ap D_k,t + e_int[1-exp(-mu_k eta_t eta_sys)]",probability/pulse,finite_key,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-005,Basis counts,n_X and n_Z are intensity/time sums weighted by Alice/Bob basis probabilities and pulse count,counts,finite_key,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-006,Chernoff bounds,inverse multiplicative lower/upper corrections with beta=ln(21/epsilon_s),scaled counts,finite_key,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-007,Decoy bounds,"vacuum, single-photon events and single-photon errors use frozen three-intensity algebra",counts,finite_key,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-008,Phase error,"phi_X = min(v_Z1/s_Z1 + gamma, 0.5)",fraction,finite_key,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-009,Error correction,finite-block logM expression with lower-tail binomial quantile,bits,finite_key,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-010,Key length,"signed margin is clamped at zero, divided by pass count and floored for released-key diagnostic",bits,finite_key; sweep_v06,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-011,Beam radius,w_diff^2=r_tx^2+(theta R)^2; w_eff^2=w_diff^2+4(sigma R)^2,m^2,link_v07,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-012,Capture,eta_geo=1-exp[-2 r_rx^2/w_eff^2],fraction,link_v07,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-013,Atmosphere,"eta_atm=T_zenith^[1/max(sin elevation,1e-12)]",fraction,link_v07,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-014,Total link,eta_total=eta_geo eta_clear eta_atm eta_tx eta_rx eta_coupling eta_detector,fraction,link_v07; integrated_v07,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-015,Site frame,WGS-84 geodetic coordinate to ECEF and local east/north/up basis,m/rad,geometry_v07,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-016,Orbit propagation,unperturbed circular two-body phase plus approximate Earth rotation,m/rad,geometry_v07; integrated_v07,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-017,Access,contiguous samples at elevation >=10 deg; selected pass maximizes peak elevation then duration,s/deg,geometry_v07; integrated_v07,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-018,Window optimum,integer exhaustive sweep; maximize floored key and select smaller half-window on exact tie,s/bits,sweep_v06; integrated_v07,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
+MC-019,Azimuth singularity,azimuth is undefined and serialized as null when abs(cos(elevation)) <= 1e-12,rad or null,geometry_v07,FROZEN-SOFTWARE-CONTRACT-NOT-PHYSICAL-TRUTH
