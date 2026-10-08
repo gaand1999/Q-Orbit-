@@ -1,0 +1,517 @@
+{
+  "package_id": "QO-QKD-TERMINAL-MODEL-VALIDATION-V0.12",
+  "audit_id": "QO-V012-AUDIT-001",
+  "date": "2026-08-24",
+  "result": "PASS-DEFINITION-DESK",
+  "check_count": 54,
+  "pass_count": 54,
+  "fail_count": 0,
+  "checks": [
+    {
+      "check_id": "MANIFEST-PACKAGE",
+      "result": "PASS",
+      "evidence": "QO-QKD-TERMINAL-MODEL-VALIDATION-V0.12",
+      "scope": "Package identity"
+    },
+    {
+      "check_id": "SYSTEM-CLAIM-BOUNDARY",
+      "result": "PASS",
+      "evidence": {
+        "system": "auditable reference architecture only",
+        "tabuk_run": "NOT RUN",
+        "tabuk_result": "NONE",
+        "laser": "INHIBITED",
+        "release": "PRIVATE-BLOCKED",
+        "security": "CONDITIONAL-NOT-VALIDATED"
+      },
+      "scope": "No operational/TRL claim"
+    },
+    {
+      "check_id": "TABUK-FAIL-CLOSED",
+      "result": "PASS",
+      "evidence": {
+        "system": "auditable reference architecture only",
+        "tabuk_run": "NOT RUN",
+        "tabuk_result": "NONE",
+        "laser": "INHIBITED",
+        "release": "PRIVATE-BLOCKED",
+        "security": "CONDITIONAL-NOT-VALIDATED"
+      },
+      "scope": "No Tabuk result"
+    },
+    {
+      "check_id": "LASER-FAIL-CLOSED",
+      "result": "PASS",
+      "evidence": "INHIBITED",
+      "scope": "No laser authorization"
+    },
+    {
+      "check_id": "RELEASE-FAIL-CLOSED",
+      "result": "PASS",
+      "evidence": "PRIVATE-BLOCKED",
+      "scope": "No external release"
+    },
+    {
+      "check_id": "SECURITY-CLAIM-BOUNDARY",
+      "result": "PASS",
+      "evidence": "CONDITIONAL-NOT-VALIDATED",
+      "scope": "No unqualified secure claim"
+    },
+    {
+      "check_id": "SOURCE-COUNT",
+      "result": "PASS",
+      "evidence": 15,
+      "scope": "Controlled evidence basis"
+    },
+    {
+      "check_id": "SOURCE-BOUNDARIES",
+      "result": "PASS",
+      "evidence": [],
+      "scope": "Applicability/non-applicability complete"
+    },
+    {
+      "check_id": "SOURCE-CORE-COVERAGE",
+      "result": "PASS",
+      "evidence": [
+        "SRC-CCSDS-141.1",
+        "SRC-ETSI-QKD-011",
+        "SRC-ETSI-QKD-016",
+        "SRC-IEC-60825-12",
+        "SRC-ISO-23837-1",
+        "SRC-ISO-23837-2",
+        "SRC-LIAO-2017",
+        "SRC-LIM-2014",
+        "SRC-NASA-7009B",
+        "SRC-NIST-DETECTOR",
+        "SRC-SIDHU-2022"
+      ],
+      "scope": "Primary/official coverage"
+    },
+    {
+      "check_id": "DECISION-COUNT",
+      "result": "PASS",
+      "evidence": 22,
+      "scope": "Architecture identity"
+    },
+    {
+      "check_id": "DECISION-SOURCE-TRACE",
+      "result": "PASS",
+      "evidence": [],
+      "scope": "Decision provenance"
+    },
+    {
+      "check_id": "WAVELENGTH-NOT-ADOPTED",
+      "result": "PASS",
+      "evidence": {
+        "decision_id": "ADR-012-007",
+        "domain": "Optical band",
+        "decision": "Near-infrared quantum-signal class is retained for trade closure; exact wavelength is TBD.",
+        "status": "TBD-DESIGN-TARGET",
+        "source_ids": "SRC-LIAO-2017; SRC-QO-R1",
+        "claim_boundary": "The 785-nm V0.7 metadata and 850-nm experimental precedent are not adopted hardware specifications.",
+        "decision_date": "2026-08-24",
+        "change_authority": "Q-Orbit configuration control"
+      },
+      "scope": "No invented laser wavelength"
+    },
+    {
+      "check_id": "TABUK-DECISION-BLOCK",
+      "result": "PASS",
+      "evidence": {
+        "decision_id": "ADR-012-019",
+        "domain": "Tabuk",
+        "decision": "Tabuk remains a candidate geographic scenario only; no V0.12 Tabuk mission run is permitted.",
+        "status": "CONTROLLED-BLOCK",
+        "source_ids": "SRC-QO-R1",
+        "claim_boundary": "Site, atmosphere, terminal, orbit, safety and acceptance gates remain open.",
+        "decision_date": "2026-08-24",
+        "change_authority": "Q-Orbit configuration control"
+      },
+      "scope": "No Tabuk run"
+    },
+    {
+      "check_id": "LASER-DECISION-BLOCK",
+      "result": "PASS",
+      "evidence": {
+        "decision_id": "ADR-012-020",
+        "domain": "Laser",
+        "decision": "Laser and beacon emission remain fail-closed INHIBITED.",
+        "status": "CONTROLLED-BLOCK",
+        "source_ids": "SRC-QO-R1; SRC-IEC-60825-12",
+        "claim_boundary": "No wavelength, power, class, MPE, NOHD or authorization claim.",
+        "decision_date": "2026-08-24",
+        "change_authority": "Q-Orbit configuration control"
+      },
+      "scope": "No laser emission"
+    },
+    {
+      "check_id": "PROTOCOL-COUNT",
+      "result": "PASS",
+      "evidence": 35,
+      "scope": "Protocol identity"
+    },
+    {
+      "check_id": "PROTOCOL-FAMILY",
+      "result": "PASS",
+      "evidence": {
+        "P-004": {
+          "profile_id": "P-004",
+          "layer": "Protocol",
+          "item": "Family",
+          "controlled_value": "efficient BB84",
+          "unit_or_format": "state",
+          "disposition": "CONTROLLED",
+          "evidence_basis": "SRC-SIDHU-2022",
+          "acceptance_method": "Proof-profile review",
+          "downstream_use": "Reference implementation definition; mission-model use only when applicable evidence gate closes",
+          "claim_limit": "Not serialized hardware or operational performance"
+        },
+        "P-005": {
+          "profile_id": "P-005",
+          "layer": "Source",
+          "item": "Optical state class",
+          "controlled_value": "phase-randomized weak coherent pulses",
+          "unit_or_format": "state",
+          "disposition": "CONTROLLED-REQUIREMENT",
+          "evidence_basis": "SRC-SIDHU-2022",
+          "acceptance_method": "Source characterization",
+          "downstream_use": "Reference implementation definition; mission-model use only when applicable evidence gate closes",
+          "claim_limit": "Not serialized hardware or operational performance"
+        }
+      },
+      "scope": "Method definition"
+    },
+    {
+      "check_id": "DECOY-ORDER",
+      "result": "PASS",
+      "evidence": {
+        "profile_id": "P-010",
+        "layer": "Decoy",
+        "item": "Ordering",
+        "controlled_value": "mu1 > mu2 > mu3 = 0",
+        "unit_or_format": "relation",
+        "disposition": "CONTROLLED",
+        "evidence_basis": "SRC-SIDHU-2022",
+        "acceptance_method": "Input-domain test",
+        "downstream_use": "Reference implementation definition; mission-model use only when applicable evidence gate closes",
+        "claim_limit": "Not serialized hardware or operational performance"
+      },
+      "scope": "Finite-key input domain"
+    },
+    {
+      "check_id": "NUMERIC-PROTOCOL-TBD",
+      "result": "PASS",
+      "evidence": {
+        "P-011": "TBD",
+        "P-012": "TBD",
+        "P-014": "TBD",
+        "P-015": "TBD",
+        "P-016": "TBD",
+        "P-018": "TBD",
+        "P-023": "TBD"
+      },
+      "scope": "No fabricated implementation values"
+    },
+    {
+      "check_id": "PROTOCOL-FAIL-CLOSED",
+      "result": "PASS",
+      "evidence": {
+        "P-033": "NOT RUN",
+        "P-034": "INHIBITED",
+        "P-035": "PRIVATE-BLOCKED"
+      },
+      "scope": "No operational promotion"
+    },
+    {
+      "check_id": "FUNCTION-COUNT",
+      "result": "PASS",
+      "evidence": 35,
+      "scope": "Functional decomposition"
+    },
+    {
+      "check_id": "FUNCTION-NO-HARDWARE-OVERCLAIM",
+      "result": "PASS",
+      "evidence": {
+        "PLANNED-NOT-IMPLEMENTED": 33,
+        "REFERENCE-MODEL-ONLY": 1,
+        "OUTSIDE-V0.12": 1
+      },
+      "scope": "No serialized implementation claim"
+    },
+    {
+      "check_id": "INPUT-CONTRACT-COUNT",
+      "result": "PASS",
+      "evidence": 50,
+      "scope": "Model input contract"
+    },
+    {
+      "check_id": "INPUT-CONTRACT-COMPLETE",
+      "result": "PASS",
+      "evidence": [],
+      "scope": "Units/evidence/rules/gates/uncertainty"
+    },
+    {
+      "check_id": "PARAMETER-COUNT",
+      "result": "PASS",
+      "evidence": 127,
+      "scope": "Parameter disposition"
+    },
+    {
+      "check_id": "PARAMETER-CARRY-IDENTITY",
+      "result": "PASS",
+      "evidence": {
+        "carried": 109,
+        "upstream": 109
+      },
+      "scope": "V0.11R1 identity preserved"
+    },
+    {
+      "check_id": "PARAMETER-NEW-COUNT",
+      "result": "PASS",
+      "evidence": 18,
+      "scope": "V0.12 definition additions"
+    },
+    {
+      "check_id": "PARAMETER-NO-PHYSICAL-PROMOTION",
+      "result": "PASS",
+      "evidence": [],
+      "scope": "Every row retains a claim limit"
+    },
+    {
+      "check_id": "VALIDATION-CATALOG",
+      "result": "PASS",
+      "evidence": 46,
+      "scope": "V&V identity"
+    },
+    {
+      "check_id": "VALIDATION-EXECUTED-COUNT",
+      "result": "PASS",
+      "evidence": {
+        "PASS": 19
+      },
+      "scope": "Desk execution"
+    },
+    {
+      "check_id": "VALIDATION-RESIDUAL-HONESTY",
+      "result": "PASS",
+      "evidence": {
+        "PASS": 19,
+        "NOT-EXECUTED": 27
+      },
+      "scope": "No false execution"
+    },
+    {
+      "check_id": "VALIDATION-RUN",
+      "result": "PASS",
+      "evidence": {
+        "overall_result": "PASS-DESK-MODEL-VALIDATION",
+        "executed": 19,
+        "passed": 19,
+        "failed": 0
+      },
+      "scope": "Desk run summary"
+    },
+    {
+      "check_id": "WAVELENGTH-LIMIT-TEST",
+      "result": "PASS",
+      "evidence": {
+        "case_id": "VAL-SW-013",
+        "execution_date": "2026-08-24",
+        "environment": "Python 3.12.13; NumPy 2.3.5; SciPy 1.17.0; Linux-6.18.35-x86_64-with-glibc2.39",
+        "result": "PASS",
+        "observed": "{\"785_metadata\": [0.0003520872640689469], \"850_metadata\": [0.0003520872640689469]}",
+        "expected": "identical",
+        "tolerance": "EXACT",
+        "evidence_artifact": "runs/Q-Orbit_Desk_Model_Validation_Run_V0.12.json",
+        "limitation": "PASS confirms a disclosed model limitation, not wavelength independence in physics"
+      },
+      "scope": "Inert metadata disclosed"
+    },
+    {
+      "check_id": "V06-REGRESSION",
+      "result": "PASS",
+      "evidence": "{\"additional_system_loss_db\": 13.0, \"edge_elevation_deg\": 30.4813547009598, \"finite_penalty_bits\": 256.5669430839006, \"half_window_s\": 102, \"lambda_ec_bits\": 65385.40180119235, \"m_x\": 8586.215167746126, \"mean_photon_number\": 0.62400964, \"n_x\": 492818.0901525894, \"n_z\": 48555.17200782972, \"phase_error_x\": 0.09270161340569935, \"qber_x\": 0.017422686665352745, \"raw_secret_key_bits\": 41338.62418456675, \"s_x0\": 5047.784882329125, \"s_x1\": 183803.04893680647, \"s_z1\": 12007.470453438744, \"sample_bins\": 205, \"secret_key_bits\": 41338, \"total_zenith_loss_db\": 39.98970004336019, \"v_z1\": 845.9615478747239, \"window_end_s\": 102, \"window_start_s\": -102}",
+      "scope": "Retained fixture exactness"
+    },
+    {
+      "check_id": "V07-REGRESSION",
+      "result": "PASS",
+      "evidence": {
+        "nominal": "PASS",
+        "samples": "PASS"
+      },
+      "scope": "Synthetic fixture exactness"
+    },
+    {
+      "check_id": "LIMITATION-COUNT",
+      "result": "PASS",
+      "evidence": {
+        "OPEN-DISCLOSED": 14
+      },
+      "scope": "Open model limits"
+    },
+    {
+      "check_id": "LIMITATION-REMEDIATION",
+      "result": "PASS",
+      "evidence": [],
+      "scope": "Each limitation has a path"
+    },
+    {
+      "check_id": "GATE-COUNT",
+      "result": "PASS",
+      "evidence": 16,
+      "scope": "Evidence gates"
+    },
+    {
+      "check_id": "GATE-STATE",
+      "result": "PASS",
+      "evidence": {
+        "PASS-DESK": 2,
+        "PARTIAL": 1,
+        "BLOCKED": 12,
+        "BLOCKED-DEFERRED": 1
+      },
+      "scope": "Only desk gates pass"
+    },
+    {
+      "check_id": "TABUK-GATE-BLOCKED",
+      "result": "PASS",
+      "evidence": {
+        "gate_id": "GATE-TABUK",
+        "gate_name": "Tabuk mission-case execution",
+        "state": "BLOCKED",
+        "required_evidence": "All applicable upstream gates PASS",
+        "claim_effect": "Run NOT RUN; result NONE",
+        "as_of_date": "2026-08-24",
+        "decision_authority": "Applicable technical/safety/security/release authority"
+      },
+      "scope": "No Tabuk run"
+    },
+    {
+      "check_id": "SAFETY-GATE-BLOCKED",
+      "result": "PASS",
+      "evidence": {
+        "gate_id": "GATE-SAFETY",
+        "gate_name": "Laser safety and airspace",
+        "state": "BLOCKED",
+        "required_evidence": "Actual emission envelope, IEC assessment, interlock test and written applicable coordination",
+        "claim_effect": "Laser remains INHIBITED",
+        "as_of_date": "2026-08-24",
+        "decision_authority": "Applicable technical/safety/security/release authority"
+      },
+      "scope": "Laser remains inhibited"
+    },
+    {
+      "check_id": "CLAIM-COUNT",
+      "result": "PASS",
+      "evidence": 15,
+      "scope": "Claim boundary"
+    },
+    {
+      "check_id": "CLAIM-DISTRIBUTION",
+      "result": "PASS",
+      "evidence": {
+        "ALLOWED-WITH-QUALIFIER": 1,
+        "ALLOWED": 2,
+        "PROHIBITED": 12
+      },
+      "scope": "No overclaim"
+    },
+    {
+      "check_id": "CLAIM-CORE-PROHIBITIONS",
+      "result": "PASS",
+      "evidence": [
+        "laser",
+        "operational",
+        "public",
+        "secure",
+        "tabuk",
+        "trl-6"
+      ],
+      "scope": "Core exclusions"
+    },
+    {
+      "check_id": "TRACE-COUNT",
+      "result": "PASS",
+      "evidence": 152,
+      "scope": "Trace identity"
+    },
+    {
+      "check_id": "TRACE-COMPLETE",
+      "result": "PASS",
+      "evidence": [],
+      "scope": "Individual mapping"
+    },
+    {
+      "check_id": "UPSTREAM-EVIDENCE",
+      "result": "PASS",
+      "evidence": {
+        "rows": 17,
+        "failures": []
+      },
+      "scope": "Hash-pinned regression evidence"
+    },
+    {
+      "check_id": "PREDECESSOR-AUDIT",
+      "result": "PASS",
+      "evidence": {
+        "result": "PASS-REMEDIATION-DESK",
+        "fail_count": 0
+      },
+      "scope": "Controlled predecessor"
+    },
+    {
+      "check_id": "WORKBOOK-IDENTITY",
+      "result": "PASS",
+      "evidence": {
+        "package_sha256": "939677279dec3013cea9c3242cfb8b9c896255fef028d0641d1a93bc1c303bb5",
+        "output_sha256": "939677279dec3013cea9c3242cfb8b9c896255fef028d0641d1a93bc1c303bb5"
+      },
+      "scope": "Workbook copies"
+    },
+    {
+      "check_id": "WORKBOOK-SHEETS",
+      "result": "PASS",
+      "evidence": 15,
+      "scope": "Workbook structure"
+    },
+    {
+      "check_id": "WORKBOOK-FORMULAS",
+      "result": "PASS",
+      "evidence": 605,
+      "scope": "Formula-backed controls"
+    },
+    {
+      "check_id": "WORKBOOK-EXTERNAL-LINKS",
+      "result": "PASS",
+      "evidence": [],
+      "scope": "No external workbook dependencies"
+    },
+    {
+      "check_id": "WORKBOOK-FORMULA-ERRORS",
+      "result": "PASS",
+      "evidence": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+      "scope": "Formula error scan"
+    },
+    {
+      "check_id": "WORKBOOK-VISUAL-PREVIEWS",
+      "result": "PASS",
+      "evidence": 15,
+      "scope": "All-sheet visual QA"
+    },
+    {
+      "check_id": "REQUIRED-FILES",
+      "result": "PASS",
+      "evidence": [],
+      "scope": "Primary deliverables"
+    }
+  ],
+  "claim_boundary": {
+    "system": "auditable reference architecture only",
+    "tabuk_run": "NOT RUN",
+    "tabuk_result": "NONE",
+    "laser": "INHIBITED",
+    "release": "PRIVATE-BLOCKED",
+    "security": "CONDITIONAL-NOT-VALIDATED"
+  }
+}
