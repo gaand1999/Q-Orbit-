@@ -1,0 +1,66 @@
+{
+  "run_id": "QO-RBV-CASE-S1-REF-001-RUN-002",
+  "date": "2026-08-19",
+  "case_id": "CASE-S1-REF-001",
+  "reporting_class": "descriptive modeled result and internal reproduction evidence",
+  "gate_state": "ARCH-G1, SCI-G1, and SIM-G1 are not passed",
+  "manifest_sha256": "0714d6e76ff416cbb28f05817dd4f6e690b6657e4922a30b4896fb1c347c8583",
+  "loss_file_sha256": "2d8eca7992d0fe738bf25c1896b1aa5efe39fd81805fbf84464863f3777b5874",
+  "implementation": "Q-Orbit separate internal reimplementation V0.6",
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39"
+  },
+  "selection_statement": "Best integer half-window in 1..221 s for the frozen fixed protocol inputs; not a global protocol optimum.",
+  "baseline": {
+    "half_window_s": 102,
+    "sample_bins": 205,
+    "window_start_s": -102,
+    "window_end_s": 102,
+    "edge_elevation_deg": 30.4813547009598,
+    "additional_system_loss_db": 13.0,
+    "total_zenith_loss_db": 39.98970004336019,
+    "raw_secret_key_bits": 41338.62418456675,
+    "secret_key_bits": 41338,
+    "qber_x": 0.017422686665352745,
+    "phase_error_x": 0.09270161340569935,
+    "n_x": 492818.0901525894,
+    "n_z": 48555.17200782972,
+    "m_x": 8586.215167746126,
+    "lambda_ec_bits": 65385.40180119235,
+    "s_x0": 5047.784882329125,
+    "s_x1": 183803.04893680647,
+    "v_z1": 845.9615478747239,
+    "s_z1": 12007.470453438744,
+    "mean_photon_number": 0.62400964,
+    "finite_penalty_bits": 256.5669430839006
+  },
+  "outcomes": {
+    "run_validity": "VALID",
+    "OUT-1": "POSITIVE",
+    "OUT-2": "POSITIVE",
+    "OUT-3": "POSITIVE",
+    "OUT-4": "NOT-ATTEMPTED",
+    "quarantine": false,
+    "technical_release_readiness": "ELIGIBLE",
+    "release_authority": "NOT-AUTHORIZED",
+    "distribution_state": "PRIVATE-BLOCKED"
+  },
+  "deterministic_rerun_exact": true,
+  "limitations": [
+    "This is a reference-study reproduction fixture, not a Q-Orbit flight design or mission case.",
+    "The author-distributed modeled reference curve was constructed from an empirically derived channel and system model; it is not raw measurement data, an ephemeris, or an authorized Q-Orbit site record.",
+    "The retained study inputs are not adopted as Q-Orbit hardware specifications or approved cryptographic parameters.",
+    "The result does not establish operational security, mission feasibility, certification, approval, availability, or implementation security.",
+    "No real Q-Orbit orbit, ground-site coordinate, weather record, optical terminal, detector, authentication construction, entropy source, or EKM implementation is represented.",
+    "The numerical comparison is a separate internal reimplementation compared with retained author code; it is not independent third-party verification or validation."
+  ],
+  "release_control": {
+    "technical_packaging_state": "ELIGIBLE",
+    "authority_state": "NOT-AUTHORIZED",
+    "distribution_state": "PRIVATE-BLOCKED",
+    "rule": "Technical completeness never grants release authority."
+  }
+}

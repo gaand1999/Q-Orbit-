@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.1",
+  "document_id": "QO-RBV-RUN-MANIFEST-001",
+  "version": "V0.6",
+  "date": "2026-08-19",
+  "case_id": "CASE-S1-REF-001",
+  "case_name": "Single-pass direct-downlink finite-key reference reproduction fixture",
+  "classification": "private preliminary research",
+  "reporting_class": "descriptive modeled result and internal reproduction evidence",
+  "baseline_status": "research baseline candidate; internally validated; not approved",
+  "gate_state": "ARCH-G1, SCI-G1, and SIM-G1 are not passed",
+  "release_control": {
+    "technical_packaging_state": "ELIGIBLE",
+    "authority_state": "NOT-AUTHORIZED",
+    "distribution_state": "PRIVATE-BLOCKED",
+    "rule": "Technical completeness never grants release authority."
+  },
+  "claim_boundary": [
+    "This is a reference-study reproduction fixture, not a Q-Orbit flight design or mission case.",
+    "The author-distributed modeled reference curve was constructed from an empirically derived channel and system model; it is not raw measurement data, an ephemeris, or an authorized Q-Orbit site record.",
+    "The retained study inputs are not adopted as Q-Orbit hardware specifications or approved cryptographic parameters.",
+    "The result does not establish operational security, mission feasibility, certification, approval, availability, or implementation security.",
+    "No real Q-Orbit orbit, ground-site coordinate, weather record, optical terminal, detector, authentication construction, entropy source, or EKM implementation is represented.",
+    "The numerical comparison is a separate internal reimplementation compared with retained author code; it is not independent third-party verification or validation."
+  ],
+  "sources": {
+    "SRC-SIDHU-2022": {
+      "type": "primary scientific source",
+      "title": "Finite key effects in satellite quantum key distribution",
+      "doi": "10.1038/s41534-022-00525-3",
+      "url": "https://www.nature.com/articles/s41534-022-00525-3",
+      "publication_date": "2022-02-16",
+      "validated_on": "2026-08-19",
+      "applicability": "finite-block, single-pass, three-intensity/two-decoy efficient-BB84 method and study context",
+      "non_applicability": "does not define Q-Orbit mission, site, device, security authority, or acceptance values"
+    },
+    "SRC-SATQUMA-V1": {
+      "type": "author software release retained for comparison",
+      "repository": "https://github.com/cnqo-qcomms/SatQuMA",
+      "tag": "v1.0.0",
+      "commit": "6012c072031a951398a245b45f4e7835c00114ad",
+      "code_sha256": "c3b0653aa414076c52b721ec61deb868803abec2ac71658d829f9839ee59fa88",
+      "documentation_sha256": "44755d3e15f8ea461d76234a420b0ac1f90f9539b00722f91083847db46ef5e8",
+      "license": "MIT",
+      "applicability": "retained author implementation and fixed example inputs for an internal numerical comparison",
+      "non_applicability": "comparison does not validate the security proof, the software generally, or a Q-Orbit system"
+    },
+    "SRC-SATQUMA-LOSS-XI0": {
+      "type": "author-distributed modeled reference data",
+      "file": "third_party/satquma-v1.0.0/FS_loss_XI0.csv",
+      "sha256": "2d8eca7992d0fe738bf25c1896b1aa5efe39fd81805fbf84464863f3777b5874",
+      "columns": [
+        "relative_time_s",
+        "elevation_rad",
+        "link_efficiency"
+      ],
+      "applicability": "zero-offset modeled reference curve distributed with SatQuMA v1.0.0",
+      "provenance_interpretation": "associated paper describes an empirically derived channel and system model constructed from published Micius results",
+      "non_applicability": "not raw measurements, an ephemeris, an authorized Q-Orbit site record, or a decomposed optical budget"
+    },
+    "SRC-QO-DECISION-001": {
+      "type": "explicit analysis decision",
+      "date": "2026-08-18",
+      "decision": "Use a private reference-study fixture to test the computational and fail-closed pipeline while formal architecture and method reviews remain open."
+    },
+    "SRC-QO-AUDIT-2026-08-18": {
+      "type": "internal evidence and coherence audit",
+      "date": "2026-08-18",
+      "scope": "scientific claims, internal traceability, package integrity, simulation reproducibility, wording, and configuration conflicts",
+      "independence": "not third-party IV&V"
+    }
+  },
+  "time_and_channel": {
+    "time_coordinate": "integer seconds relative to maximum elevation; t=0 at peak",
+    "sample_interval_s": 1,
+    "available_time_range_s": [
+      -346,
+      346
+    ],
+    "window_sweep_half_width_s": [
+      1,
+      221
+    ],
+    "window_selection_rule": "exhaustive integer sweep; maximize floored finite secret-key length for otherwise frozen inputs; choose the smaller half-window on an exact tie",
+    "minimum_elevation_deg": 10.0,
+    "pass_profile": "single zero-offset modeled reference pass",
+    "loss_column": 3,
+    "nominal_zenith_link_efficiency": 0.002,
+    "nominal_zenith_loss_db": 26.989700043360187,
+    "additional_system_loss_db": 13.0,
+    "total_zenith_loss_db": 39.98970004336019,
+    "number_of_passes": 1
+  },
+  "qkd_profile": {
+    "family": "prepare-and-measure efficient BB84 with phase-randomized weak coherent pulses",
+    "basis_key_generation": "X",
+    "basis_parameter_estimation": "Z",
+    "alice_basis_x_probability": 0.7611,
+    "bob_basis_x_probability": 0.7611,
+    "signal_intensities_photons_per_pulse": [
+      0.7921,
+      0.1707,
+      0.0
+    ],
+    "intensity_probabilities": [
+      0.7501,
+      0.1749,
+      0.07500000000000001
+    ],
+    "source_repetition_rate_hz": 100000000.0,
+    "secrecy_parameter": 1e-09,
+    "correctness_parameter": 1e-15,
+    "extraneous_count_probability_per_pulse": 5e-07,
+    "afterpulse_probability": 0.001,
+    "intrinsic_qber_fraction": 0.005,
+    "detector_efficiency_multiplier": 1.0,
+    "transmitter_efficiency_multiplier": 1.0,
+    "multiplier_rationale": "unity bookkeeping multipliers prevent double-counting because the distributed curve aggregates nominal electro-optical effects; they are not physical efficiency claims",
+    "statistical_bound": "inverse multiplicative Chernoff corrections",
+    "error_correction_model": "Tomamichel et al. finite-block logM expression as implemented by retained SatQuMA v1.0.0",
+    "phase_randomization": "ideal method assumption; not device evidence",
+    "protocol_parameter_mode": "fixed author-example values; not globally optimized or approved by Q-Orbit"
+  },
+  "baseline_gates": {
+    "GATE-001_authentication": "PASS (simulation fixture only)",
+    "GATE-002_configuration_identity": "PASS (retained run-record check)",
+    "GATE-003_device_health_calibration": "PASS (simulation fixture assumption only)",
+    "GATE-004_entropy_randomness": "PASS (simulation fixture assumption only)",
+    "GATE-005_data_freshness": "PASS (retained run-record check)",
+    "GATE-006_data_conflict": "PASS (retained run-record check)",
+    "GATE-007_policy_constraint": "PASS (analysis-fixture policy only; no mission threshold)",
+    "GATE-008_evidence_continuity": "PASS (retained run-record check)"
+  },
+  "ekm_fixture": {
+    "binding_id": "CASE-S1-REF-001/BIND-001",
+    "pair_state_sequence": [
+      "Prepared",
+      "Committed",
+      "Available"
+    ],
+    "commit_rule": "both simulated endpoint records must match binding_id and committed quantity",
+    "timeout_rule": "one missing peer response closes the fixture transaction as Unknown/Quarantined",
+    "retry_count": 0,
+    "consumer_delivery": "not attempted in baseline",
+    "scope": "logical state-machine fixture; not an implemented key-management protocol"
+  },
+  "optimizer": {
+    "optimized_variables": [
+      "transmission half-window integer seconds"
+    ],
+    "fixed_variables": [
+      "basis probability",
+      "intensity probabilities",
+      "intensities"
+    ],
+    "objective": "maximize floored finite secret-key length",
+    "tie_break": "smallest half-window",
+    "search_method": "exhaustive enumeration",
+    "convergence": "not applicable; complete finite search over one variable"
+  },
+  "reproducibility": {
+    "randomness": "none; deterministic expectation-value calculation",
+    "random_seed": null,
+    "numerical_runtime": {
+      "python": "3.12.13",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    },
+    "presentation_runtime": {
+      "prior_v0_5_lock": "Matplotlib 3.10.5",
+      "validation_environment_observed": "Matplotlib 3.10.8",
+      "impact": "no V0.6 figure is generated; numerical core does not import Matplotlib"
+    },
+    "discrete_outcome_tolerance": "exact",
+    "raw_key_bits_absolute_tolerance": 1e-06,
+    "floating_relative_tolerance": 1e-10,
+    "comparison_rule": "tolerances were recorded in the V0.5 manifest before the comparison artifact, but no immutable external timestamp or signed commit proves the order",
+    "validation_class": "internal deterministic rerun plus separate internal reimplementation compared with retained author code"
+  },
+  "research_baseline_controls": {
+    "claim_register_count": 27,
+    "parameter_register_count": 74,
+    "negative_control_count": 12,
+    "canonical_input_manifest": "Q-Orbit_Canonical_Input_Manifest_V0.6.csv",
+    "version_rule": "Only files listed in the V0.6 manifest are baseline inputs. Same-version variants outside this package are superseded and non-governing.",
+    "approval_rule": "Internal validation does not pass ARCH-G1, SCI-G1, SIM-G1, or any release gate."
+  }
+}
