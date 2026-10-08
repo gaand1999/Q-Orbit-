@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-003 — Q-Orbit conceptual space-to-ground deployment</title>
+  <desc id="desc">Conceptual satellite-to-ground direct link between one space and one ground domain during one candidate pass. Orbit, site, hardware, apertures, wavelength, and physical EKM placement are not selected.</desc>
+  <defs>
+    <style>
+      .bg{fill:#05070d}.domain{fill:#0a121d;stroke:#49667a;stroke-width:2;stroke-dasharray:12 9}.node{fill:#10212a;stroke:#75e9ed;stroke-width:2}.platform{fill:#111824;stroke:#49667a;stroke-width:2}.open{fill:#251c17;stroke:#edba70;stroke-width:2;stroke-dasharray:8 7}.h1{fill:#eef5f8;font:600 31px Arial,sans-serif}.h2{fill:#eef5f8;font:600 23px Arial,sans-serif}.body{fill:#a7b8c7;font:17px Arial,sans-serif}.small{fill:#748697;font:14px Arial,sans-serif}.code{fill:#75e9ed;font:700 14px monospace;letter-spacing:1px}.status{fill:#75e9ed;font:700 15px monospace;letter-spacing:2px}.amber{fill:#edba70}.link{stroke:#75e9ed;stroke-width:5;fill:none}.classical{stroke:#8b9cff;stroke-width:3;stroke-dasharray:11 8;fill:none}.grid{stroke:#183040;stroke-width:1}.earth{fill:#0c2630;stroke:#2f6570;stroke-width:2}
+    </style>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" class="grid" fill="none"/></pattern>
+    <marker id="cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#75e9ed"/></marker>
+    <marker id="indigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8b9cff"/></marker>
+  </defs>
+  <rect width="1600" height="900" class="bg"/>
+  <rect x="0" y="120" width="1600" height="680" fill="url(#grid)" opacity=".35"/>
+  <text x="64" y="58" class="code">FIG-003 · V0.3</text>
+  <text x="64" y="101" class="h1">One-pass conceptual deployment allocation</text>
+  <text x="1536" y="58" text-anchor="end" class="status">CONCEPTUAL · PRELIMINARY · NOT TO SCALE</text>
+  <text x="1536" y="88" text-anchor="end" class="small">NOT A FLIGHT, FACILITY, PRODUCT, OR CERTIFIED BOUNDARY DESIGN</text>
+
+  <rect x="70" y="160" width="590" height="555" rx="12" class="domain"/>
+  <text x="100" y="198" class="code">ENDPOINT DOMAIN A · SPACE</text>
+  <rect x="115" y="240" width="500" height="130" rx="6" class="platform"/>
+  <text x="145" y="276" class="code">CONCEPTUAL SPACE PLATFORM INTERFACE</text>
+  <text x="145" y="316" class="h2">Resources, time, command, telemetry</text>
+  <text x="145" y="347" class="small">Capabilities assumed; implementation evidence not present</text>
+  <rect x="115" y="410" width="230" height="120" rx="6" class="node"/>
+  <text x="140" y="444" class="code">ARC-QA / TZ-QA</text><text x="140" y="484" class="h2">QKD-A</text><text x="140" y="514" class="small">reference transmitter</text>
+  <rect x="385" y="410" width="230" height="120" rx="6" class="open"/>
+  <text x="410" y="444" class="code amber">LOGICAL ARC-EA</text><text x="410" y="484" class="h2">EKM-A</text><text x="410" y="514" class="small">physical placement · TBD-008</text>
+  <rect x="115" y="570" width="500" height="100" rx="6" class="open"/>
+  <text x="145" y="606" class="code amber">UNSELECTED SPACE DESIGN DETAILS</text>
+  <text x="145" y="640" class="body">terminal · bus partition · module · hardware · interfaces</text>
+
+  <rect x="940" y="160" width="590" height="555" rx="12" class="domain"/>
+  <text x="970" y="198" class="code">ENDPOINT DOMAIN B · GROUND</text>
+  <rect x="985" y="240" width="500" height="130" rx="6" class="platform"/>
+  <text x="1015" y="276" class="code">CONCEPTUAL GROUND PLATFORM INTERFACE</text>
+  <text x="1015" y="316" class="h2">Facility, operator, data, control</text>
+  <text x="1015" y="347" class="small">Site and facility boundaries not selected</text>
+  <rect x="985" y="410" width="230" height="120" rx="6" class="node"/>
+  <text x="1010" y="444" class="code">ARC-QB / TZ-QB</text><text x="1010" y="484" class="h2">QKD-B</text><text x="1010" y="514" class="small">reference receiver</text>
+  <rect x="1255" y="410" width="230" height="120" rx="6" class="open"/>
+  <text x="1280" y="444" class="code amber">LOGICAL ARC-EB</text><text x="1280" y="484" class="h2">EKM-B</text><text x="1280" y="514" class="small">physical placement · TBD-008</text>
+  <rect x="985" y="570" width="500" height="100" rx="6" class="open"/>
+  <text x="1015" y="606" class="code amber">UNSELECTED GROUND DESIGN DETAILS</text>
+  <text x="1015" y="640" class="body">site · apertures · wavelength · devices · facility · products</text>
+
+  <path d="M345 465 C620 300 915 300 1100 465" class="link" marker-end="url(#cyan)"/>
+  <text x="800" y="312" text-anchor="middle" class="code">IF-Q01 · ONE DIRECT QUANTUM DOWNLINK · ONE CANDIDATE PASS</text>
+  <path d="M345 500 C640 650 925 650 1100 500" class="classical" marker-start="url(#indigo)" marker-end="url(#indigo)"/>
+  <text x="800" y="654" text-anchor="middle" class="small">IF-Q02 · authenticated classical protocol dependency</text>
+  <circle cx="800" cy="472" r="62" class="earth"/>
+  <path d="M742 476 Q800 440 858 476 Q800 520 742 476" fill="none" stroke="#75e9ed" stroke-width="2"/>
+  <text x="800" y="466" text-anchor="middle" class="code">DIRECT</text>
+  <text x="800" y="492" text-anchor="middle" class="small">no relay</text>
+
+  <rect x="70" y="755" width="1460" height="95" rx="6" class="open"/>
+  <text x="98" y="790" class="code amber">OPEN DESIGN CASE — DO NOT INFER VALUES</text>
+  <text x="98" y="820" class="body">Orbit/site/interval · optical link and uncertainty · device model · physical EKM/HSM paths · applicable rules</text>
+  <text x="1495" y="820" text-anchor="end" class="small">TBD-003 · TBD-004 · TBD-006 · TBD-008 · TBD-014</text>
+  <text x="1530" y="884" text-anchor="end" class="small">Source: CH1 §§1.5, 1.10 · A-001 · A-002 · conceptual allocation only</text>
+</svg>

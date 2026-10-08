@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-005 — Q-Orbit interface and data-flow map</title>
+  <desc id="desc">Labeled interface flows connect the two QKD endpoints, endpoint key managers, local consumers, AQMO, evidence service, and presentation layer. Every key-value edge terminates only at its associated EKM or local consumer path.</desc>
+  <defs>
+    <style>
+      .bg{fill:#05070d}.node{fill:#0d1723;stroke:#49667a;stroke-width:2}.keynode{fill:#10232b;stroke:#75e9ed;stroke-width:2}.ctlnode{fill:#151a32;stroke:#8b9cff;stroke-width:2}.evnode{fill:#231d18;stroke:#edba70;stroke-width:2}.h1{fill:#eef5f8;font:600 31px Arial,sans-serif}.h2{fill:#eef5f8;font:600 20px Arial,sans-serif}.body{fill:#a7b8c7;font:16px Arial,sans-serif}.small{fill:#748697;font:13px Arial,sans-serif}.code{fill:#75e9ed;font:700 13px monospace;letter-spacing:.8px}.status{fill:#75e9ed;font:700 15px monospace;letter-spacing:2px}.amber{fill:#edba70}.indigo{fill:#aeb8ff}.quantum{stroke:#75e9ed;stroke-width:5;fill:none}.classical{stroke:#8b9cff;stroke-width:3;stroke-dasharray:11 8;fill:none}.key{stroke:#75e9ed;stroke-width:5;fill:none}.meta{stroke:#8b9cff;stroke-width:3;stroke-dasharray:4 8;fill:none}.command{stroke:#adb9ff;stroke-width:3;stroke-dasharray:14 6 3 6;fill:none}.evidence{stroke:#edba70;stroke-width:3;stroke-dasharray:2 8;fill:none}.release{stroke:#edba70;stroke-width:4;fill:none}.tag{fill:#05070d;stroke:#284052;stroke-width:1}
+    </style>
+    <marker id="cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#75e9ed"/></marker>
+    <marker id="indigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8b9cff"/></marker>
+    <marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#edba70"/></marker>
+  </defs>
+  <rect width="1600" height="900" class="bg"/>
+  <text x="64" y="58" class="code">FIG-005 · V0.3</text>
+  <text x="64" y="101" class="h1">Interface and data-flow map</text>
+  <text x="1536" y="58" text-anchor="end" class="status">CONCEPTUAL · PRELIMINARY · 12 DECLARED INTERFACES</text>
+  <text x="1536" y="88" text-anchor="end" class="small">SCHEMAS · TRANSPORTS · TIMING · RETRIES · ERROR CODES REMAIN OPEN</text>
+
+  <rect x="100" y="190" width="230" height="90" rx="6" class="keynode"/><text x="125" y="224" class="code">ARC-QA</text><text x="125" y="257" class="h2">QKD-A</text>
+  <rect x="1270" y="190" width="230" height="90" rx="6" class="keynode"/><text x="1295" y="224" class="code">ARC-QB</text><text x="1295" y="257" class="h2">QKD-B</text>
+  <path d="M330 212 H1270" class="quantum" marker-end="url(#cyan)"/><rect x="695" y="188" width="210" height="32" rx="4" class="tag"/><text x="800" y="210" text-anchor="middle" class="code">IF-Q01 · DC-QS-01</text>
+  <path d="M330 258 H1270" class="classical" marker-start="url(#indigo)" marker-end="url(#indigo)"/><rect x="646" y="270" width="308" height="32" rx="4" class="tag"/><text x="800" y="292" text-anchor="middle" class="small indigo">IF-Q02 · DC-CP-01 / DC-TR-01</text>
+
+  <rect x="100" y="385" width="230" height="90" rx="6" class="keynode"/><text x="125" y="419" class="code">ARC-EA</text><text x="125" y="452" class="h2">EKM-A</text>
+  <rect x="1270" y="385" width="230" height="90" rx="6" class="keynode"/><text x="1295" y="419" class="code">ARC-EB</text><text x="1295" y="452" class="h2">EKM-B</text>
+  <path d="M215 280 V385" class="key" marker-end="url(#cyan)"/><rect x="232" y="315" width="245" height="32" rx="4" class="tag"/><text x="245" y="337" class="small">IF-K01 · DC-KV-01 + binding</text>
+  <path d="M1385 280 V385" class="key" marker-end="url(#cyan)"/><rect x="1123" y="315" width="245" height="32" rx="4" class="tag"/><text x="1355" y="337" text-anchor="end" class="small">IF-K02 · DC-KV-01 + binding</text>
+  <path d="M330 430 H1270" class="meta" marker-start="url(#indigo)" marker-end="url(#indigo)"/><rect x="622" y="407" width="356" height="32" rx="4" class="tag"/><text x="800" y="429" text-anchor="middle" class="code">IF-K03 · DC-PS-01 · ZERO KEY VALUES</text>
+
+  <rect x="100" y="585" width="230" height="80" rx="6" class="node"/><text x="125" y="617" class="code">ARC-CA</text><text x="125" y="647" class="h2">Consumer A</text>
+  <rect x="1270" y="585" width="230" height="80" rx="6" class="node"/><text x="1295" y="617" class="code">ARC-CB</text><text x="1295" y="647" class="h2">Consumer B</text>
+  <path d="M215 475 V585" class="key" marker-start="url(#cyan)" marker-end="url(#cyan)"/><rect x="232" y="516" width="260" height="32" rx="4" class="tag"/><text x="245" y="538" class="small">IF-C01 · DC-CD-01 / DC-CA-01</text>
+  <path d="M1385 475 V585" class="key" marker-start="url(#cyan)" marker-end="url(#cyan)"/><rect x="1108" y="516" width="260" height="32" rx="4" class="tag"/><text x="1355" y="538" text-anchor="end" class="small">IF-C02 · DC-CD-01 / DC-CA-01</text>
+
+  <rect x="675" y="340" width="250" height="95" rx="6" class="ctlnode"/><text x="700" y="374" class="code indigo">ARC-AQ / TZ-OR</text><text x="700" y="408" class="h2">AQMO</text>
+  <rect x="430" y="510" width="220" height="80" rx="6" class="node"/><text x="455" y="542" class="code">REQUEST / AUTHORITY</text><text x="455" y="570" class="small">DC-RQ-01</text>
+  <rect x="950" y="510" width="220" height="80" rx="6" class="node"/><text x="975" y="542" class="code">ARC-DV · DATA</text><text x="975" y="570" class="small">DC-OD-01</text>
+  <path d="M650 550 L725 435" class="meta" marker-end="url(#indigo)"/><rect x="548" y="460" width="145" height="30" rx="4" class="tag"/><text x="620" y="481" text-anchor="middle" class="small indigo">IF-A01 · request</text>
+  <path d="M950 550 L875 435" class="meta" marker-end="url(#indigo)"/><rect x="907" y="460" width="145" height="30" rx="4" class="tag"/><text x="980" y="481" text-anchor="middle" class="small indigo">IF-A02 · data</text>
+  <path d="M675 385 H545 V300" class="command" marker-end="url(#indigo)"/>
+  <path d="M925 385 H1055 V300" class="command" marker-end="url(#indigo)"/>
+  <rect x="710" y="308" width="180" height="30" rx="4" class="tag"/><text x="800" y="329" text-anchor="middle" class="small indigo">IF-A03 · commands</text>
+
+  <rect x="520" y="690" width="260" height="85" rx="6" class="evnode"/><text x="545" y="724" class="code amber">ARC-EV / TZ-EV</text><text x="545" y="755" class="h2">Evidence service</text>
+  <rect x="820" y="690" width="260" height="85" rx="6" class="evnode"/><text x="845" y="724" class="code amber">ARC-RL / TZ-PU</text><text x="845" y="755" class="h2">Release / presentation</text>
+  <path d="M215 665 C215 735 400 735 520 735" class="evidence" marker-end="url(#amber)"/>
+  <path d="M1385 665 C1385 735 1200 735 1080 735" class="evidence" marker-end="url(#amber)"/>
+  <path d="M800 435 V650 H650 V690" class="evidence" marker-end="url(#amber)"/>
+  <rect x="542" y="650" width="216" height="30" rx="4" class="tag"/><text x="650" y="671" text-anchor="middle" class="small amber">IF-E01 · DC-AU-01</text>
+  <path d="M780 735 H820" class="release" marker-end="url(#amber)"/>
+  <text x="800" y="720" text-anchor="middle" class="small amber">IF-R01</text>
+
+  <rect x="65" y="810" width="1470" height="50" rx="5" class="node"/>
+  <line x1="92" y1="835" x2="145" y2="835" class="quantum"/><text x="157" y="840" class="small">quantum</text>
+  <line x1="275" y1="835" x2="328" y2="835" class="classical"/><text x="340" y="840" class="small">authenticated classical</text>
+  <line x1="535" y1="835" x2="588" y2="835" class="key"/><text x="600" y="840" class="small">protected key value</text>
+  <line x1="785" y1="835" x2="838" y2="835" class="meta"/><text x="850" y="840" class="small">metadata/status</text>
+  <line x1="1040" y1="835" x2="1093" y2="835" class="command"/><text x="1105" y="840" class="small">command</text>
+  <line x1="1230" y1="835" x2="1283" y2="835" class="evidence"/><text x="1295" y="840" class="small">evidence/release</text>
+  <text x="1530" y="884" text-anchor="end" class="small">Source: CH2 §2.5 · CH3 §§3.4–3.6 · QO-EDH-CH05 §5.9</text>
+</svg>

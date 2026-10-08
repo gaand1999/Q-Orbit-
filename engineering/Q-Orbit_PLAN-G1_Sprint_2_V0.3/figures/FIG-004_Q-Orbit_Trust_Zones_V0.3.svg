@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-004 — Q-Orbit logical trust zones</title>
+  <desc id="desc">Separate logical zones protect the two QKD functions and two key managers; orchestration, evidence, and presentation remain outside key-value paths. Dashed zones are not certified cryptographic-module boundaries.</desc>
+  <defs>
+    <style>
+      .bg{fill:#05070d}.frame{fill:#08111b;stroke:#49667a;stroke-width:2;stroke-dasharray:12 9}.key{fill:#10232b;stroke:#75e9ed;stroke-width:3;stroke-dasharray:9 7}.ctl{fill:#151a32;stroke:#8b9cff;stroke-width:2;stroke-dasharray:9 7}.ev{fill:#231d18;stroke:#edba70;stroke-width:2;stroke-dasharray:9 7}.h1{fill:#eef5f8;font:600 31px Arial,sans-serif}.h2{fill:#eef5f8;font:600 22px Arial,sans-serif}.body{fill:#a7b8c7;font:16px Arial,sans-serif}.small{fill:#748697;font:14px Arial,sans-serif}.code{fill:#75e9ed;font:700 14px monospace;letter-spacing:1px}.status{fill:#75e9ed;font:700 15px monospace;letter-spacing:2px}.amber{fill:#edba70}.indigo{fill:#aeb8ff}.keyline{stroke:#75e9ed;stroke-width:5;fill:none}.protocol{stroke:#8b9cff;stroke-width:3;stroke-dasharray:10 8;fill:none}.meta{stroke:#8b9cff;stroke-width:3;stroke-dasharray:4 8;fill:none}.evidence{stroke:#edba70;stroke-width:3;stroke-dasharray:2 8;fill:none}.ban{fill:#2a1519;stroke:#ef8299;stroke-width:2}.rose{fill:#ef8299}
+    </style>
+    <marker id="cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#75e9ed"/></marker>
+    <marker id="indigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8b9cff"/></marker>
+    <marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#edba70"/></marker>
+  </defs>
+  <rect width="1600" height="900" class="bg"/>
+  <text x="64" y="58" class="code">FIG-004 · V0.3</text>
+  <text x="64" y="101" class="h1">Logical trust zones and allowed boundary flows</text>
+  <text x="1536" y="58" text-anchor="end" class="status">CONCEPTUAL · PRELIMINARY · LOGICAL ZONES</text>
+  <text x="1536" y="88" text-anchor="end" class="small">DASHED ZONES ARE NOT CERTIFIED CRYPTOGRAPHIC-MODULE BOUNDARIES</text>
+
+  <rect x="60" y="145" width="500" height="550" rx="10" class="frame"/>
+  <text x="88" y="180" class="code">ENDPOINT DOMAIN A</text>
+  <rect x="105" y="225" width="410" height="160" rx="8" class="key"/>
+  <text x="132" y="260" class="code">TZ-QA · ARC-QA</text><text x="132" y="300" class="h2">QKD-A protected function</text>
+  <text x="132" y="332" class="body">Local raw + intermediate state</text><text x="132" y="360" class="body">Accepted final output after all gates</text>
+  <rect x="105" y="470" width="410" height="160" rx="8" class="key"/>
+  <text x="132" y="505" class="code">TZ-EA · ARC-EA</text><text x="132" y="545" class="h2">EKM-A protected function</text>
+  <text x="132" y="577" class="body">Key value + binding + lifecycle</text><text x="132" y="605" class="body">Prepared / Committed / Unknown</text>
+  <path d="M310 385 V470" class="keyline" marker-end="url(#cyan)"/><text x="326" y="433" class="small">IF-K01 · key + binding</text>
+
+  <rect x="1040" y="145" width="500" height="550" rx="10" class="frame"/>
+  <text x="1068" y="180" class="code">ENDPOINT DOMAIN B</text>
+  <rect x="1085" y="225" width="410" height="160" rx="8" class="key"/>
+  <text x="1112" y="260" class="code">TZ-QB · ARC-QB</text><text x="1112" y="300" class="h2">QKD-B protected function</text>
+  <text x="1112" y="332" class="body">Local raw + intermediate state</text><text x="1112" y="360" class="body">Accepted final output after all gates</text>
+  <rect x="1085" y="470" width="410" height="160" rx="8" class="key"/>
+  <text x="1112" y="505" class="code">TZ-EB · ARC-EB</text><text x="1112" y="545" class="h2">EKM-B protected function</text>
+  <text x="1112" y="577" class="body">Key value + binding + lifecycle</text><text x="1112" y="605" class="body">Prepared / Committed / Unknown</text>
+  <path d="M1290 385 V470" class="keyline" marker-end="url(#cyan)"/><text x="1274" y="433" text-anchor="end" class="small">IF-K02 · key + binding</text>
+
+  <path d="M515 280 H1085" class="protocol" marker-start="url(#indigo)" marker-end="url(#indigo)"/>
+  <text x="800" y="264" text-anchor="middle" class="code">IF-Q02 · AUTHENTICATED CLASSICAL · NO SECRET KEY STRING</text>
+  <path d="M515 565 H1085" class="meta" marker-start="url(#indigo)" marker-end="url(#indigo)"/>
+  <text x="800" y="548" text-anchor="middle" class="code">IF-K03 · BINDING / PAIR STATUS ONLY · ZERO KEY VALUES</text>
+
+  <rect x="630" y="320" width="340" height="115" rx="8" class="ctl"/>
+  <text x="658" y="354" class="code indigo">TZ-OR · ARC-AQ / ARC-DV / ARC-CT</text>
+  <text x="658" y="392" class="h2">Orchestration &amp; control</text><text x="658" y="420" class="small">requests · qualified data · commands</text>
+  <path d="M630 378 H560" class="meta" marker-end="url(#indigo)"/>
+  <path d="M970 378 H1040" class="meta" marker-end="url(#indigo)"/>
+
+  <rect x="630" y="625" width="340" height="100" rx="8" class="ev"/>
+  <text x="658" y="658" class="code amber">TZ-EV · ARC-EV</text>
+  <text x="658" y="694" class="h2">Evidence &amp; configuration</text>
+  <path d="M560 650 H630" class="evidence" marker-end="url(#amber)"/>
+  <path d="M1040 650 H970" class="evidence" marker-end="url(#amber)"/>
+
+  <rect x="630" y="765" width="340" height="85" rx="8" class="ev"/>
+  <text x="658" y="798" class="code amber">TZ-PU · PRESENTATION</text>
+  <text x="658" y="831" class="body">Private derivatives · IF-R01 gate</text>
+  <path d="M800 725 V765" class="evidence" marker-end="url(#amber)"/>
+
+  <rect x="80" y="735" width="470" height="115" rx="8" class="ban"/>
+  <text x="108" y="770" class="code rose">KEY-VALUE EXCLUSIONS</text>
+  <text x="108" y="806" class="body">No AQMO · no evidence · no model</text>
+  <text x="108" y="834" class="body">no presentation · no IF-K03</text>
+  <rect x="1050" y="735" width="470" height="115" rx="8" class="ban"/>
+  <text x="1078" y="770" class="code rose">GATE EXCLUSIONS</text>
+  <text x="1078" y="806" class="body">No local-gate override · no unknown-as-pass</text>
+  <text x="1078" y="834" class="body">no one-sided availability · no silent downgrade</text>
+  <text x="1530" y="884" text-anchor="end" class="small">Source: CH2 §2.5 · REQ-CYB-006 · REQ-EVD · REQ-REL</text>
+</svg>

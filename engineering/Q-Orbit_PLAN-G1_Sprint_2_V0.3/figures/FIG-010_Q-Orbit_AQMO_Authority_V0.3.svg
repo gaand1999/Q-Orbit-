@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-010 — Q-Orbit AQMO authority and control view</title>
+  <desc id="desc">AQMO receives validated metadata and issues constrained orchestration commands, but it cannot access keys or override cryptographic, device, EKM, incident, risk, or release gates.</desc>
+  <defs>
+    <style>
+      .bg{fill:#05070d}.panel{fill:#0d1723;stroke:#49667a;stroke-width:2}.aqmo{fill:#151a32;stroke:#8b9cff;stroke-width:3}.permit{fill:#10232b;stroke:#75e9ed;stroke-width:2}.prohibit{fill:#2a1519;stroke:#ef8299;stroke-width:2}.gate{fill:#231d18;stroke:#edba70;stroke-width:2}.h1{fill:#eef5f8;font:600 31px Arial,sans-serif}.h2{fill:#eef5f8;font:600 22px Arial,sans-serif}.body{fill:#a7b8c7;font:16px Arial,sans-serif}.small{fill:#748697;font:14px Arial,sans-serif}.code{fill:#75e9ed;font:700 14px monospace;letter-spacing:1px}.status{fill:#75e9ed;font:700 15px monospace;letter-spacing:2px}.amber{fill:#edba70}.rose{fill:#ef8299}.indigo{fill:#aeb8ff}.meta{stroke:#8b9cff;stroke-width:3;stroke-dasharray:5 8;fill:none}.command{stroke:#adb9ff;stroke-width:3;stroke-dasharray:14 6 3 6;fill:none}.blocked{stroke:#ef8299;stroke-width:3;stroke-dasharray:8 7;fill:none}
+    </style>
+    <marker id="indigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8b9cff"/></marker>
+    <marker id="rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#ef8299"/></marker>
+  </defs>
+  <rect width="1600" height="900" class="bg"/>
+  <text x="64" y="58" class="code">FIG-010 · V0.3</text>
+  <text x="64" y="101" class="h1">AQMO authority and control boundary</text>
+  <text x="1536" y="58" text-anchor="end" class="status">CONCEPTUAL · PRELIMINARY · METADATA ONLY</text>
+  <text x="1536" y="88" text-anchor="end" class="small">LOCAL ENDPOINT AND EKM SAFETY GATES REMAIN AUTHORITATIVE</text>
+
+  <rect x="615" y="285" width="370" height="230" rx="12" class="aqmo"/>
+  <text x="650" y="328" class="code indigo">ARC-AQ · TZ-OR</text>
+  <text x="650" y="376" class="h1">AQMO</text>
+  <text x="650" y="410" class="body">Constrained opportunity orchestrator</text>
+  <line x1="650" y1="438" x2="950" y2="438" stroke="#40516f"/>
+  <text x="650" y="472" class="body">filter · rank · reserve · monitor · replan</text>
+  <text x="650" y="499" class="small">within an approved, bounded configuration</text>
+
+  <rect x="65" y="150" width="455" height="515" rx="10" class="permit"/>
+  <text x="98" y="192" class="code">PERMITTED INPUTS · IF-A01 / IF-A02</text>
+  <text x="98" y="235" class="h2">Validated metadata only</text>
+  <text x="98" y="286" class="body">01 · Request identity, authority, purpose</text>
+  <text x="98" y="328" class="body">02 · Priority and declared constraints</text>
+  <text x="98" y="370" class="body">03 · Geometry, time, environment</text>
+  <text x="98" y="412" class="body">04 · Resource and hardware state</text>
+  <text x="98" y="454" class="body">05 · Security and configuration state</text>
+  <text x="98" y="496" class="body">06 · Aggregated inventory metadata</text>
+  <line x1="98" y1="535" x2="487" y2="535" stroke="#244b53"/>
+  <text x="98" y="572" class="small">Required with source/provenance, validity,</text>
+  <text x="98" y="598" class="small">freshness, quality, uncertainty, plausibility,</text>
+  <text x="98" y="624" class="small">and conflict state where applicable.</text>
+  <path d="M520 388 H615" class="meta" marker-end="url(#indigo)"/>
+
+  <rect x="1080" y="150" width="455" height="515" rx="10" class="permit"/>
+  <text x="1113" y="192" class="code">PERMITTED ACTIONS · IF-A03</text>
+  <text x="1113" y="235" class="h2">Allow-listed orchestration</text>
+  <text x="1113" y="286" class="body">01 · Eliminate failed hard constraints</text>
+  <text x="1113" y="328" class="body">02 · Rank qualified opportunities</text>
+  <text x="1113" y="370" class="body">03 · Reserve a qualified opportunity</text>
+  <text x="1113" y="412" class="body">04 · Request start, hold, or stop</text>
+  <text x="1113" y="454" class="body">05 · Monitor permitted state metadata</text>
+  <text x="1113" y="496" class="body">06 · Replan within approved constraints</text>
+  <line x1="1113" y1="535" x2="1502" y2="535" stroke="#244b53"/>
+  <text x="1113" y="572" class="small">Every command remains subject to target,</text>
+  <text x="1113" y="598" class="small">session, configuration, freshness, authority,</text>
+  <text x="1113" y="624" class="small">current-state, and local-gate checks.</text>
+  <path d="M985 388 H1080" class="command" marker-end="url(#indigo)"/>
+
+  <rect x="245" y="720" width="1110" height="130" rx="10" class="prohibit"/>
+  <text x="278" y="756" class="code rose">PROHIBITED ACCESS AND AUTHORITY</text>
+  <text x="278" y="794" class="body">Key values · protocol approval · device or finite-key override · EKM commit/delivery override</text>
+  <text x="278" y="826" class="body">incident recovery authority · risk acceptance · fallback activation · public-release approval</text>
+  <path d="M800 515 V720" class="blocked" marker-end="url(#rose)"/>
+  <circle cx="800" cy="626" r="28" fill="#2a1519" stroke="#ef8299" stroke-width="3"/>
+  <path d="M786 612 L814 640 M814 612 L786 640" stroke="#ef8299" stroke-width="4"/>
+
+  <rect x="590" y="145" width="420" height="85" rx="8" class="gate"/>
+  <text x="620" y="180" class="code amber">AUTHORITATIVE LOCAL GATES</text>
+  <text x="620" y="211" class="body">authentication · device · profile · EKM · incident · release</text>
+  <path d="M800 230 V285" class="blocked" marker-end="url(#rose)"/>
+  <text x="826" y="263" class="small rose">AQMO cannot override</text>
+
+  <text x="70" y="704" class="small">AQMO loss: stop new coordination; only a still-valid preauthorized bounded transaction may continue with every local gate positive.</text>
+  <text x="1530" y="884" text-anchor="end" class="small">Source: CH1 §1.8 · CH3 §3.4 · REQ-AQM-001 through REQ-AQM-011</text>
+</svg>

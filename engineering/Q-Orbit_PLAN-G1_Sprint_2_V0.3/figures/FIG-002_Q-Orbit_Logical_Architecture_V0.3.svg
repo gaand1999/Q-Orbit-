@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-002 — Q-Orbit preliminary end-to-end logical architecture</title>
+  <desc id="desc">Two QKD endpoints feed their associated endpoint key managers; the key managers coordinate non-secret pair state and separately deliver to local consumers, while AQMO uses metadata only. OUT-3 is attached to two-sided commit and OUT-4 to separate delivery.</desc>
+  <defs>
+    <style>
+      .bg{fill:#05070d}.panel{fill:#0c1420;stroke:#284052;stroke-width:2}.zone{fill:#08111b;stroke:#49667a;stroke-width:2;stroke-dasharray:10 8}.key{fill:#10232b;stroke:#75e9ed;stroke-width:2}.ctl{fill:#151a32;stroke:#8b9cff;stroke-width:2}.ev{fill:#231d18;stroke:#edba70;stroke-width:2}.h1{fill:#eef5f8;font:600 31px Arial,sans-serif}.h2{fill:#eef5f8;font:600 22px Arial,sans-serif}.body{fill:#a7b8c7;font:17px Arial,sans-serif}.small{fill:#748697;font:14px Arial,sans-serif}.code{fill:#75e9ed;font:700 14px monospace;letter-spacing:1px}.status{fill:#75e9ed;font:700 15px monospace;letter-spacing:2px}.amber{fill:#edba70}.indigo{fill:#aeb8ff}.quantum{stroke:#75e9ed;stroke-width:5;fill:none}.classical{stroke:#8b9cff;stroke-width:3;stroke-dasharray:11 8;fill:none}.keyline{stroke:#75e9ed;stroke-width:5;fill:none}.meta{stroke:#8b9cff;stroke-width:3;stroke-dasharray:5 8;fill:none}.evidence{stroke:#edba70;stroke-width:3;stroke-dasharray:2 8;fill:none}
+    </style>
+    <marker id="cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#75e9ed"/></marker>
+    <marker id="indigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8b9cff"/></marker>
+    <marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#edba70"/></marker>
+  </defs>
+  <rect width="1600" height="900" class="bg"/>
+  <text x="64" y="58" class="code">FIG-002 · V0.3</text>
+  <text x="64" y="101" class="h1">End-to-end logical architecture</text>
+  <text x="1536" y="58" text-anchor="end" class="status">CONCEPTUAL · PRELIMINARY · PRIVATE</text>
+  <text x="1536" y="88" text-anchor="end" class="small">KEY REPLENISHMENT PRIMARY · DELIVERY SEPARATE</text>
+
+  <rect x="70" y="155" width="550" height="600" rx="10" class="zone"/>
+  <text x="98" y="189" class="code">ENDPOINT DOMAIN A · SPACE</text>
+  <rect x="120" y="235" width="260" height="115" rx="6" class="key"/>
+  <text x="145" y="268" class="code">ARC-QA / TZ-QA</text><text x="145" y="307" class="h2">QKD-A</text><text x="145" y="333" class="small">local acceptance gates</text>
+  <rect x="120" y="440" width="260" height="115" rx="6" class="key"/>
+  <text x="145" y="473" class="code">ARC-EA / TZ-EA</text><text x="145" y="512" class="h2">EKM-A</text><text x="145" y="538" class="small">pair state + inventory</text>
+  <rect x="120" y="645" width="260" height="80" rx="6" class="panel"/>
+  <text x="145" y="679" class="code">ARC-CA</text><text x="145" y="707" class="body">Local consumer A</text>
+  <path d="M250 350 V440" class="keyline" marker-end="url(#cyan)"/>
+  <text x="270" y="399" class="small">IF-K01 · accepted key + binding</text>
+  <path d="M250 555 V645" class="keyline" marker-end="url(#cyan)"/>
+  <text x="270" y="605" class="small">IF-C01 · protected delivery</text>
+
+  <rect x="980" y="155" width="550" height="600" rx="10" class="zone"/>
+  <text x="1008" y="189" class="code">ENDPOINT DOMAIN B · GROUND</text>
+  <rect x="1220" y="235" width="260" height="115" rx="6" class="key"/>
+  <text x="1245" y="268" class="code">ARC-QB / TZ-QB</text><text x="1245" y="307" class="h2">QKD-B</text><text x="1245" y="333" class="small">local acceptance gates</text>
+  <rect x="1220" y="440" width="260" height="115" rx="6" class="key"/>
+  <text x="1245" y="473" class="code">ARC-EB / TZ-EB</text><text x="1245" y="512" class="h2">EKM-B</text><text x="1245" y="538" class="small">pair state + inventory</text>
+  <rect x="1220" y="645" width="260" height="80" rx="6" class="panel"/>
+  <text x="1245" y="679" class="code">ARC-CB</text><text x="1245" y="707" class="body">Local consumer B</text>
+  <path d="M1350 350 V440" class="keyline" marker-end="url(#cyan)"/>
+  <text x="1330" y="399" text-anchor="end" class="small">IF-K02 · accepted key + binding</text>
+  <path d="M1350 555 V645" class="keyline" marker-end="url(#cyan)"/>
+  <text x="1330" y="605" text-anchor="end" class="small">IF-C02 · protected delivery</text>
+
+  <path d="M380 270 H1220" class="quantum" marker-end="url(#cyan)"/>
+  <text x="800" y="251" text-anchor="middle" class="code">IF-Q01 · DIRECT QUANTUM STATES · OUT-1 SUPPORT</text>
+  <path d="M380 325 H1220" class="classical" marker-start="url(#indigo)" marker-end="url(#indigo)"/>
+  <text x="800" y="352" text-anchor="middle" class="small indigo">IF-Q02 · authenticated / bound / fresh / replay-treated classical protocol · OUT-2 gates</text>
+
+  <path d="M380 490 H1220" class="meta" marker-start="url(#indigo)" marker-end="url(#indigo)"/>
+  <text x="800" y="472" text-anchor="middle" class="code">IF-K03 · NON-SECRET PAIR STATUS · ZERO KEY VALUES</text>
+  <rect x="655" y="505" width="290" height="60" rx="30" class="key"/>
+  <text x="800" y="542" text-anchor="middle" class="h2">OUT-3 · TWO-SIDED COMMIT</text>
+
+  <path d="M380 685 H1220" class="meta" marker-start="url(#indigo)" marker-end="url(#indigo)"/>
+  <rect x="655" y="655" width="290" height="60" rx="30" class="ctl"/>
+  <text x="800" y="692" text-anchor="middle" class="h2">OUT-4 · SEPARATE DELIVERY</text>
+
+  <rect x="655" y="390" width="290" height="85" rx="6" class="ctl"/>
+  <text x="680" y="421" class="code">ARC-AQ / TZ-OR</text><text x="680" y="451" class="h2">AQMO · metadata only</text>
+  <path d="M655 425 H540 V370" class="meta" marker-end="url(#indigo)"/>
+  <path d="M945 425 H1060 V370" class="meta" marker-end="url(#indigo)"/>
+  <text x="800" y="384" text-anchor="middle" class="small indigo">IF-A03 · allow-listed orchestration · local gates remain authoritative</text>
+
+  <rect x="70" y="790" width="1460" height="70" rx="6" class="ev"/>
+  <text x="98" y="820" class="code amber">ARC-EV · IF-E01 · NON-SECRET EVIDENCE ONLY</text>
+  <text x="98" y="848" class="body">Exact correlation · gates · states · reason codes · versions · OUT-1 / OUT-2 / OUT-3 / OUT-4 · no key values</text>
+  <path d="M800 755 V790" class="evidence" marker-end="url(#amber)"/>
+
+  <rect x="455" y="590" width="210" height="42" rx="4" class="panel"/>
+  <text x="560" y="617" text-anchor="middle" class="small">Prepared/Unknown ≠ available</text>
+  <rect x="935" y="590" width="210" height="42" rx="4" class="panel"/>
+  <text x="1040" y="617" text-anchor="middle" class="small">No unsafe reallocation</text>
+  <text x="1530" y="885" text-anchor="end" class="small">Source: CH1 §1.5 · CH3 §§3.5–3.9 · REQ-SRV · REQ-KM · REQ-AQM</text>
+</svg>
