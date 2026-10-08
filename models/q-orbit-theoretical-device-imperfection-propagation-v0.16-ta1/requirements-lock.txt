@@ -1,0 +1,6 @@
+Python==3.12.13
+numpy==2.3.5
+scipy==1.17.0
+
+# Workbook authoring is performed by the Codex primary-runtime @oai/artifact-tool.
+# No external packages were installed for this package.

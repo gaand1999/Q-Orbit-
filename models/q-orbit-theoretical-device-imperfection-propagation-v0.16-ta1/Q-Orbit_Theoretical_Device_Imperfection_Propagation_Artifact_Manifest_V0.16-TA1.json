@@ -1,0 +1,449 @@
+{
+  "package_id": "QO-THEORETICAL-DEVICE-IMPERFECTION-PROPAGATION-V0.16-TA1",
+  "version": "V0.16-TA1",
+  "date": "2026-08-25",
+  "artifact_count": 63,
+  "artifacts": [
+    {
+      "artifact_id": "ART-016-001",
+      "relative_path": "Q-Orbit_Engineering_Design_Handbook_V0.16-TA1_Chapter_6_7_Theoretical_Insert.md",
+      "role": "HANDBOOK-INSERT",
+      "size_bytes": 4786,
+      "sha256": "fcabbb649bc2546e9834400e908a80ddc7a21e79e2821146a281f9a32cf492b4"
+    },
+    {
+      "artifact_id": "ART-016-002",
+      "relative_path": "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Final_Audit_V0.16-TA1.json",
+      "role": "FINAL-AUDIT",
+      "size_bytes": 14135,
+      "sha256": "dcbd9587b3ef94acf8a80776ef4ec8879a5e190af0a67058185b41e36d5ebf4a"
+    },
+    {
+      "artifact_id": "ART-016-003",
+      "relative_path": "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Manifest_V0.16-TA1.json",
+      "role": "PACKAGE-CONTROL",
+      "size_bytes": 1547,
+      "sha256": "9677fe9c50460eb57983cb1cb9ab1ccd95bfe2ce6def0a0daa7a7bdeff0f7f0c"
+    },
+    {
+      "artifact_id": "ART-016-004",
+      "relative_path": "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Report_V0.16-TA1.md",
+      "role": "PRIMARY-REPORT",
+      "size_bytes": 9668,
+      "sha256": "9587e4416f514b6459afeb7b571b39a4beb5ad093b27f6c2ee6e2178d3107536"
+    },
+    {
+      "artifact_id": "ART-016-005",
+      "relative_path": "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Workbook_V0.16-TA1.audit-inspect.ndjson",
+      "role": "PACKAGE-CONTROL",
+      "size_bytes": 2022,
+      "sha256": "e15ff666b757982d9ec1ea9fa267d8c9b6b37ea1a0fcfd98cef94fd02eb3236b"
+    },
+    {
+      "artifact_id": "ART-016-006",
+      "relative_path": "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Workbook_V0.16-TA1.formula-errors.ndjson",
+      "role": "PACKAGE-CONTROL",
+      "size_bytes": 60,
+      "sha256": "acc0111e19cf44d2753fc9ecd164bf1b27fbd65597463a25cf48bd1c65e90146"
+    },
+    {
+      "artifact_id": "ART-016-007",
+      "relative_path": "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Workbook_V0.16-TA1.inspect.ndjson",
+      "role": "PACKAGE-CONTROL",
+      "size_bytes": 6075,
+      "sha256": "14d197625c0e7069ef0bbdabebeb99388bc9889f421f102edc1a045033d88121"
+    },
+    {
+      "artifact_id": "ART-016-008",
+      "relative_path": "Q-Orbit_Theoretical_Device_Imperfection_Propagation_Workbook_V0.16-TA1.xlsx",
+      "role": "WORKBOOK",
+      "size_bytes": 169108,
+      "sha256": "462cfdaa4f71bca718818fa5aefac651f38ec15e11f56d5d9c2a567c7d04e02d"
+    },
+    {
+      "artifact_id": "ART-016-009",
+      "relative_path": "README.md",
+      "role": "PACKAGE-CONTROL",
+      "size_bytes": 1652,
+      "sha256": "2ce245538e7a66f5f31e2562509754c5c90e2e990ac9e7bf21df6bf96ea2b2cb"
+    },
+    {
+      "artifact_id": "ART-016-010",
+      "relative_path": "controlled_inputs/v0.11r1/Q-Orbit_Engineering_Design_Handbook_V0.11R1_Chapter_6.md",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 45262,
+      "sha256": "349950842557e2c8485904c083fc89439a5f270477531d07c44006d0c76887bd"
+    },
+    {
+      "artifact_id": "ART-016-011",
+      "relative_path": "controlled_inputs/v0.11r1/Q-Orbit_Engineering_Design_Handbook_V0.11R1_Chapter_7.md",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 26128,
+      "sha256": "38c0cb7ba0582e656050b421ff11abe3ec01d0db921181235a4b206e1ca4f417"
+    },
+    {
+      "artifact_id": "ART-016-012",
+      "relative_path": "controlled_inputs/v0.12/Q-Orbit_Model_Input_Contract_V0.12.csv",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 17341,
+      "sha256": "f84561e31862a4f68738835e62b9157170ba60c1e4d341adbd33e379492f2029"
+    },
+    {
+      "artifact_id": "ART-016-013",
+      "relative_path": "controlled_inputs/v0.12/Q-Orbit_Model_Limitation_Register_V0.12.csv",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 4628,
+      "sha256": "ffa6204e28efcdcb44be2fd6d2a4cf8880bac16a35fd0e2f3b4791040410c045"
+    },
+    {
+      "artifact_id": "ART-016-014",
+      "relative_path": "controlled_inputs/v0.12/Q-Orbit_Protocol_Implementation_Profile_V0.12.csv",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 9402,
+      "sha256": "bf0e1586f95cfcf02abaac767a3d3579d4a98298a6f1ee01474cb6cc20851eff"
+    },
+    {
+      "artifact_id": "ART-016-015",
+      "relative_path": "controlled_inputs/v0.12/Q-Orbit_QKD_Terminal_and_Model_Validation_Final_Audit_V0.12.json",
+      "role": "FINAL-AUDIT",
+      "size_bytes": 15422,
+      "sha256": "6e0b53dd85cd973971af7a92edf4e51782bc416d90b3376b0a2d779bc04a0431"
+    },
+    {
+      "artifact_id": "ART-016-016",
+      "relative_path": "controlled_inputs/v0.13/Q-Orbit_Independent_Model_Comparison_Final_Audit_V0.13.json",
+      "role": "FINAL-AUDIT",
+      "size_bytes": 8030,
+      "sha256": "2783f6c37405272d5389b31c9c5c6d31d28b85b70582513ee067ed551941fa8e"
+    },
+    {
+      "artifact_id": "ART-016-017",
+      "relative_path": "controlled_inputs/v0.13/Q-Orbit_V0.13_Limitation_Register.csv",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 1727,
+      "sha256": "1a840739d5acc65c0db5ba7a5fcf1886544ef5cdd6f3da6df9ac1dff92b493bc"
+    },
+    {
+      "artifact_id": "ART-016-018",
+      "relative_path": "controlled_inputs/v0.13/Q-Orbit_V0.13_Mathematical_Contract.csv",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 3101,
+      "sha256": "4b48c6137a20f9b107143f6c6823dbf3177c078e4d8fdc5b0e6ccdd5abd87591"
+    },
+    {
+      "artifact_id": "ART-016-019",
+      "relative_path": "controlled_inputs/v0.15-ea1/Q-Orbit_Serialized_Source_and_Detector_Evidence_Acquisition_Final_Audit_V0.15-EA1.json",
+      "role": "FINAL-AUDIT",
+      "size_bytes": 10169,
+      "sha256": "76aaa4822d4560803a85403f48f248a870ef7e7351e71b02c34a8a13e10fdda2"
+    },
+    {
+      "artifact_id": "ART-016-020",
+      "relative_path": "controlled_inputs/v0.15-ea1/Q-Orbit_Serialized_Source_and_Detector_Evidence_Acquisition_Manifest_V0.15-EA1.json",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 1186,
+      "sha256": "158f67359805d28e8ac9022ca75643b789d33c2c20a09ef41e2342fcbe9fa4ae"
+    },
+    {
+      "artifact_id": "ART-016-021",
+      "relative_path": "controlled_inputs/v0.15-ea1/Q-Orbit_V0.15-EA1_Test_Matrix.csv",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 12732,
+      "sha256": "918e248e33833d9eb0be79d405af1df0746da2af094f079c7ef5a0d7a009dcf3"
+    },
+    {
+      "artifact_id": "ART-016-022",
+      "relative_path": "controlled_inputs/v0.6/CASE-S1-REF-001_Baseline_Run_V0.6.json",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 3063,
+      "sha256": "3673acf4d9a737235a6bcd6facc0886d6b609760559fc548cf52d8c542632a33"
+    },
+    {
+      "artifact_id": "ART-016-023",
+      "relative_path": "controlled_inputs/v0.6/FS_loss_XI0.csv",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 20282,
+      "sha256": "2d8eca7992d0fe738bf25c1896b1aa5efe39fd81805fbf84464863f3777b5874"
+    },
+    {
+      "artifact_id": "ART-016-024",
+      "relative_path": "controlled_inputs/v0.6/Q-Orbit_CASE-S1_Run_Manifest_V0.6.json",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 9428,
+      "sha256": "0714d6e76ff416cbb28f05817dd4f6e690b6657e4922a30b4896fb1c347c8583"
+    },
+    {
+      "artifact_id": "ART-016-025",
+      "relative_path": "controlled_inputs/v0.6/qorbit_sim_v0_6.py",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 20978,
+      "sha256": "d6f7df8126589eeb11c2e9d6e04561ee66b9b2774b069481e9a0c2527788dbd4"
+    },
+    {
+      "artifact_id": "ART-016-026",
+      "relative_path": "controlled_inputs/v0.7/Q-Orbit_CASE-M1_Parameter_and_Provenance_Register_V0.7.csv",
+      "role": "CONTROLLED-INPUT",
+      "size_bytes": 23845,
+      "sha256": "fb07b900966085b6b1dccbc6bc451251d6ab41c6580e30493848a7c57a0b89db"
+    },
+    {
+      "artifact_id": "ART-016-027",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Claim_Boundary_Register.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 2224,
+      "sha256": "bc86441444fde37394d5fee039ac5edfb98984ec09bde16a55aec2aec415213d"
+    },
+    {
+      "artifact_id": "ART-016-028",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Controlled_Input_Index.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 4833,
+      "sha256": "b7c067b78127c60da0b6810d23f3ae3796df66dfd1f0229d1790682aaab8eaac"
+    },
+    {
+      "artifact_id": "ART-016-029",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Gate_Register.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 1694,
+      "sha256": "a008f74856a1add6355ef1a4e7a400c4eb155557d19d7f5780501b19a65ac111"
+    },
+    {
+      "artifact_id": "ART-016-030",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Grid_Boundary.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 3230,
+      "sha256": "28b9fef231e2522966a00325728cda215ef2c1442086550221a69838733f9423"
+    },
+    {
+      "artifact_id": "ART-016-031",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Imperfection_to_Proof_Mapping.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 5785,
+      "sha256": "9907aa34ed7428db33c01d6178fb9f58d7a68ff7ec9bf590f1728c57a7b9245e"
+    },
+    {
+      "artifact_id": "ART-016-032",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Limitation_Register.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 3657,
+      "sha256": "123b95162930055a33cabd72b30788fab3a108b0f354d9bc9d9e22a4a6694d71"
+    },
+    {
+      "artifact_id": "ART-016-033",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Local_Sensitivity.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 3121,
+      "sha256": "8a71575b715d4ae60054e11a2f5b814a93fe9f1f7ef99f51351e02fcc3fe3639"
+    },
+    {
+      "artifact_id": "ART-016-034",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Parameter_Catalog.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 2065,
+      "sha256": "fb9260f33b0d2362eb246ead0c4d2d77b673691e5b141e558a15b572eb4d6011"
+    },
+    {
+      "artifact_id": "ART-016-035",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Regression_Tests.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 1325,
+      "sha256": "a9843e201385a3cd318c9aecaf867f19e64a7e0d63057e9191615a8f8d2a7335"
+    },
+    {
+      "artifact_id": "ART-016-036",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Source_Register.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 2611,
+      "sha256": "01735d8a7630f819b7dcb62ed8b104c50ae17c83f4a5f1b3e69e02943aff7e1e"
+    },
+    {
+      "artifact_id": "ART-016-037",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Two_Parameter_Screen.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 300066,
+      "sha256": "9b2888daa0a4a4767799d1c9650968743ac7ab4c8ad8a57d4db112c352d9769f"
+    },
+    {
+      "artifact_id": "ART-016-038",
+      "relative_path": "data_processed/Q-Orbit_V0.16-TA1_Zero_Key_Frontier.csv",
+      "role": "PROCESSED-DATA",
+      "size_bytes": 4248,
+      "sha256": "29e956f19f493d24da55f27d19f6f45b0dea4c900dfea31e1d3e5d536a9eaf5f"
+    },
+    {
+      "artifact_id": "ART-016-039",
+      "relative_path": "previews/Audit.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 161506,
+      "sha256": "45a891f43bddf0319e6aed53748f19810646724445b1edce873cb6643214fb22"
+    },
+    {
+      "artifact_id": "ART-016-040",
+      "relative_path": "previews/Baseline.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 195095,
+      "sha256": "12c7cc21185ddba4188cfe473a04ef9a30ecd3bcf2f58e792cea4cd37d857abe"
+    },
+    {
+      "artifact_id": "ART-016-041",
+      "relative_path": "previews/Claims.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 270197,
+      "sha256": "d3db70a92c794c01adac518371709257a53629d94587521e993a650ab09da4aa"
+    },
+    {
+      "artifact_id": "ART-016-042",
+      "relative_path": "previews/Controlled_Inputs.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 515771,
+      "sha256": "4e37ff1c45b105a93e77df77d9a1f12c8de58d255a264c244d003572adad0da1"
+    },
+    {
+      "artifact_id": "ART-016-043",
+      "relative_path": "previews/Frontiers.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 443186,
+      "sha256": "0e57effae276b0df5a6c6ea477833fc95ae17d8f762f81f7d9d8191517992164"
+    },
+    {
+      "artifact_id": "ART-016-044",
+      "relative_path": "previews/Gates.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 233428,
+      "sha256": "9e19c204cb782d6a4ef09f8ded82ec9cb0d613fc52f8f0d6a7784492f52a0f76"
+    },
+    {
+      "artifact_id": "ART-016-045",
+      "relative_path": "previews/Grid_Boundary.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 330134,
+      "sha256": "7d2734a13ace41f2aef1b08853fa020ea6f97d30a1878d0c4b5f448af89c979a"
+    },
+    {
+      "artifact_id": "ART-016-046",
+      "relative_path": "previews/Grid_Screen.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 553332,
+      "sha256": "994dc53300fe97dcc0a21eba483701cf916005f37245933dacd6bd805ec666a0"
+    },
+    {
+      "artifact_id": "ART-016-047",
+      "relative_path": "previews/Grid_Summary.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 157455,
+      "sha256": "075cb502671b1308820ad226cd071446850eb36405c96400d22a363991cfb679"
+    },
+    {
+      "artifact_id": "ART-016-048",
+      "relative_path": "previews/Limitations.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 366665,
+      "sha256": "3cf6521ae0c2d637be90021650baf16e82d9811056c33906608d621a72d4aab9"
+    },
+    {
+      "artifact_id": "ART-016-049",
+      "relative_path": "previews/Local_Response.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 300615,
+      "sha256": "bac4b44238e5dd5dd644828ba10fc7708c8a79cd197f362ff44cdb2b102e5287"
+    },
+    {
+      "artifact_id": "ART-016-050",
+      "relative_path": "previews/Parameters.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 256601,
+      "sha256": "013f5b608748cd20fff79b81ac11cedd881198db1e9489daa96994e9b8ab5f7d"
+    },
+    {
+      "artifact_id": "ART-016-051",
+      "relative_path": "previews/Proof_Mapping.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 532895,
+      "sha256": "3a1dc623383b981a7fddd8405cf463047dda2d5b8efbd87d28b1aef0d9ef7db0"
+    },
+    {
+      "artifact_id": "ART-016-052",
+      "relative_path": "previews/Read_Me.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 201143,
+      "sha256": "ce5717bb410fa4da5dedac9387261921a5e97b9b5c33e9dda756b1b07b406365"
+    },
+    {
+      "artifact_id": "ART-016-053",
+      "relative_path": "previews/Regression.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 150546,
+      "sha256": "89bc37230d6fa936b5ff2e75e00e031f818154ccd6cd87f09e87d7cd664f1750"
+    },
+    {
+      "artifact_id": "ART-016-054",
+      "relative_path": "previews/Sources.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 316617,
+      "sha256": "92c266715f6303ec774d619fde8b9c7235543b0aebaced7ffe341dfc224d2033"
+    },
+    {
+      "artifact_id": "ART-016-055",
+      "relative_path": "previews/Summary.png",
+      "role": "VISUAL-QA",
+      "size_bytes": 196344,
+      "sha256": "fa10b793c9a5ae96e4531af8f56ed24fc0928359530601d2979c80c46e1f11d2"
+    },
+    {
+      "artifact_id": "ART-016-056",
+      "relative_path": "requirements-lock.txt",
+      "role": "PACKAGE-CONTROL",
+      "size_bytes": 183,
+      "sha256": "a6e95206870a68c76e59a2cc2c956cbde0a51cbc4f4a9ecf7f1ba7669df399ec"
+    },
+    {
+      "artifact_id": "ART-016-057",
+      "relative_path": "runs/Q-Orbit_V0.16-TA1_Theoretical_Run_Summary.json",
+      "role": "RUN-RECORD",
+      "size_bytes": 2642,
+      "sha256": "4c9d78215441b9f9584fc8fb3e979721f4d7fed1cacd088100b708d11295691c"
+    },
+    {
+      "artifact_id": "ART-016-058",
+      "relative_path": "source/audit_theoretical_device_imperfection_v0_16_ta1.py",
+      "role": "REPRODUCTION-SOURCE",
+      "size_bytes": 18603,
+      "sha256": "541a5ac226ae861d6ded53890f8ccda8b9e0f37310dc57124bc7a00cbced366a"
+    },
+    {
+      "artifact_id": "ART-016-059",
+      "relative_path": "source/build_theoretical_device_imperfection_workbook_v0_16_ta1.mjs",
+      "role": "REPRODUCTION-SOURCE",
+      "size_bytes": 36368,
+      "sha256": "df11ff068967342db27804131b65f1693d0a182fca06afe0200ec70af847ec77"
+    },
+    {
+      "artifact_id": "ART-016-060",
+      "relative_path": "source/finalize_theoretical_device_imperfection_v0_16_ta1.py",
+      "role": "REPRODUCTION-SOURCE",
+      "size_bytes": 4082,
+      "sha256": "81879079c2cd8418c976511ab8330adbdee37ef00958e071e14451ac650db0bb"
+    },
+    {
+      "artifact_id": "ART-016-061",
+      "relative_path": "source/prepare_theoretical_device_imperfection_package_v0_16_ta1.py",
+      "role": "REPRODUCTION-SOURCE",
+      "size_bytes": 2349,
+      "sha256": "5a2f69fe38841f24c16482d6d5a0ab784b744be64c7d3df399a8a91c7eb1ccf5"
+    },
+    {
+      "artifact_id": "ART-016-062",
+      "relative_path": "source/run_theoretical_device_imperfection_model_v0_16_ta1.py",
+      "role": "REPRODUCTION-SOURCE",
+      "size_bytes": 33533,
+      "sha256": "5b76cf3c21640c282a5d76ded0e71be1d6092880c66d4c5adbf675f746237425"
+    },
+    {
+      "artifact_id": "ART-016-063",
+      "relative_path": "source/verify_theoretical_device_imperfection_zip_v0_16_ta1.py",
+      "role": "REPRODUCTION-SOURCE",
+      "size_bytes": 3937,
+      "sha256": "b35e77e2ae3a863f833561d3ca078ae478ae4d44de64411448ea2b873d7cb16a"
+    }
+  ]
+}
