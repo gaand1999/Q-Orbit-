@@ -1,0 +1,15 @@
+claim_id,statement,disposition,reason
+CLM-001,V0.6 reference fixture is reproduced at 41338 floored bits with a 102 second half-window,PERMITTED,Exact deterministic software regression for the controlled fixture
+CLM-002,All 12 V0.16 regression and boundary-invariant tests pass,PERMITTED,Machine-checked package fact
+CLM-003,The declared 41 by 41 p_ec versus intrinsic-QBER grid contains 568 positive and 1113 nonpositive signed-margin cases,PERMITTED,Deterministic design-space result with non-probabilistic ranges
+CLM-004,Only 33.789 percent of the declared grid is positive,PERMITTED-WITH-QUALIFIER,Must be described as a grid fraction and never reliability availability or success probability
+CLM-005,Additional loss has the largest absolute local response under the declared step definitions,PERMITTED-WITH-QUALIFIER,Step sizes differ and the ranking is local numerical response only
+CLM-006,The one-parameter crossing values are device requirements or acceptance thresholds,PROHIBITED,They are software-fixture frontiers with all other parameters frozen
+CLM-007,Q-Orbit has characterized a source or detector,PROHIBITED,V0.15 evidence count and V0.16 physical execution count remain zero
+CLM-008,Q-Orbit has selected or should purchase a laser source detector telescope or other hardware,PROHIBITED,No device identity evidence or procurement decision is in scope
+CLM-009,The modeled key is cryptographically releasable,PROHIBITED,Key release remains QUARANTINED/ZERO-RELEASED
+CLM-010,The calculation proves implementation security or composable system security,PROHIBITED,Several proof-to-device mappings are explicitly UNMAPPED
+CLM-011,The result predicts Tabuk performance,PROHIBITED,No parcel orbit atmosphere terminal or Tabuk run is represented
+CLM-012,The result establishes mission feasibility readiness certification or approval,PROHIBITED,Only bounded software-fixture propagation is performed
+CLM-013,The grid ranges define probability distributions,PROHIBITED,V0.7 ranges are uniform engineering screening bounds only
+CLM-014,QBER alone is an accepting security criterion,PROHIBITED,The frozen finite-key expression also requires vacuum and single-photon bounds phase-error bound leakage and security terms

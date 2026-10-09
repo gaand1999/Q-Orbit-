@@ -1,0 +1,12 @@
+gate_id,gate,criterion,current_state,consequence
+TA-G01,Controlled-input integrity,All 17 copied predecessor files match recorded hashes,PASS-CONTROLLED,Permits use of the copied files as controlled theoretical inputs only
+TA-G02,Fixture reproduction,V0.6 selected window and declared numerical outputs match tolerances,PASS-THEORETICAL,Permits only software-regression statement
+TA-G03,Deterministic grid integrity,Exactly 1681 unique finite rows with a complete state partition,PASS-THEORETICAL,Permits only bounded design-space reporting
+TA-G04,Boundary invariants,Physical execution absent and unmapped effects receive no invented penalty,PASS-THEORETICAL,Preserves fail-closed interpretation
+TA-G05,Proof-to-device completeness,Every security-relevant imperfection has a selected proof-compatible map,BLOCKED,No implementation-security claim
+TA-G06,Characterization confidence,All device parameters have simultaneous confidence coverage composed with the security statement,BLOCKED,No certification or composable-security claim
+TA-G07,Physical characterization,Serialized source and detector evidence acquired and reviewed,NOT-EXECUTED,No device acceptance or purchase recommendation
+TA-G08,Hardware-in-loop,Authorized non-emitting and optical integrations completed,BLOCKED,No operational or HIL claim
+TA-G09,Tabuk case,Parcel orbit atmosphere terminal and safety case frozen,NOT-RUN/NONE,No Tabuk quantitative result
+TA-G10,Key release,Authenticated implementation and two-sided EKM evidence accepted,QUARANTINED/ZERO-RELEASED,No key material may be treated as available
+TA-G11,External release,Named review and publication authorization recorded,PRIVATE-BLOCKED,Package remains private
